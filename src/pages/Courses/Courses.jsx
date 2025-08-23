@@ -40,6 +40,7 @@ import {
   VideoCameraOutlined,
 } from "@ant-design/icons";
 import { coursesData } from "../../data/coursesData";
+import "./Courses.css";
 
 const { Title, Paragraph, Text } = Typography;
 const { Option } = Select;
@@ -247,14 +248,8 @@ const Courses = () => {
   };
 
   return (
-    <div
-      className="courses-page"
-      style={{ minHeight: "100vh", padding: "24px 0", background: "#f8f9fa" }}
-    >
-      <div
-        className="main-container"
-        style={{ maxWidth: "1400px", margin: "0 auto", padding: "0 16px" }}
-      >
+    <div className="courses-page">
+      <div className="courses-main-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

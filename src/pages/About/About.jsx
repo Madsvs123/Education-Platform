@@ -38,6 +38,7 @@ import {
   CalendarOutlined,
   DollarOutlined,
 } from "@ant-design/icons";
+import "./About.css";
 
 const { Title, Paragraph, Text } = Typography;
 
@@ -200,7 +201,7 @@ const About = () => {
     <div style={{ minHeight: "100vh", backgroundColor: "#fff" }}>
       {/* Hero Section */}
       <div
-        className="bg-gradient-primary"
+        className="bg-gradient-primary hero-section"
         style={{
           background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
           padding: "100px 0",

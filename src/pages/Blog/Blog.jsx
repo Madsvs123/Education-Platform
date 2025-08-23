@@ -25,6 +25,7 @@ import {
   FilterOutlined,
 } from "@ant-design/icons";
 import { blogData } from "../../data/blogData";
+import "./Blog.css";
 
 const { Title, Paragraph } = Typography;
 const { Search } = Input;
@@ -58,42 +59,26 @@ const Blog = () => {
   const regularArticles = articles.slice(1);
 
   return (
-    <div style={{ minHeight: "100vh", backgroundColor: "#f8f9fa" }}>
+    <div className="blog-page">
       {/* Hero Section */}
-      <div
-        className="bg-gradient-primary"
-        style={{
-          padding: "80px 0",
-          color: "#fff",
-          textAlign: "center",
-          background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-        }}
-      >
+      <div className="blog-hero">
         <div className="main-container">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <Title level={1} style={{ color: "#fff", marginBottom: "20px" }}>
+            <Title level={1} className="blog-hero-title">
               {t("blog.title")}
             </Title>
-            <Paragraph
-              style={{
-                color: "#fff",
-                fontSize: "18px",
-                maxWidth: "600px",
-                margin: "0 auto",
-                opacity: 0.9,
-              }}
-            >
+            <Paragraph className="blog-hero-subtitle">
               {t("blog.subtitle")}
             </Paragraph>
           </motion.div>
         </div>
       </div>
 
-      <div className="main-container" style={{ padding: "60px 20px" }}>
+      <div className="blog-main-container">
         {/* Search and Filter Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

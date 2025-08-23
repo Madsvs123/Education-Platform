@@ -37,6 +37,7 @@ import {
   SafetyCertificateOutlined,
 } from "@ant-design/icons";
 import { tutorsData } from "../../data/tutorsData";
+import "./Tutors.css";
 
 const { Title, Paragraph, Text } = Typography;
 const { Search } = Input;
@@ -91,64 +92,26 @@ const Tutors = () => {
   const successRate = 95; // Platform success rate
 
   return (
-    <div style={{ minHeight: "100vh", backgroundColor: "#f8f9fa" }}>
+    <div className="tutors-page">
       {/* Hero Section */}
-      <div
-        className="bg-gradient-primary"
-        style={{
-          padding: "80px 0 60px",
-          color: "#fff",
-          textAlign: "center",
-          background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-        }}
-      >
+      <div className="tutors-hero">
         <div className="main-container">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <Title
-              level={1}
-              style={{ color: "#fff", marginBottom: "16px", fontWeight: 700 }}
-            >
+            <Title level={1} className="tutors-hero-title">
               {t("tutors.title")}
             </Title>
-            <Paragraph
-              style={{
-                color: "#fff",
-                fontSize: "18px",
-                maxWidth: "700px",
-                margin: "0 auto 30px",
-                opacity: 0.9,
-              }}
-            >
+            <Paragraph className="tutors-hero-subtitle">
               {t("tutors.subtitle")}
             </Paragraph>
-            <div
-              style={{
-                display: "flex",
-                gap: "16px",
-                justifyContent: "center",
-                flexWrap: "wrap",
-              }}
-            >
-              <Button
-                type="primary"
-                size="large"
-                style={{ borderRadius: "8px" }}
-              >
+            <div className="tutors-hero-buttons">
+              <Button type="primary" size="large">
                 {t("tutors.become_tutor")}
               </Button>
-              <Button
-                size="large"
-                style={{
-                  background: "rgba(255,255,255,0.2)",
-                  border: "none",
-                  color: "#fff",
-                  borderRadius: "8px",
-                }}
-              >
+              <Button size="large" className="tutors-hero-secondary-btn">
                 {t("tutors.how_it_works")}
               </Button>
             </div>

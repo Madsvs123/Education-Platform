@@ -1,162 +1,213 @@
-
-import React from 'react';
-import { Row, Col, Card, Typography, Timeline, Statistic, Button, Avatar, Space } from 'antd';
-import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
-import { 
-  TeamOutlined, 
-  BookOutlined, 
-  TrophyOutlined, 
+// About.jsx
+import React from "react";
+import {
+  Row,
+  Col,
+  Card,
+  Typography,
+  Timeline,
+  Statistic,
+  Button,
+  Avatar,
+  Space,
+  Tag,
+} from "antd";
+import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
+import {
+  TeamOutlined,
+  BookOutlined,
+  TrophyOutlined,
   GlobalOutlined,
   HeartOutlined,
   BulbOutlined,
   RocketOutlined,
   SafetyCertificateOutlined,
-  EnvironmentOutlined,
   MailOutlined,
   LinkedinOutlined,
-  TwitterOutlined
-} from '@ant-design/icons';
+  TwitterOutlined,
+  MessageOutlined,
+  StarOutlined,
+  UserOutlined,
+  ClockCircleOutlined,
+  CheckCircleOutlined,
+  RiseOutlined,
+  BankOutlined,
+  CrownOutlined,
+  FlagOutlined,
+  CalendarOutlined,
+  DollarOutlined,
+} from "@ant-design/icons";
 
-const { Title, Paragraph } = Typography;
+const { Title, Paragraph, Text } = Typography;
 
 const About = () => {
   const { t } = useTranslation();
 
   const values = [
     {
-      icon: <HeartOutlined style={{ fontSize: '48px', color: '#ff4d4f' }} />,
-      title: 'Passion for Education',
-      description: 'We believe education is the key to unlocking human potential and creating a better world for everyone.'
+      icon: <HeartOutlined style={{ fontSize: "48px", color: "#ff4d4f" }} />,
+      title: t("about.values.passion.title"),
+      description: t("about.values.passion.description"),
     },
     {
-      icon: <BulbOutlined style={{ fontSize: '48px', color: '#faad14' }} />,
-      title: 'Innovation',
-      description: 'We continuously innovate to provide the best learning experience through cutting-edge technology.'
+      icon: <BulbOutlined style={{ fontSize: "48px", color: "#faad14" }} />,
+      title: t("about.values.innovation.title"),
+      description: t("about.values.innovation.description"),
     },
     {
-      icon: <GlobalOutlined style={{ fontSize: '48px', color: '#52c41a' }} />,
-      title: 'Accessibility',
-      description: 'Quality education should be accessible to everyone, regardless of location, background, or circumstances.'
+      icon: <GlobalOutlined style={{ fontSize: "48px", color: "#52c41a" }} />,
+      title: t("about.values.accessibility.title"),
+      description: t("about.values.accessibility.description"),
     },
     {
-      icon: <SafetyCertificateOutlined style={{ fontSize: '48px', color: '#1890ff' }} />,
-      title: 'Excellence',
-      description: 'We maintain the highest standards in course content, instructor quality, and student support.'
+      icon: (
+        <SafetyCertificateOutlined
+          style={{ fontSize: "48px", color: "#1890ff" }}
+        />
+      ),
+      title: t("about.values.excellence.title"),
+      description: t("about.values.excellence.description"),
     },
     {
-      icon: <TeamOutlined style={{ fontSize: '48px', color: '#722ed1' }} />,
-      title: 'Community',
-      description: 'We foster a supportive learning community where students and educators thrive together.'
+      icon: <TeamOutlined style={{ fontSize: "48px", color: "#722ed1" }} />,
+      title: t("about.values.community.title"),
+      description: t("about.values.community.description"),
     },
     {
-      icon: <RocketOutlined style={{ fontSize: '48px', color: '#eb2f96' }} />,
-      title: 'Growth',
-      description: 'We are committed to continuous learning and personal development for all our stakeholders.'
-    }
+      icon: <RocketOutlined style={{ fontSize: "48px", color: "#eb2f96" }} />,
+      title: t("about.values.growth.title"),
+      description: t("about.values.growth.description"),
+    },
   ];
 
   const timeline = [
     {
-      color: '#1890ff',
+      color: "#1890ff",
       children: (
         <div>
-          <Title level={4} style={{ marginBottom: '8px' }}>2020 - Platform Launch</Title>
-          <Paragraph style={{ color: '#666', margin: 0 }}>
-            EduPlatform was founded with the vision of democratizing education and making quality learning accessible worldwide.
+          <Title level={4} style={{ marginBottom: "8px" }}>
+            {t("about.timeline.2020.title")}
+          </Title>
+          <Paragraph style={{ color: "#666", margin: 0 }}>
+            {t("about.timeline.2020.description")}
           </Paragraph>
         </div>
-      )
+      ),
     },
     {
-      color: '#52c41a',
+      color: "#52c41a",
       children: (
         <div>
-          <Title level={4} style={{ marginBottom: '8px' }}>2021 - First Milestone</Title>
-          <Paragraph style={{ color: '#666', margin: 0 }}>
-            Reached our first milestone of 1,000 active students and 50+ expert instructors across various fields.
+          <Title level={4} style={{ marginBottom: "8px" }}>
+            {t("about.timeline.2021.title")}
+          </Title>
+          <Paragraph style={{ color: "#666", margin: 0 }}>
+            {t("about.timeline.2021.description")}
           </Paragraph>
         </div>
-      )
+      ),
     },
     {
-      color: '#faad14',
+      color: "#faad14",
       children: (
         <div>
-          <Title level={4} style={{ marginBottom: '8px' }}>2022 - International Expansion</Title>
-          <Paragraph style={{ color: '#666', margin: 0 }}>
-            Expanded to serve students in over 50 countries worldwide with multilingual support and localized content.
+          <Title level={4} style={{ marginBottom: "8px" }}>
+            {t("about.timeline.2022.title")}
+          </Title>
+          <Paragraph style={{ color: "#666", margin: 0 }}>
+            {t("about.timeline.2022.description")}
           </Paragraph>
         </div>
-      )
+      ),
     },
     {
-      color: '#722ed1',
+      color: "#722ed1",
       children: (
         <div>
-          <Title level={4} style={{ marginBottom: '8px' }}>2023 - Major Growth</Title>
-          <Paragraph style={{ color: '#666', margin: 0 }}>
-            Growing community of 50,000+ learners and 500+ educators from around the globe with 1000+ courses.
+          <Title level={4} style={{ marginBottom: "8px" }}>
+            {t("about.timeline.2023.title")}
+          </Title>
+          <Paragraph style={{ color: "#666", margin: 0 }}>
+            {t("about.timeline.2023.description")}
           </Paragraph>
         </div>
-      )
+      ),
     },
     {
-      color: '#ff4d4f',
+      color: "#ff4d4f",
       children: (
         <div>
-          <Title level={4} style={{ marginBottom: '8px' }}>2024 - Innovation & AI</Title>
-          <Paragraph style={{ color: '#666', margin: 0 }}>
-            Introduced AI-powered personalized learning paths and advanced analytics to enhance the learning experience.
+          <Title level={4} style={{ marginBottom: "8px" }}>
+            {t("about.timeline.2024.title")}
+          </Title>
+          <Paragraph style={{ color: "#666", margin: 0 }}>
+            {t("about.timeline.2024.description")}
           </Paragraph>
         </div>
-      )
-    }
+      ),
+    },
   ];
 
-  const teamMembers = [
+  const successStories = [
     {
-      name: 'Sarah Johnson',
-      role: 'CEO & Founder',
-      bio: 'Former educator with 15+ years in educational technology',
-      avatar: 'https://images.unsplash.com/photo-1494790108755-2616b612b593?w=150&h=150&fit=crop&crop=face',
-      social: { linkedin: '#', twitter: '#' }
+      name: "Alex Johnson",
+      role: t("about.success_stories.software_engineer"),
+      achievement: t("about.success_stories.career_switch"),
+      story: t("about.success_stories.alex_story"),
+      avatar:
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+      before: "Marketing Manager",
+      after: "Senior Developer",
+      time: "6 months",
     },
     {
-      name: 'Michael Chen',
-      role: 'CTO',
-      bio: 'Tech visionary with expertise in scalable learning platforms',
-      avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face',
-      social: { linkedin: '#', twitter: '#' }
+      name: "Maria Rodriguez",
+      role: t("about.success_stories.data_scientist"),
+      achievement: t("about.success_stories.promotion"),
+      story: t("about.success_stories.maria_story"),
+      avatar:
+        "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face",
+      before: "Junior Analyst",
+      after: "Lead Data Scientist",
+      time: "8 months",
     },
     {
-      name: 'Emily Rodriguez',
-      role: 'Head of Education',
-      bio: 'Curriculum designer with PhD in Educational Psychology',
-      avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face',
-      social: { linkedin: '#', twitter: '#' }
+      name: "David Kim",
+      role: t("about.success_stories.ui_designer"),
+      achievement: t("about.success_stories.freelance_success"),
+      story: t("about.success_stories.david_story"),
+      avatar:
+        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face",
+      before: "Student",
+      after: "Freelance Designer",
+      time: "4 months",
     },
     {
-      name: 'David Kim',
-      role: 'Head of Product',
-      bio: 'Product strategist focused on user experience and engagement',
-      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face',
-      social: { linkedin: '#', twitter: '#' }
-    }
+      name: "Sarah Chen",
+      role: t("about.success_stories.digital_marketer"),
+      achievement: t("about.success_stories.business_growth"),
+      story: t("about.success_stories.sarah_story"),
+      avatar:
+        "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=150&h=150&fit=crop&crop=face",
+      before: "Small Business Owner",
+      after: "Marketing Agency Founder",
+      time: "9 months",
+    },
   ];
 
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: '#fff' }}>
+    <div style={{ minHeight: "100vh", backgroundColor: "#fff" }}>
       {/* Hero Section */}
-      <div 
+      <div
         className="bg-gradient-primary"
-        style={{ 
-          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-          padding: '100px 0',
-          color: '#fff',
-          textAlign: 'center',
-          position: 'relative',
-          overflow: 'hidden'
+        style={{
+          background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+          padding: "100px 0",
+          color: "#fff",
+          textAlign: "center",
+          position: "relative",
+          overflow: "hidden",
         }}
       >
         <div className="main-container">
@@ -165,93 +216,125 @@ const About = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <Title level={1} style={{ color: '#fff', marginBottom: '24px', fontSize: '3rem' }}>
-              {t('about.title')}
+            <Title
+              level={1}
+              style={{ color: "#fff", marginBottom: "24px", fontSize: "3rem" }}
+            >
+              {t("about.title")}
             </Title>
-            <Paragraph style={{ 
-              color: '#fff', 
-              fontSize: '20px', 
-              maxWidth: '800px', 
-              margin: '0 auto 40px',
-              opacity: 0.95,
-              lineHeight: '1.6'
-            }}>
-              Empowering learners worldwide through innovative education technology, expert instruction, and a commitment to making quality education accessible to everyone.
+            <Paragraph
+              style={{
+                color: "#fff",
+                fontSize: "20px",
+                maxWidth: "800px",
+                margin: "0 auto 40px",
+                opacity: 0.95,
+                lineHeight: "1.6",
+              }}
+            >
+              {t("about.hero_description")}
             </Paragraph>
             <Space size="large">
-              <Button type="default" size="large" style={{ borderRadius: '25px' }}>
-                Our Story
+              <Button
+                type="default"
+                size="large"
+                style={{ borderRadius: "25px" }}
+              >
+                {t("about.cta.our_story")}
               </Button>
-              <Button size="large" style={{ 
-                background: 'rgba(255,255,255,0.2)', 
-                border: '1px solid rgba(255,255,255,0.3)', 
-                color: '#fff',
-                borderRadius: '25px'
-              }}>
-                Join Our Team
+              <Button
+                size="large"
+                style={{
+                  background: "rgba(255,255,255,0.2)",
+                  border: "1px solid rgba(255,255,255,0.3)",
+                  color: "#fff",
+                  borderRadius: "25px",
+                }}
+              >
+                {t("about.cta.join_team")}
               </Button>
             </Space>
           </motion.div>
         </div>
       </div>
 
-      <div className="main-container" style={{ padding: '80px 20px' }}>
+      <div className="main-container" style={{ padding: "80px 20px" }}>
         {/* Mission & Vision */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          style={{ marginBottom: '100px' }}
+          style={{ marginBottom: "100px" }}
         >
           <Row gutter={[48, 48]} align="middle">
             <Col xs={24} md={12}>
-              <div style={{ 
-                background: 'linear-gradient(135deg, #f6f9fc 0%, #e9f2ff 100%)',
-                padding: '40px',
-                borderRadius: '20px',
-                height: '100%'
-              }}>
-                <div style={{ 
-                  width: '60px',
-                  height: '60px',
-                  background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-                  borderRadius: '15px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  marginBottom: '24px'
-                }}>
-                  <RocketOutlined style={{ fontSize: '24px', color: '#fff' }} />
+              <div
+                style={{
+                  background:
+                    "linear-gradient(135deg, #f6f9fc 0%, #e9f2ff 100%)",
+                  padding: "40px",
+                  borderRadius: "20px",
+                  height: "100%",
+                }}
+              >
+                <div
+                  style={{
+                    width: "60px",
+                    height: "60px",
+                    background:
+                      "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+                    borderRadius: "15px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    marginBottom: "24px",
+                  }}
+                >
+                  <RocketOutlined style={{ fontSize: "24px", color: "#fff" }} />
                 </div>
-                <Title level={2} style={{ marginBottom: '20px' }}>{t('about.mission')}</Title>
-                <Paragraph style={{ fontSize: '16px', lineHeight: '1.8', color: '#555' }}>
-                  {t('about.mission_text')} We strive to break down barriers to education and create opportunities for lifelong learning that transform lives and communities.
+                <Title level={2} style={{ marginBottom: "20px" }}>
+                  {t("about.mission")}
+                </Title>
+                <Paragraph
+                  style={{ fontSize: "16px", lineHeight: "1.8", color: "#555" }}
+                >
+                  {t("about.mission_text")}
                 </Paragraph>
               </div>
             </Col>
             <Col xs={24} md={12}>
-              <div style={{ 
-                background: 'linear-gradient(135deg, #fff5f5 0%, #ffebee 100%)',
-                padding: '40px',
-                borderRadius: '20px',
-                height: '100%'
-              }}>
-                <div style={{ 
-                  width: '60px',
-                  height: '60px',
-                  background: 'linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%)',
-                  borderRadius: '15px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  marginBottom: '24px'
-                }}>
-                  <BulbOutlined style={{ fontSize: '24px', color: '#fff' }} />
+              <div
+                style={{
+                  background:
+                    "linear-gradient(135deg, #fff5f5 0%, #ffebee 100%)",
+                  padding: "40px",
+                  borderRadius: "20px",
+                  height: "100%",
+                }}
+              >
+                <div
+                  style={{
+                    width: "60px",
+                    height: "60px",
+                    background:
+                      "linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%)",
+                    borderRadius: "15px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    marginBottom: "24px",
+                  }}
+                >
+                  <BulbOutlined style={{ fontSize: "24px", color: "#fff" }} />
                 </div>
-                <Title level={2} style={{ marginBottom: '20px' }}>{t('about.vision')}</Title>
-                <Paragraph style={{ fontSize: '16px', lineHeight: '1.8', color: '#555' }}>
-                  {t('about.vision_text')} We envision a future where learning knows no boundaries and every individual has the tools they need to succeed.
+                <Title level={2} style={{ marginBottom: "20px" }}>
+                  {t("about.vision")}
+                </Title>
+                <Paragraph
+                  style={{ fontSize: "16px", lineHeight: "1.8", color: "#555" }}
+                >
+                  {t("about.vision_text")}
                 </Paragraph>
               </div>
             </Col>
@@ -264,14 +347,21 @@ const About = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          style={{ marginBottom: '100px' }}
+          style={{ marginBottom: "100px" }}
         >
-          <div style={{ textAlign: 'center', marginBottom: '60px' }}>
-            <Title level={2} style={{ marginBottom: '16px' }}>
-              Our Core Values
+          <div style={{ textAlign: "center", marginBottom: "60px" }}>
+            <Title level={2} style={{ marginBottom: "16px" }}>
+              {t("about.values.title")}
             </Title>
-            <Paragraph style={{ fontSize: '18px', color: '#666', maxWidth: '600px', margin: '0 auto' }}>
-              These values guide everything we do and shape the culture of our learning community.
+            <Paragraph
+              style={{
+                fontSize: "18px",
+                color: "#666",
+                maxWidth: "600px",
+                margin: "0 auto",
+              }}
+            >
+              {t("about.values.subtitle")}
             </Paragraph>
           </div>
           <Row gutter={[32, 32]}>
@@ -283,23 +373,25 @@ const About = () => {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <Card 
-                    style={{ 
-                      textAlign: 'center', 
-                      height: '320px',
-                      borderRadius: '16px',
-                      boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
-                      border: '1px solid #f0f0f0',
-                      transition: 'all 0.3s ease'
+                  <Card
+                    style={{
+                      textAlign: "center",
+                      height: "320px",
+                      borderRadius: "16px",
+                      boxShadow: "0 4px 20px rgba(0,0,0,0.08)",
+                      border: "1px solid #f0f0f0",
+                      transition: "all 0.3s ease",
                     }}
                     hoverable
-                    bodyStyle={{ padding: '32px 24px' }}
+                    bodyStyle={{ padding: "32px 24px" }}
                   >
-                    <div style={{ marginBottom: '24px' }}>
-                      {value.icon}
-                    </div>
-                    <Title level={4} style={{ marginBottom: '16px' }}>{value.title}</Title>
-                    <Paragraph style={{ color: '#666', lineHeight: '1.6', margin: 0 }}>
+                    <div style={{ marginBottom: "24px" }}>{value.icon}</div>
+                    <Title level={4} style={{ marginBottom: "16px" }}>
+                      {value.title}
+                    </Title>
+                    <Paragraph
+                      style={{ color: "#666", lineHeight: "1.6", margin: 0 }}
+                    >
                       {value.description}
                     </Paragraph>
                   </Card>
@@ -315,16 +407,18 @@ const About = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          style={{ marginBottom: '100px' }}
+          style={{ marginBottom: "100px" }}
         >
-          <div style={{ 
-            background: 'linear-gradient(135deg, #001529 0%, #002140 100%)',
-            borderRadius: '20px',
-            padding: '80px 40px',
-            textAlign: 'center'
-          }}>
-            <Title level={2} style={{ color: '#fff', marginBottom: '50px' }}>
-              Our Impact in Numbers
+          <div
+            style={{
+              background: "linear-gradient(135deg, #001529 0%, #002140 100%)",
+              borderRadius: "20px",
+              padding: "80px 40px",
+              textAlign: "center",
+            }}
+          >
+            <Title level={2} style={{ color: "#fff", marginBottom: "50px" }}>
+              {t("about.stats.title")}
             </Title>
             <Row gutter={[32, 32]} justify="center">
               <Col xs={12} sm={6}>
@@ -335,10 +429,18 @@ const About = () => {
                   viewport={{ once: true }}
                 >
                   <Statistic
-                    title={<span style={{ color: '#ccc', fontSize: '16px' }}>Students Worldwide</span>}
+                    title={
+                      <span style={{ color: "#ccc", fontSize: "16px" }}>
+                        {t("about.stats.students")}
+                      </span>
+                    }
                     value={50000}
-                    prefix={<TeamOutlined style={{ color: '#1890ff' }} />}
-                    valueStyle={{ color: '#fff', fontSize: '2.5rem', fontWeight: 'bold' }}
+                    prefix={<TeamOutlined style={{ color: "#1890ff" }} />}
+                    valueStyle={{
+                      color: "#fff",
+                      fontSize: "2.5rem",
+                      fontWeight: "bold",
+                    }}
                     suffix="+"
                   />
                 </motion.div>
@@ -351,10 +453,18 @@ const About = () => {
                   viewport={{ once: true }}
                 >
                   <Statistic
-                    title={<span style={{ color: '#ccc', fontSize: '16px' }}>Courses Available</span>}
+                    title={
+                      <span style={{ color: "#ccc", fontSize: "16px" }}>
+                        {t("about.stats.courses")}
+                      </span>
+                    }
                     value={1000}
-                    prefix={<BookOutlined style={{ color: '#52c41a' }} />}
-                    valueStyle={{ color: '#fff', fontSize: '2.5rem', fontWeight: 'bold' }}
+                    prefix={<BookOutlined style={{ color: "#52c41a" }} />}
+                    valueStyle={{
+                      color: "#fff",
+                      fontSize: "2.5rem",
+                      fontWeight: "bold",
+                    }}
                     suffix="+"
                   />
                 </motion.div>
@@ -367,10 +477,18 @@ const About = () => {
                   viewport={{ once: true }}
                 >
                   <Statistic
-                    title={<span style={{ color: '#ccc', fontSize: '16px' }}>Countries Served</span>}
+                    title={
+                      <span style={{ color: "#ccc", fontSize: "16px" }}>
+                        {t("about.stats.countries")}
+                      </span>
+                    }
                     value={50}
-                    prefix={<GlobalOutlined style={{ color: '#faad14' }} />}
-                    valueStyle={{ color: '#fff', fontSize: '2.5rem', fontWeight: 'bold' }}
+                    prefix={<GlobalOutlined style={{ color: "#faad14" }} />}
+                    valueStyle={{
+                      color: "#fff",
+                      fontSize: "2.5rem",
+                      fontWeight: "bold",
+                    }}
                     suffix="+"
                   />
                 </motion.div>
@@ -383,10 +501,18 @@ const About = () => {
                   viewport={{ once: true }}
                 >
                   <Statistic
-                    title={<span style={{ color: '#ccc', fontSize: '16px' }}>Industry Awards</span>}
+                    title={
+                      <span style={{ color: "#ccc", fontSize: "16px" }}>
+                        {t("about.stats.awards")}
+                      </span>
+                    }
                     value={25}
-                    prefix={<TrophyOutlined style={{ color: '#ff4d4f' }} />}
-                    valueStyle={{ color: '#fff', fontSize: '2.5rem', fontWeight: 'bold' }}
+                    prefix={<TrophyOutlined style={{ color: "#ff4d4f" }} />}
+                    valueStyle={{
+                      color: "#fff",
+                      fontSize: "2.5rem",
+                      fontWeight: "bold",
+                    }}
                     suffix="+"
                   />
                 </motion.div>
@@ -401,14 +527,21 @@ const About = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          style={{ marginBottom: '100px' }}
+          style={{ marginBottom: "100px" }}
         >
-          <div style={{ textAlign: 'center', marginBottom: '60px' }}>
-            <Title level={2} style={{ marginBottom: '16px' }}>
-              Our Journey
+          <div style={{ textAlign: "center", marginBottom: "60px" }}>
+            <Title level={2} style={{ marginBottom: "16px" }}>
+              {t("about.timeline.title")}
             </Title>
-            <Paragraph style={{ fontSize: '18px', color: '#666', maxWidth: '600px', margin: '0 auto' }}>
-              From a small startup to a global education platform - here's how we've grown together.
+            <Paragraph
+              style={{
+                fontSize: "18px",
+                color: "#666",
+                maxWidth: "600px",
+                margin: "0 auto",
+              }}
+            >
+              {t("about.timeline.subtitle")}
             </Paragraph>
           </div>
           <Row justify="center">
@@ -418,25 +551,32 @@ const About = () => {
           </Row>
         </motion.div>
 
-        {/* Team */}
+        {/* Success Stories */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          style={{ marginBottom: '100px' }}
+          style={{ marginBottom: "100px" }}
         >
-          <div style={{ textAlign: 'center', marginBottom: '60px' }}>
-            <Title level={2} style={{ marginBottom: '16px' }}>
-              Meet Our Leadership Team
+          <div style={{ textAlign: "center", marginBottom: "60px" }}>
+            <Title level={2} style={{ marginBottom: "16px" }}>
+              {t("about.success_stories.title")}
             </Title>
-            <Paragraph style={{ fontSize: '18px', color: '#666', maxWidth: '600px', margin: '0 auto' }}>
-              Passionate educators and technologists working together to revolutionize learning.
+            <Paragraph
+              style={{
+                fontSize: "18px",
+                color: "#666",
+                maxWidth: "600px",
+                margin: "0 auto",
+              }}
+            >
+              {t("about.success_stories.subtitle")}
             </Paragraph>
           </div>
           <Row gutter={[32, 32]}>
-            {teamMembers.map((member, index) => (
-              <Col xs={24} sm={12} lg={6} key={index}>
+            {successStories.map((story, index) => (
+              <Col xs={24} md={12} key={index}>
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -445,31 +585,110 @@ const About = () => {
                 >
                   <Card
                     style={{
-                      textAlign: 'center',
-                      borderRadius: '16px',
-                      boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
-                      border: '1px solid #f0f0f0'
+                      borderRadius: "16px",
+                      boxShadow: "0 4px 20px rgba(0,0,0,0.08)",
+                      border: "1px solid #f0f0f0",
+                      height: "100%",
                     }}
-                    hoverable
-                    bodyStyle={{ padding: '32px 24px' }}
+                    bodyStyle={{ padding: "32px" }}
                   >
-                    <Avatar
-                      size={120}
-                      src={member.avatar}
-                      style={{ marginBottom: '20px' }}
-                    />
-                    <Title level={4} style={{ marginBottom: '8px' }}>{member.name}</Title>
-                    <Title level={5} style={{ color: '#1890ff', marginBottom: '12px', fontWeight: 'normal' }}>
-                      {member.role}
-                    </Title>
-                    <Paragraph style={{ color: '#666', marginBottom: '20px', fontSize: '14px' }}>
-                      {member.bio}
-                    </Paragraph>
-                    <Space>
-                      <Button type="text" icon={<LinkedinOutlined />} />
-                      <Button type="text" icon={<TwitterOutlined />} />
-                      <Button type="text" icon={<MailOutlined />} />
-                    </Space>
+                    <div
+                      style={{
+                        display: "flex",
+                        alignItems: "flex-start",
+                        marginBottom: "20px",
+                      }}
+                    >
+                      <Avatar
+                        size={80}
+                        src={story.avatar}
+                        style={{ marginRight: "20px" }}
+                      />
+                      <div>
+                        <Title level={4} style={{ marginBottom: "4px" }}>
+                          {story.name}
+                        </Title>
+                        <Text
+                          type="secondary"
+                          style={{ display: "block", marginBottom: "8px" }}
+                        >
+                          {story.role}
+                        </Text>
+                        <Tag color="blue" icon={<StarOutlined />}>
+                          {story.achievement}
+                        </Tag>
+                      </div>
+                    </div>
+
+                    <div
+                      style={{
+                        background: "#f9f9f9",
+                        padding: "20px",
+                        borderRadius: "12px",
+                        marginBottom: "20px",
+                        position: "relative",
+                      }}
+                    >
+                      <MessageOutlined
+                        style={{
+                          position: "absolute",
+                          top: "10px",
+                          left: "10px",
+                          fontSize: "24px",
+                          color: "#1890ff",
+                          opacity: 0.2,
+                        }}
+                      />
+                      <Paragraph
+                        style={{
+                          color: "#555",
+                          fontStyle: "italic",
+                          margin: 0,
+                          paddingLeft: "20px",
+                        }}
+                      >
+                        "{story.story}"
+                      </Paragraph>
+                    </div>
+
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                        padding: "16px",
+                        background:
+                          "linear-gradient(135deg, #f6f9fc 0%, #e9f2ff 100%)",
+                        borderRadius: "12px",
+                      }}
+                    >
+                      <div style={{ textAlign: "center" }}>
+                        <Text
+                          strong
+                          style={{ display: "block", color: "#666" }}
+                        >
+                          Before
+                        </Text>
+                        <Text>{story.before}</Text>
+                      </div>
+                      <div style={{ textAlign: "center" }}>
+                        <ClockCircleOutlined
+                          style={{ fontSize: "24px", color: "#1890ff" }}
+                        />
+                        <Text style={{ display: "block", marginTop: "8px" }}>
+                          {story.time}
+                        </Text>
+                      </div>
+                      <div style={{ textAlign: "center" }}>
+                        <Text
+                          strong
+                          style={{ display: "block", color: "#666" }}
+                        >
+                          After
+                        </Text>
+                        <Text>{story.after}</Text>
+                      </div>
+                    </div>
                   </Card>
                 </motion.div>
               </Col>
@@ -484,54 +703,56 @@ const About = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <Card 
-            style={{ 
-              background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-              border: 'none',
-              borderRadius: '20px',
-              textAlign: 'center',
-              color: '#fff'
+          <Card
+            style={{
+              background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+              border: "none",
+              borderRadius: "20px",
+              textAlign: "center",
+              color: "#fff",
             }}
-            bodyStyle={{ padding: '60px 40px' }}
+            bodyStyle={{ padding: "60px 40px" }}
           >
-            <Title level={2} style={{ color: '#fff', marginBottom: '20px' }}>
-              Ready to Join Our Mission?
+            <Title level={2} style={{ color: "#fff", marginBottom: "20px" }}>
+              {t("about.cta.title")}
             </Title>
-            <Paragraph style={{ 
-              color: 'rgba(255,255,255,0.9)', 
-              marginBottom: '30px', 
-              fontSize: '18px',
-              maxWidth: '500px',
-              margin: '0 auto 30px'
-            }}>
-              Whether you're a learner looking to grow or an educator ready to make an impact, we'd love to have you join our community.
+            <Paragraph
+              style={{
+                color: "rgba(255,255,255,0.9)",
+                marginBottom: "30px",
+                fontSize: "18px",
+                maxWidth: "500px",
+                margin: "0 auto 30px",
+              }}
+            >
+              {t("about.cta.subtitle")}
             </Paragraph>
             <Space size="large">
-              <Button 
+              <Button
                 size="large"
-                style={{ 
-                  backgroundColor: '#fff', 
-                  color: '#667eea', 
-                  border: 'none',
-                  borderRadius: '25px',
-                  paddingLeft: '30px',
-                  paddingRight: '30px'
+                style={{
+                  backgroundColor: "#fff",
+                  color: "#667eea",
+                  border: "none",
+                  borderRadius: "25px",
+                  paddingLeft: "30px",
+                  paddingRight: "30px",
                 }}
               >
-                Start Learning Today
+                {t("about.cta.start_learning")}
               </Button>
-              <Button 
+              <Button
                 size="large"
-                style={{ 
-                  backgroundColor: 'transparent', 
-                  color: '#fff', 
-                  border: '2px solid rgba(255,255,255,0.3)',
-                  borderRadius: '25px',
-                  paddingLeft: '30px',
-                  paddingRight: '30px'
+                style={{
+                  backgroundColor: "transparent",
+                  color: "#fff",
+                  border: "2px solid rgba(255,255,255,0.3)",
+                  borderRadius: "25px",
+                  paddingLeft: "30px",
+                  paddingRight: "30px",
                 }}
               >
-                Become an Instructor
+                {t("about.cta.become_instructor")}
               </Button>
             </Space>
           </Card>

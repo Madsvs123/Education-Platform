@@ -1,4 +1,3 @@
-
 {
   "en": {
     "translation": {
@@ -96,36 +95,238 @@
         "bestseller": "Bestseller",
         "new": "New",
         "no_results": "No courses found",
-        "no_results_desc": "Try adjusting your search or filter criteria"
+        "no_results_desc": "Try adjusting your search or filter criteria",
+        "preview": "Preview Course",
+        "learning_paths": "Structured Learning Paths",
+        "all_courses": "All Courses",
+        "progress": "Progress",
+        "certificate": "Certificate",
+        "continue_path": "Continue Path",
+        "error": "Something went wrong!",
+        "retry": "Try Again",
+        "card_error": "Error loading course card",
+        "favorite": {
+          "add": "Add to favorites",
+          "remove": "Remove from favorites"
+        },
+        "lessons": "lessons",
+        "reset_filters": "Reset Filters"
       },
       "tutors": {
         "title": "Meet Our Expert Tutors",
         "subtitle": "Learn from industry professionals and experienced educators",
-        "rating": "Rating",
-        "students": "Students",
-        "view_profile": "View Profile",
-        "courses_count": "Courses"
+        "become_tutor": "Become a Tutor",
+        "how_it_works": "How it Works",
+        "why_choose": "Why Choose Our Platform?",
+        "stats": {
+          "active_students": "Active Students",
+          "expert_tutors": "Expert Tutors",
+          "courses_available": "Courses Available",
+          "average_rating": "Average Rating"
+        },
+        "search": {
+          "placeholder": "Search tutors by name, expertise or specialty...",
+          "subjects_all": "All Subjects",
+          "sort": {
+            "highest_rated": "Highest Rated",
+            "most_students": "Most Students",
+            "most_courses": "Most Courses",
+            "price_low": "Price: Low to High",
+            "price_high": "Price: High to Low"
+          },
+          "reset": "Reset Filters",
+          "results_count": "{{count}} {{count, plural, one{tutor} other{tutors}}} found"
+        },
+        "tutor_card": {
+          "verified": "Verified Tutor",
+          "reviews": "reviews",
+          "students": "students",
+          "courses": "courses",
+          "online_now": "Online now",
+          "per_hour": "/hr",
+          "message": "Message",
+          "book_trial": "Book Trial Lesson",
+          "view_profile": "View Profile"
+        },
+        "how_works": {
+          "title": "How It Works",
+          "step1_title": "Find Your Tutor",
+          "step1_desc": "Browse our verified tutors, read reviews, and compare profiles to find the perfect match for your learning goals.",
+          "step2_title": "Book a Session",
+          "step2_desc": "Schedule a lesson at your convenience. Choose from available time slots that work with your schedule.",
+          "step3_title": "Start Learning",
+          "step3_desc": "Connect with your tutor through our secure platform and begin your learning journey with expert guidance."
+        },
+        "cta": {
+          "title": "Ready to Share Your Knowledge?",
+          "subtitle": "Join our community of expert tutors and start making an impact on students worldwide. Set your own schedule and rates while doing what you love.",
+          "features": {
+            "rates": "Set your own rates",
+            "schedule": "Flexible schedule",
+            "reach": "Global student reach"
+          },
+          "button": "Become a Tutor Today"
+        }
       },
       "blog": {
         "title": "Educational Insights & Resources",
         "subtitle": "Stay updated with the latest trends, tips, and insights in education and technology",
-        "read_more": "Read More",
-        "min_read": "min read",
-        "views": "views"
+        "search": {
+          "placeholder": "Search articles...",
+          "categories": "All Categories"
+        },
+        "actions": {
+          "subscribe": "Subscribe",
+          "read_more": "Read More",
+          "like": "Like",
+          "save": "Save",
+          "share": "Share"
+        },
+        "featured": "Featured Article",
+        "latest": "Latest Articles",
+        "newsletter": {
+          "title": "Never Miss an Update",
+          "subtitle": "Subscribe to our newsletter for the latest insights, tutorials, and industry news",
+          "placeholder": "Enter your email"
+        },
+        "meta": {
+          "min_read": "min read",
+          "views": "views",
+          "by": "by"
+        }
       },
       "about": {
         "title": "About EduPlatform",
+        "hero_description": "Empowering learners worldwide through innovative education technology, expert instruction, and a commitment to making quality education accessible to everyone.",
         "mission": "Our Mission",
-        "mission_text": "To democratize education and make quality learning accessible to everyone, everywhere.",
+        "mission_text": "To democratize education and make quality learning accessible to everyone, everywhere. We strive to break down barriers to education and create opportunities for lifelong learning that transform lives and communities.",
         "vision": "Our Vision",
-        "vision_text": "To become the world's leading platform for innovative and inclusive education."
+        "vision_text": "To become the world's leading platform for innovative and inclusive education. We envision a future where learning knows no boundaries and every individual has the tools they need to succeed.",
+        "values": {
+          "title": "Our Core Values",
+          "subtitle": "These values guide everything we do and shape the culture of our learning community.",
+          "passion": {
+            "title": "Passion for Education",
+            "description": "We believe education is the key to unlocking human potential and creating a better world for everyone."
+          },
+          "innovation": {
+            "title": "Innovation",
+            "description": "We continuously innovate to provide the best learning experience through cutting-edge technology."
+          },
+          "accessibility": {
+            "title": "Accessibility",
+            "description": "Quality education should be accessible to everyone, regardless of location, background, or circumstances."
+          },
+          "excellence": {
+            "title": "Excellence",
+            "description": "We maintain the highest standards in course content, instructor quality, and student support."
+          },
+          "community": {
+            "title": "Community",
+            "description": "We foster a supportive learning community where students and educators thrive together."
+          },
+          "growth": {
+            "title": "Growth",
+            "description": "We are committed to continuous learning and personal development for all our stakeholders."
+          }
+        },
+        "stats": {
+          "title": "Our Impact in Numbers",
+          "students": "Students Worldwide",
+          "courses": "Courses Available",
+          "countries": "Countries Served",
+          "awards": "Industry Awards"
+        },
+        "timeline": {
+          "title": "Our Journey",
+          "subtitle": "From a small startup to a global education platform - here's how we've grown together.",
+          "2020": {
+            "title": "2020 - Platform Launch",
+            "description": "EduPlatform was founded with the vision of democratizing education and making quality learning accessible worldwide."
+          },
+          "2021": {
+            "title": "2021 - First Milestone",
+            "description": "Reached our first milestone of 1,000 active students and 50+ expert instructors across various fields."
+          },
+          "2022": {
+            "title": "2022 - International Expansion",
+            "description": "Expanded to serve students in over 50 countries worldwide with multilingual support and localized content."
+          },
+          "2023": {
+            "title": "2023 - Major Growth",
+            "description": "Growing community of 50,000+ learners and 500+ educators from around the globe with 1000+ courses."
+          },
+          "2024": {
+            "title": "2024 - Innovation & AI",
+            "description": "Introduced AI-powered personalized learning paths and advanced analytics to enhance the learning experience."
+          }
+        },
+        "success_stories": {
+          "title": "Success Stories",
+          "subtitle": "Real transformations from our learning community",
+          "software_engineer": "Software Engineer",
+          "data_scientist": "Data Scientist",
+          "ui_designer": "UI/UX Designer",
+          "digital_marketer": "Digital Marketer",
+          "career_switch": "Career Switch",
+          "promotion": "Rapid Promotion",
+          "freelance_success": "Freelance Success",
+          "business_growth": "Business Growth",
+          "alex_story": "The courses on EduPlatform gave me the practical skills I needed to transition from marketing to tech. Within 6 months, I landed my first developer role!",
+          "maria_story": "The data science program completely transformed my career. I went from junior analyst to leading my team in just 8 months.",
+          "david_story": "As a design student, the mentorship I received helped me build a portfolio that landed me freelance clients before I even graduated.",
+          "sarah_story": "The digital marketing courses helped me grow my small business into a full-service agency. My revenue increased by 300% in the first year."
+        },
+        "cta": {
+          "title": "Ready to Join Our Mission?",
+          "subtitle": "Whether you're a learner looking to grow or an educator ready to make an impact, we'd love to have you join our community.",
+          "our_story": "Our Story",
+          "join_team": "Join Our Team",
+          "start_learning": "Start Learning Today",
+          "become_instructor": "Become an Instructor"
+        }
       },
       "contact": {
         "title": "Contact Us",
+        "description": "Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.",
+        "get_in_touch": "Get in Touch",
+        "send_message": "Send us a Message",
         "name": "Name",
         "email": "Email",
+        "subject": "Subject",
         "message": "Message",
-        "send": "Send Message"
+        "send": "Send Message",
+        "info": {
+          "email": {
+            "title": "Email",
+            "subtitle": "Send us an email anytime"
+          },
+          "phone": {
+            "title": "Phone",
+            "subtitle": "Call us during business hours"
+          },
+          "address": {
+            "title": "Address",
+            "subtitle": "Visit our headquarters"
+          },
+          "hours": {
+            "title": "Hours",
+            "subtitle": "We're here to help"
+          }
+        },
+        "placeholder": {
+          "name": "Your full name",
+          "email": "your.email@example.com",
+          "subject": "What is this about?",
+          "message": "Tell us more about your inquiry..."
+        },
+        "validation": {
+          "name_required": "Please enter your name",
+          "email_required": "Please enter your email",
+          "email_valid": "Please enter a valid email",
+          "subject_required": "Please enter a subject",
+          "message_required": "Please enter your message"
+        }
       },
       "auth": {
         "login": "Login",
@@ -135,7 +336,57 @@
         "confirm_password": "Confirm Password",
         "forgot_password": "Forgot Password?",
         "no_account": "Don't have an account?",
-        "have_account": "Already have an account?"
+        "have_account": "Already have an account?",
+        "welcome_back": "Welcome Back",
+        "sign_in_continue": "Sign in to continue your learning journey",
+        "create_account": "Create Account",
+        "join_learners": "Join thousands of learners today",
+        "full_name": "Full Name",
+        "or_continue_with": "or continue with",
+        "continue_google": "Continue with Google",
+        "continue_facebook": "Continue with Facebook",
+        "agree_to": "I agree to the",
+        "terms_of_service": "Terms of Service",
+        "and": "and",
+        "privacy_policy": "Privacy Policy",
+        "placeholder": {
+          "email": "Enter your email",
+          "password": "Enter your password",
+          "full_name": "Enter your full name",
+          "create_password": "Create a password",
+          "confirm_password": "Confirm your password"
+        },
+        "validation": {
+          "email_required": "Please input your email!",
+          "email_valid": "Please enter a valid email!",
+          "password_required": "Please input your password!",
+          "password_min_length": "Password must be at least 6 characters!",
+          "full_name_required": "Please input your full name!",
+          "confirm_password_required": "Please confirm your password!",
+          "passwords_not_match": "Passwords do not match!",
+          "accept_terms": "Please accept the terms"
+        }
+      },
+      "dashboard": {
+        "welcome": "Welcome back, {{name}}! 👋",
+        "learning_progress": "Here's your learning progress",
+        "continue_learning": "Continue Learning",
+        "view_all": "View All",
+        "courses_enrolled": "Courses Enrolled",
+        "hours_learned": "Hours Learned",
+        "certificates": "Certificates",
+        "current_streak": "Current Streak",
+        "recommended_for_you": "Recommended For You",
+        "browse_all": "Browse All",
+        "recent_activity": "Recent Activity",
+        "see_all": "See All",
+        "upcoming_lessons": "Upcoming Lessons",
+        "view_calendar": "View Calendar",
+        "learning_goals": "Learning Goals",
+        "set_goals": "Set Goals",
+        "completed": "completed",
+        "next": "Next: {{lesson}}",
+        "join": "Join"
       }
     }
   },
@@ -235,36 +486,238 @@
         "bestseller": "الأكثر مبيعاً",
         "new": "جديد",
         "no_results": "لم يتم العثور على دورات",
-        "no_results_desc": "جرب تعديل البحث أو معايير التصفية"
+        "no_results_desc": "جرب تعديل البحث أو معايير التصفية",
+        "preview": "معاينة الدورة",
+        "learning_paths": "مسارات التعلم المنظمة",
+        "all_courses": "جميع الدورات",
+        "progress": "التقدم",
+        "certificate": "شهادة",
+        "continue_path": "متابعة المسار",
+        "error": "حدث خطأ ما!",
+        "retry": "حاول مرة أخرى",
+        "card_error": "خطأ في تحميل بطاقة الدورة",
+        "favorite": {
+          "add": "إضافة إلى المفضلة",
+          "remove": "إزالة من المفضلة"
+        },
+        "lessons": "دروس",
+        "reset_filters": "إعادة تعيين التصفية"
       },
       "tutors": {
         "title": "تعرف على مدرسينا الخبراء",
-        "subtitle": "تعلم من المهنيين في الصناعة والمعلمين ذوي الخبرة",
-        "rating": "التقييم",
-        "students": "الطلاب",
-        "view_profile": "عرض الملف الشخصي",
-        "courses_count": "الدورات"
+        "subtitle": "تعلم من المتخصصين في المجال والمعلمين ذوي الخبرة",
+        "become_tutor": "كن مدرساً",
+        "how_it_works": "كيف يعمل",
+        "why_choose": "لماذا تختار منصتنا؟",
+        "stats": {
+          "active_students": "الطلاب النشطون",
+          "expert_tutors": "المدرسون الخبراء",
+          "courses_available": "الدورات المتاحة",
+          "average_rating": "متوسط التقييم"
+        },
+        "search": {
+          "placeholder": "ابحث عن المدرسين حسب الاسم أو الخبرة أو التخصص...",
+          "subjects_all": "جميع المواد",
+          "sort": {
+            "highest_rated": "الأعلى تقييماً",
+            "most_students": "الأكثر طلاباً",
+            "most_courses": "الأكثر دورات",
+            "price_low": "السعر: من الأقل للأعلى",
+            "price_high": "السعر: من الأعلى للأقل"
+          },
+          "reset": "إعادة تعيين التصفية",
+          "results_count": "تم العثور على {{count}} {{count, plural, zero{مدرس} one{مدرس} two{مدرسين} few{مدرسين} many{مدرس} other{مدرس}}}"
+        },
+        "tutor_card": {
+          "verified": "مدرس موثق",
+          "reviews": "تقييمات",
+          "students": "طالب",
+          "courses": "دورة",
+          "online_now": "متصل الآن",
+          "per_hour": "/ساعة",
+          "message": "مراسلة",
+          "book_trial": "حجز درس تجريبي",
+          "view_profile": "عرض الملف الشخصي"
+        },
+        "how_works": {
+          "title": "كيف يعمل",
+          "step1_title": "اعثر على مدرسك",
+          "step1_desc": "تصفح مدرسينا الموثقين، اقرأ التقييمات، وقارن الملفات الشخصية للعثور على الأنسب لأهدافك التعليمية.",
+          "step2_title": "احجز جلسة",
+          "step2_desc": "حدد موعداً للدرس في الوقت المناسب لك. اختر من الأوقات المتاحة التي تناسب جدولك.",
+          "step3_title": "ابدأ التعلم",
+          "step3_desc": "تواصل مع مدرسك عبر منصتنا الآمنة وابدأ رحلتك التعليمية مع توجيه الخبراء."
+        },
+        "cta": {
+          "title": "مستعد لمشاركة معرفتك؟",
+          "subtitle": "انضم إلى مجتمع مدرسينا الخبراء وابدأ في إحداث تأثير على الطلاب حول العالم. حدد جدولك وأسعارك أثناء قيامك بما تحب.",
+          "features": {
+            "rates": "حدد أسعارك الخاصة",
+            "schedule": "جدول مرن",
+            "reach": "وصول عالمي للطلاب"
+          },
+          "button": "كن مدرساً اليوم"
+        }
       },
       "blog": {
         "title": "رؤى وموارد تعليمية",
         "subtitle": "ابق على اطلاع بأحدث الاتجاهات والنصائح والرؤى في التعليم والتكنولوجيا",
-        "read_more": "اقرأ المزيد",
-        "min_read": "دقيقة قراءة",
-        "views": "مشاهدات"
+        "search": {
+          "placeholder": "البحث في المقالات...",
+          "categories": "جميع الفئات"
+        },
+        "actions": {
+          "subscribe": "اشترك",
+          "read_more": "اقرأ المزيد",
+          "like": "إعجاب",
+          "save": "حفظ",
+          "share": "مشاركة"
+        },
+        "featured": "مقال مميز",
+        "latest": "أحدث المقالات",
+        "newsletter": {
+          "title": "لا تفوت أي تحديث",
+          "subtitle": "اشترك في نشرتنا الإخبارية للحصول على أحدث الرؤى والدروس وأخبار الصناعة",
+          "placeholder": "أدخل بريدك الإلكتروني"
+        },
+        "meta": {
+          "min_read": "دقيقة قراءة",
+          "views": "مشاهدة",
+          "by": "بواسطة"
+        }
       },
       "about": {
         "title": "حول منصة التعليم",
+        "hero_description": "تمكين المتعلمين في جميع أنحاء العالم من خلال تقنية التعليم المبتكرة، والتعليم الخبير، والالتزام بجعل التعليم الجيد في متناول الجميع.",
         "mission": "مهمتنا",
-        "mission_text": "إضفاء الطابع الديمقراطي على التعليم وجعل التعلم الجيد في متناول الجميع في كل مكان.",
+        "mission_text": "إضفاء الطابع الديمقراطي على التعليم وجعل التعلم الجيد في متناول الجميع في كل مكان. نحن نسعى جاهدين لكسر الحواجز أمام التعليم وخلق فرص للتعلم مدى الحياة التي تحول حياة الأفراد والمجتمعات.",
         "vision": "رؤيتنا",
-        "vision_text": "أن نصبح المنصة الرائدة عالمياً للتعليم المبتكر والشامل."
+        "vision_text": "أن نصبح المنصة الرائدة عالمياً للتعليم المبتكر والشامل. نحن نتطلع إلى مستقبل لا تعرف فيه التعلم حدوداً وكل فرد لديه الأدوات التي يحتاجها لتحقيق النجاح.",
+        "values": {
+          "title": "قيمنا الأساسية",
+          "subtitle": "هذه القيم توجه كل ما نقوم به وتشكل ثقافة مجتمعنا التعليمي.",
+          "passion": {
+            "title": "الشغف بالتعليم",
+            "description": "نحن نؤمن أن التعليم هو المفتاح لإطلاق الإمكانات البشرية وخلق عالم أفضل للجميع."
+          },
+          "innovation": {
+            "title": "الابتكار",
+            "description": "نحن نبتكر باستمرار لتقديم أفضل تجربة تعلم من خلال التكنولوجيا المتطورة."
+          },
+          "accessibility": {
+            "title": "إمكانية الوصول",
+            "description": "يجب أن يكون التعليم الجيد في متناول الجميع، بغض النظر عن الموقع أو الخلفية أو الظروف."
+          },
+          "excellence": {
+            "title": "التميز",
+            "description": "نحن نحافظ على أعلى المعايير في محتوى الدورة، وجودة المدرب، ودعم الطلاب."
+          },
+          "community": {
+            "title": "المجتمع",
+            "description": "نحن نعزز مجتمع تعلم داعم حيث يزدهر الطلاب والمعلمون معًا."
+          },
+          "growth": {
+            "title": "النمو",
+            "description": "نحن ملتزمون بالتعلم المستمر والتطور الشخصي لجميع أصحاب المصلحة لدينا."
+          }
+        },
+        "stats": {
+          "title": "تأثيرنا في الأرقام",
+          "students": "الطلاب حول العالم",
+          "courses": "الدورات المتاحة",
+          "countries": "الدول المخدومة",
+          "awards": "الجوائز الصناعية"
+        },
+        "timeline": {
+          "title": "رحلتنا",
+          "subtitle": "من شركة ناشئة صغيرة إلى منصة تعليمية عالمية - إليك كيف نما معًا.",
+          "2020": {
+            "title": "2020 - إطلاق المنصة",
+            "description": "تأسست منصة التعليم برؤية إضفاء الطابع الديمقراطي على التعليم وجعل التعلم الجيد في متناول الجميع في جميع أنحاء العالم."
+          },
+          "2021": {
+            "title": "2021 - أول معلم رئيسي",
+            "description": "وصلنا إلى معلمنا الأول المتمثل في 1000 طالب نشط وأكثر من 50 مدربًا خبيرًا في مختلف المجالات."
+          },
+          "2022": {
+            "title": "2022 - التوسع الدولي",
+            "description": "توسعنا لخدمة الطلاب في أكثر من 50 دولة حول العالم بدعم متعدد اللغات ومحتوى محلي."
+          },
+          "2023": {
+            "title": "2023 - نمو كبير",
+            "description": "مجتمع متنامي من أكثر من 50000 متعلم وأكثر من 500 معلم من جميع أنحاء العالم مع أكثر من 1000 دورة."
+          },
+          "2024": {
+            "title": "2024 - الابتكار والذكاء الاصطناعي",
+            "description": "قدمنا مسارات تعلم مخصصة مدعومة بالذكاء الاصطناعي وتحليلات متقدمة لتعزيز تجربة التعلم."
+          }
+        },
+        "success_stories": {
+          "title": "قصص النجاح",
+          "subtitle": "تحولات حقيقية من مجتمعنا التعليمي",
+          "software_engineer": "مهندس برمجيات",
+          "data_scientist": "عالم بيانات",
+          "ui_designer": "مصمم واجهة المستخدم",
+          "digital_marketer": "مسوق رقمي",
+          "career_switch": "تحول مهني",
+          "promotion": "ترقية سريعة",
+          "freelance_success": "نجاح العمل الحر",
+          "business_growth": "نمو الأعمال",
+          "alex_story": "منحتني الدورات على منصة التعليم المهارات العملية التي احتجتها للانتقال من التسويق إلى التكنولوجيا. في غضون 6 أشهر، حصلت على أول وظيفة لي كمطور!",
+          "maria_story": "غير برنامج علم البيانات مساري المهني completamente. انتقلت من محللة مبتدئة إلى قائدة لفريقي في 8 أشهر فقط.",
+          "david_story": "كو طالب تصميم، ساعدني الإرشاد الذي تلقيت في بناء محفظة أعمال حصلت لي على عملاء مستقلين قبل أن أتخرج حتى.",
+          "sarah_story": "ساعدتني دورات التسويق الرقمي في تحويل عملي الصغير إلى وكالة خدمات كاملة. زادت إيراداتي بنسبة 300٪ في السنة الأولى."
+        },
+        "cta": {
+          "title": "مستعد للانضمام إلى مهمتنا؟",
+          "subtitle": "سواء كنت متعلمًا تتطلع إلى النمو أو معلمًا مستعدًا لإحداث تأثير، نحن نحب أن تنضم إلى مجتمعنا.",
+          "our_story": "قصتنا",
+          "join_team": "انضم إلى فريقنا",
+          "start_learning": "ابدأ التعلم اليوم",
+          "become_instructor": "كن مدربًا"
+        }
       },
       "contact": {
         "title": "اتصل بنا",
+        "description": "هل لديك أسئلة؟ نحن نحب أن نسمع منك. أرسل لنا رسالة وسنرد في أقرب وقت ممكن.",
+        "get_in_touch": "تواصل معنا",
+        "send_message": "أرسل لنا رسالة",
         "name": "الاسم",
         "email": "البريد الإلكتروني",
+        "subject": "الموضوع",
         "message": "الرسالة",
-        "send": "إرسال الرسالة"
+        "send": "إرسال الرسالة",
+        "info": {
+          "email": {
+            "title": "البريد الإلكتروني",
+            "subtitle": "أرسل لنا بريدًا إلكترونيًا في أي وقت"
+          },
+          "phone": {
+            "title": "الهاتف",
+            "subtitle": "اتصل بنا خلال ساعات العمل"
+          },
+          "address": {
+            "title": "العنوان",
+            "subtitle": "قم بزيارة مقرنا الرئيسي"
+          },
+          "hours": {
+            "title": "ساعات العمل",
+            "subtitle": "نحن هنا لمساعدتك"
+          }
+        },
+        "placeholder": {
+          "name": "اسمك الكامل",
+          "email": "بريدك الإلكتروني@example.com",
+          "subject": "ما هو هذا الموضوع؟",
+          "message": "أخبرنا المزيد عن استفسارك..."
+        },
+        "validation": {
+          "name_required": "يرجى إدخال اسمك",
+          "email_required": "يرجى إدخال بريدك الإلكتروني",
+          "email_valid": "يرجى إدخال بريد إلكتروني صحيح",
+          "subject_required": "يرجى إدخال موضوع",
+          "message_required": "يرجى إدخال رسالتك"
+        }
       },
       "auth": {
         "login": "تسجيل الدخول",
@@ -274,7 +727,57 @@
         "confirm_password": "تأكيد كلمة المرور",
         "forgot_password": "نسيت كلمة المرور؟",
         "no_account": "ليس لديك حساب؟",
-        "have_account": "لديك حساب بالفعل؟"
+        "have_account": "لديك حساب بالفعل؟",
+        "welcome_back": "مرحباً بعودتك",
+        "sign_in_continue": "سجل الدخول لمتابعة رحلة التعلم الخاصة بك",
+        "create_account": "إنشاء حساب",
+        "join_learners": "انضم إلى آلاف المتعلمين اليوم",
+        "full_name": "الاسم الكامل",
+        "or_continue_with": "أو تابع باستخدام",
+        "continue_google": "المتابعة مع جوجل",
+        "continue_facebook": "المتابعة مع فيسبook",
+        "agree_to": "أوافق على",
+        "terms_of_service": "شروط الخدمة",
+        "and": "و",
+        "privacy_policy": "سياسة الخصوصية",
+        "placeholder": {
+          "email": "أدخل بريدك الإلكتروني",
+          "password": "أدخل كلمة المرور",
+          "full_name": "أدخل اسمك الكامل",
+          "create_password": "إنشاء كلمة مرور",
+          "confirm_password": "تأكيد كلمة المرور"
+        },
+        "validation": {
+          "email_required": "يرجى إدخال بريدك الإلكتروني!",
+          "email_valid": "يرجى إدخال بريد إلكتروني صحيح!",
+          "password_required": "يرجى إدخال كلمة المرور!",
+          "password_min_length": "يجب أن تكون كلمة المرور 6 أحرف على الأقل!",
+          "full_name_required": "يرجى إدخال اسمك الكامل!",
+          "confirm_password_required": "يرجى تأكيد كلمة المرور!",
+          "passwords_not_match": "كلمات المرور غير متطابقة!",
+          "accept_terms": "يرجى قبول الشروط"
+        }
+      },
+      "dashboard": {
+        "welcome": "مرحباً بعودتك، {{name}}! 👋",
+        "learning_progress": "إليك تقدمك في التعلم",
+        "continue_learning": "متابعة التعلم",
+        "view_all": "عرض الكل",
+        "courses_enrolled": "الدورات المسجلة",
+        "hours_learned": "ساعات التعلم",
+        "certificates": "الشهادات",
+        "current_streak": "التتابع الحالي",
+        "recommended_for_you": "مقترح لك",
+        "browse_all": "تصفح الكل",
+        "recent_activity": "النشاط الأخير",
+        "see_all": "عرض الكل",
+        "upcoming_lessons": "الدروس القادمة",
+        "view_calendar": "عرض التقويم",
+        "learning_goals": "أهداف التعلم",
+        "set_goals": "تعيين الأهداف",
+        "completed": "مكتمل",
+        "next": "التالي: {{lesson}}",
+        "join": "انضم"
       }
     }
   }

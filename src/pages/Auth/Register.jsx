@@ -1,10 +1,25 @@
-
-import React from 'react';
-import { Form, Input, Button, Card, Typography, Divider, Space, Checkbox } from 'antd';
-import { Link, useNavigate } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
-import { UserOutlined, LockOutlined, MailOutlined, GoogleOutlined, FacebookOutlined } from '@ant-design/icons';
+// Register.jsx
+import React from "react";
+import {
+  Form,
+  Input,
+  Button,
+  Card,
+  Typography,
+  Divider,
+  Space,
+  Checkbox,
+} from "antd";
+import { Link, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
+import {
+  UserOutlined,
+  LockOutlined,
+  MailOutlined,
+  GoogleOutlined,
+  FacebookOutlined,
+} from "@ant-design/icons";
 
 const { Title, Text } = Typography;
 
@@ -13,33 +28,36 @@ const Register = () => {
   const navigate = useNavigate();
 
   const onFinish = (values) => {
-    console.log('Register:', values);
+    console.log("Register:", values);
     // Handle registration logic here
-    navigate('/dashboard');
+    navigate("/dashboard");
   };
 
   return (
-    <div style={{ 
-      minHeight: '100vh',
-      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      padding: '20px'
-    }}>
+    <div
+      style={{
+        minHeight: "100vh",
+        background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        padding: "20px",
+      }}
+    >
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <Card className="auth-form" style={{ width: '400px', maxWidth: '100%' }}>
-          <div style={{ textAlign: 'center', marginBottom: '30px' }}>
-            <Title level={2} style={{ color: '#1890ff', marginBottom: '8px' }}>
-              Create Account
+        <Card
+          className="auth-form"
+          style={{ width: "400px", maxWidth: "100%" }}
+        >
+          <div style={{ textAlign: "center", marginBottom: "30px" }}>
+            <Title level={2} style={{ color: "#1890ff", marginBottom: "8px" }}>
+              {t("auth.create_account")}
             </Title>
-            <Text style={{ color: '#666' }}>
-              Join thousands of learners today
-            </Text>
+            <Text style={{ color: "#666" }}>{t("auth.join_learners")}</Text>
           </div>
 
           <Form
@@ -49,71 +67,87 @@ const Register = () => {
             requiredMark={false}
           >
             <Form.Item
-              label="Full Name"
+              label={t("auth.full_name")}
               name="fullName"
-              rules={[{ required: true, message: 'Please input your full name!' }]}
-            >
-              <Input 
-                prefix={<UserOutlined />} 
-                placeholder="Enter your full name"
-                size="large"
-                style={{ borderRadius: '8px' }}
-              />
-            </Form.Item>
-
-            <Form.Item
-              label={t('auth.email')}
-              name="email"
               rules={[
-                { required: true, message: 'Please input your email!' },
-                { type: 'email', message: 'Please enter a valid email!' }
+                {
+                  required: true,
+                  message: t("auth.validation.full_name_required"),
+                },
               ]}
             >
-              <Input 
-                prefix={<MailOutlined />} 
-                placeholder="Enter your email"
+              <Input
+                prefix={<UserOutlined />}
+                placeholder={t("auth.placeholder.full_name")}
                 size="large"
-                style={{ borderRadius: '8px' }}
+                style={{ borderRadius: "8px" }}
               />
             </Form.Item>
 
             <Form.Item
-              label={t('auth.password')}
+              label={t("auth.email")}
+              name="email"
+              rules={[
+                {
+                  required: true,
+                  message: t("auth.validation.email_required"),
+                },
+                { type: "email", message: t("auth.validation.email_valid") },
+              ]}
+            >
+              <Input
+                prefix={<MailOutlined />}
+                placeholder={t("auth.placeholder.email")}
+                size="large"
+                style={{ borderRadius: "8px" }}
+              />
+            </Form.Item>
+
+            <Form.Item
+              label={t("auth.password")}
               name="password"
               rules={[
-                { required: true, message: 'Please input your password!' },
-                { min: 6, message: 'Password must be at least 6 characters!' }
+                {
+                  required: true,
+                  message: t("auth.validation.password_required"),
+                },
+                { min: 6, message: t("auth.validation.password_min_length") },
               ]}
             >
               <Input.Password
                 prefix={<LockOutlined />}
-                placeholder="Create a password"
+                placeholder={t("auth.placeholder.create_password")}
                 size="large"
-                style={{ borderRadius: '8px' }}
+                style={{ borderRadius: "8px" }}
               />
             </Form.Item>
 
             <Form.Item
-              label={t('auth.confirm_password')}
+              label={t("auth.confirm_password")}
               name="confirmPassword"
-              dependencies={['password']}
+              dependencies={["password"]}
               rules={[
-                { required: true, message: 'Please confirm your password!' },
+                {
+                  required: true,
+                  message: t("auth.validation.confirm_password_required"),
+                },
                 ({ getFieldValue }) => ({
                   validator(_, value) {
-                    if (!value || getFieldValue('password') === value) {
+                    if (!value || getFieldValue("password") === value) {
                       return Promise.resolve();
                     }
-                    return Promise.reject(new Error('Passwords do not match!'));
+                    return Promise.reject(
+                      new Error(t("auth.validation.passwords_not_match")),
+                    );
                   },
                 }),
               ]}
             >
               <Input.Password
                 prefix={<LockOutlined />}
-                placeholder="Confirm your password"
+                placeholder={t("auth.placeholder.confirm_password")}
                 size="large"
-                style={{ borderRadius: '8px' }}
+                style={{ borderRadius: "8px" }}
               />
             </Form.Item>
 
@@ -123,52 +157,58 @@ const Register = () => {
               rules={[
                 {
                   validator: (_, value) =>
-                    value ? Promise.resolve() : Promise.reject(new Error('Please accept the terms')),
+                    value
+                      ? Promise.resolve()
+                      : Promise.reject(
+                          new Error(t("auth.validation.accept_terms")),
+                        ),
                 },
               ]}
             >
               <Checkbox>
-                I agree to the <Link to="/terms">Terms of Service</Link> and{' '}
-                <Link to="/privacy">Privacy Policy</Link>
+                {t("auth.agree_to")}{" "}
+                <Link to="/terms">{t("auth.terms_of_service")}</Link>{" "}
+                {t("auth.and")}{" "}
+                <Link to="/privacy">{t("auth.privacy_policy")}</Link>
               </Checkbox>
             </Form.Item>
 
             <Form.Item>
-              <Button 
-                type="primary" 
-                htmlType="submit" 
+              <Button
+                type="primary"
+                htmlType="submit"
                 size="large"
-                style={{ width: '100%', height: '50px', fontSize: '16px' }}
+                style={{ width: "100%", height: "50px", fontSize: "16px" }}
               >
-                {t('auth.register')}
+                {t("auth.register")}
               </Button>
             </Form.Item>
           </Form>
 
-          <Divider>or continue with</Divider>
+          <Divider>{t("auth.or_continue_with")}</Divider>
 
-          <Space direction="vertical" style={{ width: '100%' }}>
-            <Button 
-              icon={<GoogleOutlined />} 
+          <Space direction="vertical" style={{ width: "100%" }}>
+            <Button
+              icon={<GoogleOutlined />}
               size="large"
-              style={{ width: '100%', height: '45px' }}
+              style={{ width: "100%", height: "45px" }}
             >
-              Continue with Google
+              {t("auth.continue_google")}
             </Button>
-            <Button 
-              icon={<FacebookOutlined />} 
+            <Button
+              icon={<FacebookOutlined />}
               size="large"
-              style={{ width: '100%', height: '45px' }}
+              style={{ width: "100%", height: "45px" }}
             >
-              Continue with Facebook
+              {t("auth.continue_facebook")}
             </Button>
           </Space>
 
-          <div style={{ textAlign: 'center', marginTop: '20px' }}>
-            <Text style={{ color: '#666' }}>
-              {t('auth.have_account')}{' '}
-              <Link to="/login" style={{ color: '#1890ff', fontWeight: '500' }}>
-                {t('auth.login')}
+          <div style={{ textAlign: "center", marginTop: "20px" }}>
+            <Text style={{ color: "#666" }}>
+              {t("auth.have_account")}{" "}
+              <Link to="/login" style={{ color: "#1890ff", fontWeight: "500" }}>
+                {t("auth.login")}
               </Link>
             </Text>
           </div>

@@ -1,9 +1,8 @@
-
+// coursesData.js
 export const coursesData = [
   {
     id: 1,
     title: "React Development Masterclass",
-    description: "Learn modern React development with hooks, context, and best practices. Build real-world applications with expert guidance.",
     category: "programming",
     level: "intermediate",
     duration: "12 weeks",
@@ -13,8 +12,10 @@ export const coursesData = [
     price: "$99",
     originalPrice: "$149",
     instructor: "John Doe",
-    instructorAvatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
-    thumbnail: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=400&h=250&fit=crop",
+    instructorAvatar:
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
+    thumbnail:
+      "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=400&h=250&fit=crop",
     popularity: 95,
     isBestseller: true,
     isNew: false,
@@ -22,7 +23,6 @@ export const coursesData = [
   {
     id: 2,
     title: "UI/UX Design Fundamentals",
-    description: "Master the principles of user interface and user experience design. Create stunning designs that users love.",
     category: "design",
     level: "beginner",
     duration: "8 weeks",
@@ -32,8 +32,10 @@ export const coursesData = [
     price: "$79",
     originalPrice: "$119",
     instructor: "Jane Smith",
-    instructorAvatar: "https://images.unsplash.com/photo-1494790108755-2616b612b1e0?w=100&h=100&fit=crop&crop=face",
-    thumbnail: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=250&fit=crop",
+    instructorAvatar:
+      "https://images.unsplash.com/photo-1494790108755-2616b612b1e0?w=100&h=100&fit=crop&crop=face",
+    thumbnail:
+      "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=250&fit=crop",
     popularity: 88,
     isBestseller: true,
     isNew: true,
@@ -41,7 +43,6 @@ export const coursesData = [
   {
     id: 3,
     title: "Business Strategy & Management",
-    description: "Develop strategic thinking and management skills for modern business. Lead teams and drive organizational success.",
     category: "business",
     level: "advanced",
     duration: "10 weeks",
@@ -51,8 +52,10 @@ export const coursesData = [
     price: "$129",
     originalPrice: "$199",
     instructor: "Mike Johnson",
-    instructorAvatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
-    thumbnail: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=250&fit=crop",
+    instructorAvatar:
+      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
+    thumbnail:
+      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=250&fit=crop",
     popularity: 92,
     isBestseller: false,
     isNew: false,
@@ -60,7 +63,6 @@ export const coursesData = [
   {
     id: 4,
     title: "Data Science with Python",
-    description: "Comprehensive guide to data science using Python and machine learning. Analyze data and build predictive models.",
     category: "programming",
     level: "intermediate",
     duration: "16 weeks",
@@ -70,8 +72,10 @@ export const coursesData = [
     price: "$149",
     originalPrice: "$229",
     instructor: "Sarah Wilson",
-    instructorAvatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
-    thumbnail: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop",
+    instructorAvatar:
+      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
+    thumbnail:
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop",
     popularity: 97,
     isBestseller: true,
     isNew: false,
@@ -79,7 +83,6 @@ export const coursesData = [
   {
     id: 5,
     title: "Digital Marketing Essentials",
-    description: "Learn effective digital marketing strategies and tools. Grow your business with proven marketing techniques.",
     category: "business",
     level: "beginner",
     duration: "6 weeks",
@@ -89,8 +92,10 @@ export const coursesData = [
     price: "$69",
     originalPrice: "$99",
     instructor: "Tom Brown",
-    instructorAvatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face",
-    thumbnail: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop",
+    instructorAvatar:
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face",
+    thumbnail:
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop",
     popularity: 85,
     isBestseller: false,
     isNew: true,
@@ -98,7 +103,6 @@ export const coursesData = [
   {
     id: 6,
     title: "Physics: Quantum Mechanics",
-    description: "Explore the fascinating world of quantum physics and mechanics. Understand the fundamental laws of the universe.",
     category: "science",
     level: "advanced",
     duration: "14 weeks",
@@ -108,8 +112,10 @@ export const coursesData = [
     price: "$199",
     originalPrice: "$299",
     instructor: "Dr. Emily Chen",
-    instructorAvatar: "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=100&h=100&fit=crop&crop=face",
-    thumbnail: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=400&h=250&fit=crop",
+    instructorAvatar:
+      "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=100&h=100&fit=crop&crop=face",
+    thumbnail:
+      "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=400&h=250&fit=crop",
     popularity: 78,
     isBestseller: false,
     isNew: false,
@@ -117,7 +123,6 @@ export const coursesData = [
   {
     id: 7,
     title: "Mobile App Development with Flutter",
-    description: "Build cross-platform mobile applications using Flutter and Dart. Create beautiful apps for iOS and Android.",
     category: "programming",
     level: "intermediate",
     duration: "14 weeks",
@@ -127,8 +132,10 @@ export const coursesData = [
     price: "$119",
     originalPrice: "$179",
     instructor: "Alex Kumar",
-    instructorAvatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
-    thumbnail: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=250&fit=crop",
+    instructorAvatar:
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
+    thumbnail:
+      "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=250&fit=crop",
     popularity: 89,
     isBestseller: false,
     isNew: true,
@@ -136,7 +143,6 @@ export const coursesData = [
   {
     id: 8,
     title: "Graphic Design Mastery",
-    description: "Learn professional graphic design techniques using industry-standard tools like Adobe Creative Suite.",
     category: "design",
     level: "intermediate",
     duration: "10 weeks",
@@ -146,10 +152,12 @@ export const coursesData = [
     price: "$89",
     originalPrice: "$139",
     instructor: "Lisa Rodriguez",
-    instructorAvatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop&crop=face",
-    thumbnail: "https://images.unsplash.com/photo-1626785774625-0b1c2c4eab67?w=400&h=250&fit=crop",
+    instructorAvatar:
+      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop&crop=face",
+    thumbnail:
+      "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=400&h=250&fit=crop",
     popularity: 91,
     isBestseller: true,
     isNew: false,
-  }
+  },
 ];

@@ -42,26 +42,26 @@ const Home = () => {
     },
     {
       icon: <RocketOutlined style={{ fontSize: "32px" }} />,
-      title: "Accelerated Learning",
-      description: "Learn at your own pace with our innovative methods",
+      title: t("home.features.accelerated_learning"),
+      description: t("home.features.accelerated_desc"),
     },
     {
       icon: <SafetyCertificateOutlined style={{ fontSize: "32px" }} />,
-      title: "Accredited Programs",
-      description: "Globally recognized certificates and degrees",
+      title: t("home.features.accredited_programs"),
+      description: t("home.features.accredited_desc"),
     },
     {
       icon: <GlobalOutlined style={{ fontSize: "32px" }} />,
-      title: "Global Community",
-      description: "Join students from around the world",
+      title: t("home.features.global_community"),
+      description: t("home.features.global_desc"),
     },
   ];
 
   const stats = [
-    { icon: <BookOutlined />, number: "1000+", label: "Courses" },
-    { icon: <UserOutlined />, number: "50K+", label: "Students" },
-    { icon: <TeamOutlined />, number: "500+", label: "Instructors" },
-    { icon: <ClockCircleOutlined />, number: "24/7", label: "Support" },
+    { icon: <BookOutlined />, number: "1000+", label: t("home.stats.courses") },
+    { icon: <UserOutlined />, number: "50K+", label: t("home.stats.students") },
+    { icon: <TeamOutlined />, number: "500+", label: t("home.stats.instructors") },
+    { icon: <ClockCircleOutlined />, number: "24/7", label: t("home.stats.support") },
   ];
 
   const testimonials = [
@@ -92,12 +92,12 @@ const Home = () => {
   ];
 
   const benefits = [
-    "Interactive learning materials",
-    "Personalized learning paths",
-    "Hands-on projects",
-    "Peer-to-peer collaboration",
-    "Career support services",
-    "Lifetime access to course materials",
+    t("home.benefits.interactive_materials"),
+    t("home.benefits.personalized_paths"),
+    t("home.benefits.hands_on_projects"),
+    t("home.benefits.peer_collaboration"),
+    t("home.benefits.career_support"),
+    t("home.benefits.lifetime_access"),
   ];
 
   return (
@@ -183,17 +183,17 @@ const Home = () => {
               <Paragraph
                 style={{ color: "rgba(255,255,255,0.8)", marginBottom: "16px" }}
               >
-                Trusted by 50,000+ students worldwide
+                {t("home.hero.trust_text")}
               </Paragraph>
               <Space size="large">
                 <div className="trust-item">
-                  <CheckCircleOutlined /> <span>Accredited Courses</span>
+                  <CheckCircleOutlined /> <span>{t("home.hero.accredited")}</span>
                 </div>
                 <div className="trust-item">
-                  <CheckCircleOutlined /> <span>Expert Instructors</span>
+                  <CheckCircleOutlined /> <span>{t("home.hero.expert_instructors")}</span>
                 </div>
                 <div className="trust-item">
-                  <CheckCircleOutlined /> <span>Money-back Guarantee</span>
+                  <CheckCircleOutlined /> <span>{t("home.hero.money_back")}</span>
                 </div>
               </Space>
             </div>
@@ -211,10 +211,9 @@ const Home = () => {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <Title level={2}>Why Learn With Us?</Title>
+              <Title level={2}>{t("home.benefits.title")}</Title>
               <Paragraph>
-                Discover the benefits that make our learning platform stand out
-                from the rest
+                {t("home.benefits.subtitle")}
               </Paragraph>
             </motion.div>
           </div>
@@ -322,8 +321,8 @@ const Home = () => {
       <div className="section">
         <div className="main-container">
           <div className="section-title">
-            <Title level={2}>What Our Students Say</Title>
-            <Paragraph>Hear from our global community of learners</Paragraph>
+            <Title level={2}>{t("home.testimonials.title")}</Title>
+            <Paragraph>{t("home.testimonials.subtitle")}</Paragraph>
           </div>
 
           <Row gutter={[32, 32]}>
@@ -386,13 +385,12 @@ const Home = () => {
                   level={3}
                   style={{ color: "#fff", marginBottom: "12px" }}
                 >
-                  Start Your Learning Journey Today
+                  {t("home.cta.title")}
                 </Title>
                 <Paragraph
                   style={{ color: "rgba(255,255,255,0.8)", margin: 0 }}
                 >
-                  Join thousands of students achieving their goals with our
-                  courses
+                  {t("home.cta.subtitle")}
                 </Paragraph>
               </Col>
               <Col xs={24} md={10} style={{ textAlign: "right" }}>
@@ -402,7 +400,7 @@ const Home = () => {
                   className="cta-button"
                   onClick={() => navigate("/register")}
                 >
-                  Get Started Now
+                  {t("home.cta.button")}
                 </Button>
               </Col>
             </Row>

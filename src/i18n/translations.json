@@ -19,7 +19,11 @@
           "subtitle": "Transform the future with quality education",
           "description": "Join thousands of students and teachers in our comprehensive learning platform that includes interactive courses, expert tutors, and innovative tools.",
           "cta_learn": "Start Learning",
-          "cta_teach": "Become a Teacher"
+          "cta_teach": "Become a Teacher",
+          "trust_text": "Trusted by 50,000+ students worldwide",
+          "accredited": "Accredited Courses",
+          "expert_instructors": "Expert Instructors",
+          "money_back": "Money-back Guarantee"
         },
         "features": {
           "learn_online": "Learn Online",
@@ -27,11 +31,44 @@
           "expert_tutors": "Expert Tutors",
           "tutors_desc": "Learn from industry professionals",
           "certificates": "Certificates",
-          "cert_desc": "Earn recognized certifications"
+          "cert_desc": "Earn recognized certifications",
+          "accelerated_learning": "Accelerated Learning",
+          "accelerated_desc": "Learn at your own pace with our innovative methods",
+          "accredited_programs": "Accredited Programs",
+          "accredited_desc": "Globally recognized certificates and degrees",
+          "global_community": "Global Community",
+          "global_desc": "Join students from around the world"
+        },
+        "benefits": {
+          "title": "Why Learn With Us?",
+          "subtitle": "Discover the benefits that make our learning platform stand out from the rest",
+          "interactive_materials": "Interactive learning materials",
+          "personalized_paths": "Personalized learning paths",
+          "hands_on_projects": "Hands-on projects",
+          "peer_collaboration": "Peer-to-peer collaboration",
+          "career_support": "Career support services",
+          "lifetime_access": "Lifetime access to course materials"
+        },
+        "stats": {
+          "courses": "Courses",
+          "students": "Students",
+          "instructors": "Instructors",
+          "support": "Support"
+        },
+        "testimonials": {
+          "title": "What Our Students Say",
+          "subtitle": "Hear from our global community of learners"
+        },
+        "cta": {
+          "title": "Start Your Learning Journey Today",
+          "subtitle": "Join thousands of students achieving their goals with our courses",
+          "button": "Get Started Now"
         }
       },
       "courses": {
         "title": "Our Courses",
+        "subtitle": "Discover our comprehensive catalog of courses designed to advance your career",
+        "search_placeholder": "Search courses...",
         "filter": {
           "all": "All Categories",
           "programming": "Programming",
@@ -39,15 +76,42 @@
           "business": "Business",
           "science": "Science"
         },
+        "level": "Level",
+        "level_all": "All Levels",
+        "level_beginner": "Beginner",
+        "level_intermediate": "Intermediate",
+        "level_advanced": "Advanced",
+        "sort_by": "Sort by",
+        "sort_popular": "Popularity",
+        "sort_rating": "Highest Rated",
+        "sort_students": "Most Students",
+        "sort_price_low": "Price: Low to High",
+        "sort_price_high": "Price: High to Low",
+        "showing_results": "Showing",
+        "of_courses": "of",
+        "courses": "courses",
         "enroll": "Enroll Now",
         "duration": "Duration",
-        "students": "Students"
+        "students": "Students",
+        "bestseller": "Bestseller",
+        "new": "New",
+        "no_results": "No courses found",
+        "no_results_desc": "Try adjusting your search or filter criteria"
       },
       "tutors": {
         "title": "Meet Our Expert Tutors",
+        "subtitle": "Learn from industry professionals and experienced educators",
         "rating": "Rating",
         "students": "Students",
-        "view_profile": "View Profile"
+        "view_profile": "View Profile",
+        "courses_count": "Courses"
+      },
+      "blog": {
+        "title": "Educational Insights & Resources",
+        "subtitle": "Stay updated with the latest trends, tips, and insights in education and technology",
+        "read_more": "Read More",
+        "min_read": "min read",
+        "views": "views"
       },
       "about": {
         "title": "About EduPlatform",
@@ -94,7 +158,11 @@
           "subtitle": "حول المستقبل بالتعليم الجيد",
           "description": "انضم إلى آلاف الطلاب والمعلمين في منصة التعلم الشاملة التي تتضمن دورات تفاعلية ومدرسين خبراء وأدوات مبتكرة.",
           "cta_learn": "ابدأ التعلم",
-          "cta_teach": "كن مدرساً"
+          "cta_teach": "كن مدرساً",
+          "trust_text": "يثق بنا 50,000+ طالب حول العالم",
+          "accredited": "دورات معتمدة",
+          "expert_instructors": "مدرسون خبراء",
+          "money_back": "ضمان استرداد الأموال"
         },
         "features": {
           "learn_online": "تعلم عبر الإنترنت",
@@ -102,11 +170,44 @@
           "expert_tutors": "مدرسون خبراء",
           "tutors_desc": "تعلم من المهنيين في الصناعة",
           "certificates": "الشهادات",
-          "cert_desc": "احصل على شهادات معترف بها"
+          "cert_desc": "احصل على شهادات معترف بها",
+          "accelerated_learning": "التعلم المسرع",
+          "accelerated_desc": "تعلم بوتيرتك الخاصة بطرقنا المبتكرة",
+          "accredited_programs": "برامج معتمدة",
+          "accredited_desc": "شهادات ودرجات معترف بها عالمياً",
+          "global_community": "مجتمع عالمي",
+          "global_desc": "انضم للطلاب من جميع أنحاء العالم"
+        },
+        "benefits": {
+          "title": "لماذا تتعلم معنا؟",
+          "subtitle": "اكتشف المزايا التي تجعل منصة التعلم لدينا متميزة عن الباقي",
+          "interactive_materials": "مواد تعليمية تفاعلية",
+          "personalized_paths": "مسارات تعلم مخصصة",
+          "hands_on_projects": "مشاريع عملية",
+          "peer_collaboration": "تعاون بين الأقران",
+          "career_support": "خدمات دعم المهنة",
+          "lifetime_access": "وصول مدى الحياة للمواد"
+        },
+        "stats": {
+          "courses": "الدورات",
+          "students": "الطلاب",
+          "instructors": "المدرسون",
+          "support": "الدعم"
+        },
+        "testimonials": {
+          "title": "ماذا يقول طلابنا",
+          "subtitle": "استمع من مجتمعنا العالمي من المتعلمين"
+        },
+        "cta": {
+          "title": "ابدأ رحلة التعلم اليوم",
+          "subtitle": "انضم لآلاف الطلاب الذين يحققون أهدافهم مع دوراتنا",
+          "button": "ابدأ الآن"
         }
       },
       "courses": {
         "title": "دوراتنا",
+        "subtitle": "اكتشف كتالوجنا الشامل من الدورات المصممة لتطوير مهنتك",
+        "search_placeholder": "البحث في الدورات...",
         "filter": {
           "all": "جميع الفئات",
           "programming": "البرمجة",
@@ -114,15 +215,42 @@
           "business": "الأعمال",
           "science": "العلوم"
         },
+        "level": "المستوى",
+        "level_all": "جميع المستويات",
+        "level_beginner": "مبتدئ",
+        "level_intermediate": "متوسط",
+        "level_advanced": "متقدم",
+        "sort_by": "ترتيب حسب",
+        "sort_popular": "الشعبية",
+        "sort_rating": "الأعلى تقييماً",
+        "sort_students": "أكثر الطلاب",
+        "sort_price_low": "السعر: من الأقل للأعلى",
+        "sort_price_high": "السعر: من الأعلى للأقل",
+        "showing_results": "عرض",
+        "of_courses": "من",
+        "courses": "دورات",
         "enroll": "سجل الآن",
         "duration": "المدة",
-        "students": "الطلاب"
+        "students": "الطلاب",
+        "bestseller": "الأكثر مبيعاً",
+        "new": "جديد",
+        "no_results": "لم يتم العثور على دورات",
+        "no_results_desc": "جرب تعديل البحث أو معايير التصفية"
       },
       "tutors": {
         "title": "تعرف على مدرسينا الخبراء",
+        "subtitle": "تعلم من المهنيين في الصناعة والمعلمين ذوي الخبرة",
         "rating": "التقييم",
         "students": "الطلاب",
-        "view_profile": "عرض الملف الشخصي"
+        "view_profile": "عرض الملف الشخصي",
+        "courses_count": "الدورات"
+      },
+      "blog": {
+        "title": "رؤى وموارد تعليمية",
+        "subtitle": "ابق على اطلاع بأحدث الاتجاهات والنصائح والرؤى في التعليم والتكنولوجيا",
+        "read_more": "اقرأ المزيد",
+        "min_read": "دقيقة قراءة",
+        "views": "مشاهدات"
       },
       "about": {
         "title": "حول منصة التعليم",

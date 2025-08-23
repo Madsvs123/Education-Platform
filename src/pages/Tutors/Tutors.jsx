@@ -4,80 +4,13 @@ import { Row, Col, Card, Button, Typography, Rate, Tag, Avatar } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { UserOutlined, BookOutlined, StarOutlined } from '@ant-design/icons';
+import { tutorsData } from '../../data/tutorsData';
 
 const { Title, Paragraph } = Typography;
 
 const Tutors = () => {
   const { t } = useTranslation();
-
-  const tutors = [
-    {
-      id: 1,
-      name: 'Dr. John Smith',
-      subject: 'Computer Science',
-      bio: 'PhD in Computer Science with 10+ years of teaching experience in AI and Machine Learning.',
-      rating: 4.9,
-      students: 2500,
-      courses: 12,
-      image: 'https://via.placeholder.com/150x150?text=John+Smith',
-      specialties: ['AI', 'Machine Learning', 'Python']
-    },
-    {
-      id: 2,
-      name: 'Prof. Sarah Johnson',
-      subject: 'Mathematics',
-      bio: 'Professor of Mathematics specializing in calculus, statistics, and mathematical modeling.',
-      rating: 4.8,
-      students: 1800,
-      courses: 8,
-      image: 'https://via.placeholder.com/150x150?text=Sarah+Johnson',
-      specialties: ['Calculus', 'Statistics', 'Algebra']
-    },
-    {
-      id: 3,
-      name: 'Dr. Emily Chen',
-      subject: 'Physics',
-      bio: 'Quantum Physics researcher and educator with expertise in theoretical and experimental physics.',
-      rating: 4.9,
-      students: 1200,
-      courses: 6,
-      image: 'https://via.placeholder.com/150x150?text=Emily+Chen',
-      specialties: ['Quantum Physics', 'Thermodynamics', 'Optics']
-    },
-    {
-      id: 4,
-      name: 'Mark Williams',
-      subject: 'Business',
-      bio: 'Former CEO turned educator, teaching business strategy and entrepreneurship.',
-      rating: 4.7,
-      students: 3200,
-      courses: 15,
-      image: 'https://via.placeholder.com/150x150?text=Mark+Williams',
-      specialties: ['Strategy', 'Leadership', 'Entrepreneurship']
-    },
-    {
-      id: 5,
-      name: 'Lisa Brown',
-      subject: 'Design',
-      bio: 'Award-winning designer with 15 years of experience in UX/UI and graphic design.',
-      rating: 4.8,
-      students: 2100,
-      courses: 10,
-      image: 'https://via.placeholder.com/150x150?text=Lisa+Brown',
-      specialties: ['UX Design', 'UI Design', 'Graphic Design']
-    },
-    {
-      id: 6,
-      name: 'Dr. Ahmed Hassan',
-      subject: 'Engineering',
-      bio: 'Mechanical Engineer and researcher specializing in robotics and automation.',
-      rating: 4.9,
-      students: 1600,
-      courses: 9,
-      image: 'https://via.placeholder.com/150x150?text=Ahmed+Hassan',
-      specialties: ['Robotics', 'Automation', 'CAD']
-    }
-  ];
+  const tutors = tutorsData;
 
   return (
     <div style={{ padding: '40px 50px', backgroundColor: '#f8f9fa', minHeight: '100vh' }}>
@@ -86,9 +19,12 @@ const Tutors = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <Title level={1} style={{ textAlign: 'center', marginBottom: '40px' }}>
+        <Title level={1} style={{ textAlign: 'center', marginBottom: '20px' }}>
           {t('tutors.title')}
         </Title>
+        <Paragraph style={{ textAlign: 'center', fontSize: '16px', marginBottom: '40px', color: '#666' }}>
+          {t('tutors.subtitle')}
+        </Paragraph>
 
         <Row gutter={[24, 24]}>
           {tutors.map((tutor, index) => (
@@ -145,7 +81,7 @@ const Tutors = () => {
                   </div>
                   
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <span><BookOutlined /> {tutor.courses} Courses</span>
+                    <span><BookOutlined /> {tutor.courses} {t('tutors.courses_count')}</span>
                     <Rate disabled defaultValue={tutor.rating} style={{ fontSize: '14px' }} />
                   </div>
                 </Card>

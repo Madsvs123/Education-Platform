@@ -31,6 +31,7 @@ import {
   HeartOutlined,
   ShareAltOutlined,
 } from "@ant-design/icons";
+import { coursesData } from "../../data/coursesData";
 
 const { Title, Paragraph, Text } = Typography;
 const { Option } = Select;
@@ -42,134 +43,7 @@ const Courses = () => {
   const [selectedSort, setSelectedSort] = useState("popular");
   const [searchTerm, setSearchTerm] = useState("");
 
-  const courses = [
-    {
-      id: 1,
-      title: "React Development Masterclass",
-      description:
-        "Learn modern React development with hooks, context, and best practices. Build real-world applications with expert guidance.",
-      category: "programming",
-      level: "intermediate",
-      duration: "12 weeks",
-      students: 2500,
-      rating: 4.8,
-      reviews: 1245,
-      price: "$99",
-      originalPrice: "$149",
-      instructor: "John Doe",
-      instructorAvatar: "https://via.placeholder.com/40x40?text=JD",
-      thumbnail:
-        "https://via.placeholder.com/300x200/667eea/ffffff?text=React+Course",
-      popularity: 95,
-      isBestseller: true,
-      isNew: false,
-    },
-    {
-      id: 2,
-      title: "UI/UX Design Fundamentals",
-      description:
-        "Master the principles of user interface and user experience design. Create stunning designs that users love.",
-      category: "design",
-      level: "beginner",
-      duration: "8 weeks",
-      students: 1800,
-      rating: 4.7,
-      reviews: 892,
-      price: "$79",
-      originalPrice: "$119",
-      instructor: "Jane Smith",
-      instructorAvatar: "https://via.placeholder.com/40x40?text=JS",
-      thumbnail:
-        "https://via.placeholder.com/300x200/f093fb/ffffff?text=UI/UX+Course",
-      popularity: 88,
-      isBestseller: true,
-      isNew: true,
-    },
-    {
-      id: 3,
-      title: "Business Strategy & Management",
-      description:
-        "Develop strategic thinking and management skills for modern business. Lead teams and drive organizational success.",
-      category: "business",
-      level: "advanced",
-      duration: "10 weeks",
-      students: 3200,
-      rating: 4.9,
-      reviews: 1567,
-      price: "$129",
-      originalPrice: "$199",
-      instructor: "Mike Johnson",
-      instructorAvatar: "https://via.placeholder.com/40x40?text=MJ",
-      thumbnail:
-        "https://via.placeholder.com/300x200/4facfe/ffffff?text=Business+Course",
-      popularity: 92,
-      isBestseller: false,
-      isNew: false,
-    },
-    {
-      id: 4,
-      title: "Data Science with Python",
-      description:
-        "Comprehensive guide to data science using Python and machine learning. Analyze data and build predictive models.",
-      category: "programming",
-      level: "intermediate",
-      duration: "16 weeks",
-      students: 4100,
-      rating: 4.8,
-      reviews: 2103,
-      price: "$149",
-      originalPrice: "$229",
-      instructor: "Sarah Wilson",
-      instructorAvatar: "https://via.placeholder.com/40x40?text=SW",
-      thumbnail:
-        "https://via.placeholder.com/300x200/43e97b/ffffff?text=Data+Science",
-      popularity: 97,
-      isBestseller: true,
-      isNew: false,
-    },
-    {
-      id: 5,
-      title: "Digital Marketing Essentials",
-      description:
-        "Learn effective digital marketing strategies and tools. Grow your business with proven marketing techniques.",
-      category: "business",
-      level: "beginner",
-      duration: "6 weeks",
-      students: 1500,
-      rating: 4.6,
-      reviews: 723,
-      price: "$69",
-      originalPrice: "$99",
-      instructor: "Tom Brown",
-      instructorAvatar: "https://via.placeholder.com/40x40?text=TB",
-      thumbnail:
-        "https://via.placeholder.com/300x200/ff9a9e/ffffff?text=Digital+Marketing",
-      popularity: 85,
-      isBestseller: false,
-      isNew: true,
-    },
-    {
-      id: 6,
-      title: "Physics: Quantum Mechanics",
-      description:
-        "Explore the fascinating world of quantum physics and mechanics. Understand the fundamental laws of the universe.",
-      category: "science",
-      level: "advanced",
-      duration: "14 weeks",
-      students: 800,
-      rating: 4.9,
-      reviews: 345,
-      price: "$199",
-      originalPrice: "$299",
-      instructor: "Dr. Emily Chen",
-      instructorAvatar: "https://via.placeholder.com/40x40?text=EC",
-      thumbnail:
-        "https://via.placeholder.com/300x200/a8edea/ffffff?text=Quantum+Physics",
-      popularity: 78,
-      isBestseller: false,
-      isNew: false,
-    },
-  ];
+  const courses = coursesData;
 
   const filteredCourses = courses.filter((course) => {
     const matchesCategory =

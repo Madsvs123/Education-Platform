@@ -1,0 +1,153 @@
+
+{
+  "en": {
+    "translation": {
+      "nav": {
+        "home": "Home",
+        "courses": "Courses",
+        "tutors": "Tutors",
+        "about": "About",
+        "blog": "Blog",
+        "contact": "Contact",
+        "login": "Login",
+        "register": "Register",
+        "dashboard": "Dashboard"
+      },
+      "home": {
+        "hero": {
+          "title": "Empower Your Learning Journey",
+          "subtitle": "Transform the future with quality education",
+          "description": "Join thousands of students and teachers in our comprehensive learning platform that includes interactive courses, expert tutors, and innovative tools.",
+          "cta_learn": "Start Learning",
+          "cta_teach": "Become a Teacher"
+        },
+        "features": {
+          "learn_online": "Learn Online",
+          "learn_desc": "Access courses anytime, anywhere",
+          "expert_tutors": "Expert Tutors",
+          "tutors_desc": "Learn from industry professionals",
+          "certificates": "Certificates",
+          "cert_desc": "Earn recognized certifications"
+        }
+      },
+      "courses": {
+        "title": "Our Courses",
+        "filter": {
+          "all": "All Categories",
+          "programming": "Programming",
+          "design": "Design",
+          "business": "Business",
+          "science": "Science"
+        },
+        "enroll": "Enroll Now",
+        "duration": "Duration",
+        "students": "Students"
+      },
+      "tutors": {
+        "title": "Meet Our Expert Tutors",
+        "rating": "Rating",
+        "students": "Students",
+        "view_profile": "View Profile"
+      },
+      "about": {
+        "title": "About EduPlatform",
+        "mission": "Our Mission",
+        "mission_text": "To democratize education and make quality learning accessible to everyone, everywhere.",
+        "vision": "Our Vision",
+        "vision_text": "To become the world's leading platform for innovative and inclusive education."
+      },
+      "contact": {
+        "title": "Contact Us",
+        "name": "Name",
+        "email": "Email",
+        "message": "Message",
+        "send": "Send Message"
+      },
+      "auth": {
+        "login": "Login",
+        "register": "Register",
+        "email": "Email",
+        "password": "Password",
+        "confirm_password": "Confirm Password",
+        "forgot_password": "Forgot Password?",
+        "no_account": "Don't have an account?",
+        "have_account": "Already have an account?"
+      }
+    }
+  },
+  "ar": {
+    "translation": {
+      "nav": {
+        "home": "الرئيسية",
+        "courses": "الدورات",
+        "tutors": "المدرسون",
+        "about": "حولنا",
+        "blog": "المدونة",
+        "contact": "اتصل بنا",
+        "login": "تسجيل الدخول",
+        "register": "التسجيل",
+        "dashboard": "لوحة التحكم"
+      },
+      "home": {
+        "hero": {
+          "title": "قوي رحلة التعلم الخاصة بك",
+          "subtitle": "حول المستقبل بالتعليم الجيد",
+          "description": "انضم إلى آلاف الطلاب والمعلمين في منصة التعلم الشاملة التي تتضمن دورات تفاعلية ومدرسين خبراء وأدوات مبتكرة.",
+          "cta_learn": "ابدأ التعلم",
+          "cta_teach": "كن مدرساً"
+        },
+        "features": {
+          "learn_online": "تعلم عبر الإنترنت",
+          "learn_desc": "الوصول إلى الدورات في أي وقت وأي مكان",
+          "expert_tutors": "مدرسون خبراء",
+          "tutors_desc": "تعلم من المهنيين في الصناعة",
+          "certificates": "الشهادات",
+          "cert_desc": "احصل على شهادات معترف بها"
+        }
+      },
+      "courses": {
+        "title": "دوراتنا",
+        "filter": {
+          "all": "جميع الفئات",
+          "programming": "البرمجة",
+          "design": "التصميم",
+          "business": "الأعمال",
+          "science": "العلوم"
+        },
+        "enroll": "سجل الآن",
+        "duration": "المدة",
+        "students": "الطلاب"
+      },
+      "tutors": {
+        "title": "تعرف على مدرسينا الخبراء",
+        "rating": "التقييم",
+        "students": "الطلاب",
+        "view_profile": "عرض الملف الشخصي"
+      },
+      "about": {
+        "title": "حول منصة التعليم",
+        "mission": "مهمتنا",
+        "mission_text": "إضفاء الطابع الديمقراطي على التعليم وجعل التعلم الجيد في متناول الجميع في كل مكان.",
+        "vision": "رؤيتنا",
+        "vision_text": "أن نصبح المنصة الرائدة عالمياً للتعليم المبتكر والشامل."
+      },
+      "contact": {
+        "title": "اتصل بنا",
+        "name": "الاسم",
+        "email": "البريد الإلكتروني",
+        "message": "الرسالة",
+        "send": "إرسال الرسالة"
+      },
+      "auth": {
+        "login": "تسجيل الدخول",
+        "register": "التسجيل",
+        "email": "البريد الإلكتروني",
+        "password": "كلمة المرور",
+        "confirm_password": "تأكيد كلمة المرور",
+        "forgot_password": "نسيت كلمة المرور؟",
+        "no_account": "ليس لديك حساب؟",
+        "have_account": "لديك حساب بالفعل؟"
+      }
+    }
+  }
+}

@@ -1,4 +1,4 @@
-
+/* App.css */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Cairo:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap');
 
 * {
@@ -11,6 +11,58 @@ html, body {
   font-family: 'Poppins', sans-serif;
   line-height: 1.6;
   scroll-behavior: smooth;
+}
+
+/* Main container for consistent layout */
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+}
+
+/* Section styling for consistent spacing */
+.section {
+  padding: 80px 0;
+}
+
+.section-sm {
+  padding: 40px 0;
+}
+
+.section-lg {
+  padding: 100px 0;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-title h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title h2:after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.section-title p {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 /* RTL Support */
@@ -26,160 +78,537 @@ html, body {
   min-height: 100vh;
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
-/* Animations */
-.fade-in {
-  animation: fadeIn 0.6s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.slide-up {
-  animation: slideUp 0.6s ease-out;
-}
-
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Custom button styles */
-.ant-btn-primary {
+/* Theme background options */
+.bg-gradient-primary {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border: none;
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
-  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-.ant-btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+/* Hero decorative elements */
+.hero-dot {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
 }
 
-/* Card hover effects */
-.ant-card {
-  transition: all 0.3s ease;
+.hero-dot-1 {
+  width: 300px;
+  height: 300px;
+  top: -150px;
+  right: -150px;
 }
 
-.ant-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+.hero-dot-2 {
+  width: 200px;
+  height: 200px;
+  bottom: -100px;
+  left: 10%;
 }
 
-/* Custom form styles */
-.auth-form {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 40px;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+.hero-dot-3 {
+  width: 150px;
+  height: 150px;
+  top: 30%;
+  left: -75px;
 }
 
-/* Loading animation */
-.loading-spinner {
-  display: flex;
-  justify-content: center;
+/* Hero buttons */
+.hero-btn-primary {
+  height: 50px !important;
+  font-size: 16px !important;
+  background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%) !important;
+  color: #667eea !important;
+  border: none !important;
+  font-weight: 600 !important;
+  padding: 0 30px !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+  transition: all 0.3s ease !important;
+}
+
+.hero-btn-primary:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3) !important;
+}
+
+.hero-btn-secondary {
+  height: 50px !important;
+  font-size: 16px !important;
+  background: transparent !important;
+  color: #fff !important;
+  border: 2px solid #fff !important;
+  font-weight: 600 !important;
+  padding: 0 30px !important;
+  transition: all 0.3s ease !important;
+}
+
+.hero-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  transform: translateY(-3px) !important;
+  border-color: #fff !important;
+  color: #fff !important;
+}
+
+/* Trust indicators */
+.trust-item {
+  display: inline-flex;
   align-items: center;
-  height: 100vh;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 14px;
+}
+
+.trust-item span {
+  margin-left: 8px;
+}
+
+/* Benefit items */
+.benefit-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* Feature cards */
+.feature-card {
+  text-align: center;
+  height: 100%;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  border: 1px solid #f0f0f0;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1) !important;
+}
+
+.feature-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-size: 32px;
+}
+
+/* Stats section */
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Testimonial cards */
+.testimonial-card {
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid #f0f0f0;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1) !important;
+}
+
+.testimonial-quote {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 60px;
+  opacity: 0.1;
+  color: #1890ff;
+}
+
+/* CTA section */
+.cta-button {
+  height: 50px !important;
+  font-size: 16px !important;
+  background: #fff !important;
+  color: #667eea !important;
+  border: none !important;
+  font-weight: 600 !important;
+  padding: 0 30px !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+  transition: all 0.3s ease !important;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2) !important;
+  color: #667eea !important;
+  background: #f8f9fa !important;
+}
+
+.newsletter-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 16px;
+  padding: 50px;
 }
 
 /* Responsive utilities */
 @media (max-width: 768px) {
+  .main-container {
+    padding: 0 15px;
+  }
+
+  .section {
+    padding: 60px 0;
+  }
+
+  .section-lg {
+    padding: 80px 0;
+  }
+
+  .section-title h2 {
+    font-size: 2rem;
+  }
+
   .hero-title {
-    font-size: 2rem !important;
+    font-size: 2.5rem !important;
   }
-  
+
   .hero-subtitle {
-    font-size: 1.2rem !important;
+    font-size: 1.3rem !important;
   }
-  
-  .section-padding {
-    padding: 40px 20px !important;
+
+  .newsletter-section {
+    padding: 30px;
+    text-align: center;
+  }
+
+  .newsletter-section .ant-col-md-10 {
+    text-align: center !important;
+    margin-top: 20px;
   }
 }
 
 @media (max-width: 576px) {
   .hero-title {
-    font-size: 1.8rem !important;
+    font-size: 2rem !important;
   }
-  
-  .ant-layout-header {
-    padding: 0 20px !important;
+
+  .hero-subtitle {
+    font-size: 1.1rem !important;
+  }
+
+  .hero-btn-primary,
+  .hero-btn-secondary {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .trust-item {
+    display: block;
+    margin-bottom: 10px;
   }
 }
 
-/* Custom ant design overrides */
-.ant-menu-horizontal {
-  border-bottom: none;
+
+/* Add these styles to your existing App.css */
+
+/* Courses Page Styles */
+.courses-page {
+  padding: 40px 0;
+  background-color: #f8f9fa;
 }
 
-.ant-layout-header {
-  border-bottom: 1px solid #f0f0f0;
+.courses-header {
+  text-align: center;
+  margin-bottom: 40px;
 }
 
-.ant-card-meta-title {
+.courses-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #1f2937;
+}
+
+.courses-subtitle {
+  font-size: 1.1rem;
+  color: #6b7280;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.courses-filters {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin-bottom: 24px;
+}
+
+.search-input .ant-input {
+  border-radius: 8px;
+}
+
+.results-count {
+  text-align: center;
+  margin-bottom: 24px;
+  color: #6b7280;
+}
+
+.courses-grid {
+  margin-top: 24px;
+}
+
+.course-card {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: none;
+  height: 100%;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.course-image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.course-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.course-card:hover .course-image {
+  transform: scale(1.05);
+}
+
+.bestseller-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: linear-gradient(135deg, #ffd700 0%, #ffb700 100%);
+  color: #000;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
   font-weight: 600;
 }
 
-.ant-typography h1, .ant-typography h2, .ant-typography h3, .ant-typography h4 {
-  font-weight: 600;
-}
-
-/* Custom gradient backgrounds */
-.gradient-bg-primary {
+.new-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
 }
 
-.gradient-bg-secondary {
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+.course-hover-actions {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-.gradient-bg-success {
-  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+.course-card:hover .course-hover-actions {
+  opacity: 1;
 }
 
-/* Custom shadows */
-.shadow-sm {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+.course-hover-actions .ant-btn {
+  background: rgba(255, 255, 255, 0.9);
+  margin-left: 8px;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
 }
 
-.shadow-md {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+.course-content {
+  padding: 16px;
 }
 
-.shadow-lg {
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+.course-category {
+  margin-bottom: 12px;
+}
+
+.course-category .ant-tag {
+  margin-right: 8px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.course-title {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+  color: #1f2937;
+  line-height: 1.4;
+}
+
+.course-description {
+  color: #6b7280;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.course-instructor {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.course-instructor span {
+  margin-left: 8px;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.course-rating {
+  margin-bottom: 16px;
+}
+
+.rating-value {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rating-number {
+  font-weight: 600;
+  color: #f59e0b;
+  font-size: 14px;
+}
+
+.rating-count {
+  color: #9ca3af;
+  font-size: 12px;
+}
+
+.course-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.stat-item .ant-progress {
+  width: 40px;
+}
+
+.course-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.course-price {
+  display: flex;
+  flex-direction: column;
+}
+
+.current-price {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.original-price {
+  font-size: 0.875rem;
+  color: #9ca3af;
+  text-decoration: line-through;
+}
+
+.enroll-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  padding: 0 20px;
+  height: 40px;
+}
+
+.enroll-button:hover {
+  background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+  transform: translateY(-2px);
+}
+
+.no-results {
+  text-align: center;
+  padding: 60px 20px;
+  color: #6b7280;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .courses-page {
+    padding: 20px 0;
+  }
+
+  .courses-title {
+    font-size: 2rem;
+  }
+
+  .courses-filters .ant-col {
+    margin-bottom: 16px;
+  }
+
+  .course-stats {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .course-footer {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .course-price {
+    align-items: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .courses-title {
+    font-size: 1.75rem;
+  }
+
+  .course-hover-actions {
+    opacity: 1;
+  }
+
+  .course-hover-actions .ant-btn {
+    width: 28px;
+    height: 28px;
+  }
 }

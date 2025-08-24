@@ -2,6 +2,7 @@
   "en": {
     "translation": {
       "nav": {
+        "title": "Aleph Edu",
         "home": "Home",
         "courses": "Courses",
         "tutors": "Tutors",
@@ -10,7 +11,12 @@
         "contact": "Contact",
         "login": "Login",
         "register": "Register",
-        "dashboard": "Dashboard"
+        "dashboard": "Dashboard",
+        "profile": "Profile",
+        "settings": "Settings",
+        "logout": "Logout",
+        "user_name": "John Doe",
+        "toggle_menu": "Toggle menu"
       },
       "home": {
         "hero": {
@@ -415,12 +421,31 @@
         "learning_goals_title": "Learning Goals",
         "by_instructor": "by {{instructor}}",
         "progress_completed": "{{progress}}% completed"
+      }, 
+      "footer": {
+        "title": "Aleph Edu-Platform",
+        "description": "Empowering learners worldwide with quality education and innovative teaching methods.",
+        "quick_links": {
+          "title": "Quick Links"
+        },
+        "legal": {
+          "title": "Legal",
+          "privacy_policy": "Privacy Policy",
+          "terms_of_service": "Terms of Service",
+          "cookie_policy": "Cookie Policy"
+        },
+        "follow_us": {
+          "title": "Follow Us",
+          "newsletter_text": "Subscribe to our newsletter for updates"
+        },
+        "copyright": "© {{year}} EduPlatform. All rights reserved."
       }
     }
   },
   "ar": {
     "translation": {
       "nav": {
+        "title": "ألِفْ التعليمية",
         "home": "الرئيسية",
         "courses": "الدورات",
         "tutors": "المدرسون",
@@ -429,7 +454,12 @@
         "contact": "اتصل بنا",
         "login": "تسجيل الدخول",
         "register": "التسجيل",
-        "dashboard": "لوحة التحكم"
+        "dashboard": "لوحة التحكم",
+        "profile": "الملف الشخصي",
+        "settings": "الإعدادات",
+        "logout": "تسجيل الخروج",
+        "user_name": "جون دو",
+        "toggle_menu": "تبديل القائمة"
       },
     "home": {
       "hero": {
@@ -835,6 +865,24 @@
         "learning_goals_title": "أهداف التعلم",
         "by_instructor": "بواسطة {{instructor}}",
         "progress_completed": "{{progress}}% مكتمل"
+      }, 
+      "footer": {
+        "title": "ألِفْ التعليمية",
+        "description": "تمكين المتعلمين في جميع أنحاء العالم بتعليم ذو جودة وطرق تدريس مبتكرة.",
+        "quick_links": {
+          "title": "روابط سريعة"
+        },
+        "legal": {
+          "title": "قانوني",
+          "privacy_policy": "سياسة الخصوصية",
+          "terms_of_service": "شروط الخدمة",
+          "cookie_policy": "سياسة الكوكيز"
+        },
+        "follow_us": {
+          "title": "تابعنا",
+          "newsletter_text": "اشترك في نشرتنا الإخبارية للتحديثات"
+        },
+        "copyright": "© {{year}} منصة التعليم. جميع الحقوق محفوظة."
       }
     }
   }

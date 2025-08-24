@@ -129,7 +129,7 @@ const Navbar = () => {
       <div className="navbar-mobile-menu">
         <div className="navbar-mobile-header">
           <BookOutlined className="navbar-mobile-logo-icon" />
-          <span className="navbar-mobile-logo-text">EduPlatform</span>
+          <span className="navbar-mobile-logo-text">{t('nav.title')}</span>
         </div>
         
         <Menu
@@ -192,7 +192,7 @@ const Navbar = () => {
               icon={<UserOutlined />} 
               className="navbar-user-avatar"
             />
-            <span className="navbar-user-name">John Doe</span>
+            <span className="navbar-user-name">{t('nav.user_name')}</span>
           </Button>
         </Dropdown>
       );
@@ -232,7 +232,7 @@ const Navbar = () => {
         >
           <BookOutlined className="navbar-logo-icon" />
           <Link to="/" className="navbar-logo-text">
-            EduPlatform
+            {t('nav.title')}
           </Link>
         </motion.div>
 
@@ -260,7 +260,7 @@ const Navbar = () => {
               icon={mobileMenuVisible ? <CloseOutlined /> : <MenuOutlined />}
               onClick={toggleMobileMenu}
               className="navbar-mobile-toggle"
-              aria-label="Toggle menu"
+              aria-label={t('nav.toggle_menu')}
             />
           )}
         </Space>

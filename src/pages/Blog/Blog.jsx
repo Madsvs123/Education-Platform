@@ -1,4 +1,3 @@
-// Blog.jsx
 import React, { useState } from "react";
 import {
   Row,
@@ -11,6 +10,7 @@ import {
   Select,
   Button,
   Space,
+  Grid,
 } from "antd";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
@@ -23,18 +23,24 @@ import {
   ShareAltOutlined,
   BookOutlined,
   FilterOutlined,
+  RocketOutlined,
+  MailOutlined,
 } from "@ant-design/icons";
 import { blogData } from "../../data/blogData";
 import "./Blog.css";
 
-const { Title, Paragraph } = Typography;
+const { Title, Paragraph, Text } = Typography;
 const { Search } = Input;
 const { Option } = Select;
+const { useBreakpoint } = Grid;
 
 const Blog = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const screens = useBreakpoint();
+  const isRTL = i18n.language === 'ar';
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
+  const [likedArticles, setLikedArticles] = useState([]);
   const articles = blogData;
 
   const categories = [
@@ -45,6 +51,14 @@ const Blog = () => {
     "Tutorials",
     "Industry News",
   ];
+
+  const toggleLike = (articleId) => {
+    if (likedArticles.includes(articleId)) {
+      setLikedArticles(likedArticles.filter((id) => id !== articleId));
+    } else {
+      setLikedArticles([...likedArticles, articleId]);
+    }
+  };
 
   const filteredArticles = articles.filter((article) => {
     const matchesSearch =
@@ -59,41 +73,41 @@ const Blog = () => {
   const regularArticles = articles.slice(1);
 
   return (
-    <div className="blog-page">
+    <div className={`blog-page ${isRTL ? 'blog-rtl' : ''}`}>
       {/* Hero Section */}
-      <div className="blog-hero">
-        <div className="main-container">
+      <div className="blog-hero-section">
+        <div className="blog-main-container">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
             <Title level={1} className="blog-hero-title">
-              {t("blog.title")}
+              {t("blog.title", "Blog & Insights")}
             </Title>
             <Paragraph className="blog-hero-subtitle">
-              {t("blog.subtitle")}
+              {t("blog.subtitle", "Discover the latest trends, tutorials, and insights from our expert team")}
             </Paragraph>
           </motion.div>
         </div>
       </div>
 
-      <div className="blog-main-container">
+      <div className="blog-main-container blog-content-container">
         {/* Search and Filter Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          style={{ marginBottom: "40px" }}
+          className="blog-filters-section"
         >
           <Row gutter={[16, 16]} align="middle">
             <Col xs={24} md={12}>
               <Search
-                placeholder={t("blog.search.placeholder")}
+                placeholder={t("blog.search.placeholder", "Search articles...")}
                 size="large"
                 prefix={<SearchOutlined />}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                style={{ width: "100%" }}
+                className="blog-search-input"
               />
             </Col>
             <Col xs={24} md={8}>
@@ -101,20 +115,26 @@ const Blog = () => {
                 size="large"
                 value={selectedCategory}
                 onChange={setSelectedCategory}
-                style={{ width: "100%" }}
-                prefix={<FilterOutlined />}
+                className="blog-category-select"
+                suffixIcon={<FilterOutlined />}
+                placeholder={t("blog.search.categories", "All Categories")}
               >
-                <Option value="all">{t("blog.search.categories")}</Option>
                 {categories.map((category) => (
                   <Option key={category} value={category}>
-                    {category === "all" ? "All Categories" : category}
+                    {category === "all" 
+                      ? t("blog.search.all_categories", "All Categories") 
+                      : category}
                   </Option>
                 ))}
               </Select>
             </Col>
             <Col xs={24} md={4}>
-              <Button size="large" style={{ width: "100%" }}>
-                {t("blog.actions.subscribe")}
+              <Button 
+                size="large" 
+                className="blog-subscribe-btn"
+                icon={<MailOutlined />}
+              >
+                {t("blog.actions.subscribe", "Subscribe")}
               </Button>
             </Col>
           </Row>
@@ -126,77 +146,62 @@ const Blog = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            style={{ marginBottom: "60px" }}
+            className="blog-featured-section"
           >
-            <Card
-              hoverable
-              style={{
-                borderRadius: "16px",
-                overflow: "hidden",
-                boxShadow: "0 8px 30px rgba(0,0,0,0.12)",
-              }}
-            >
+            <Card className="blog-featured-card">
               <Row gutter={[32, 32]} align="middle">
                 <Col xs={24} md={12}>
                   <img
                     alt={featuredArticle.title}
                     src={featuredArticle.image}
-                    style={{
-                      width: "100%",
-                      height: "300px",
-                      objectFit: "cover",
-                      borderRadius: "12px",
-                    }}
+                    className="blog-featured-image"
                   />
                 </Col>
                 <Col xs={24} md={12}>
-                  <div style={{ padding: "20px" }}>
-                    <Tag color="gold" style={{ marginBottom: "12px" }}>
-                      {t("blog.featured")}
+                  <div className="blog-featured-content">
+                    <Tag color="gold" className="blog-featured-tag">
+                      {t("blog.featured", "Featured")}
                     </Tag>
-                    <Title level={2} style={{ marginBottom: "16px" }}>
+                    <Title level={2} className="blog-featured-title">
                       {featuredArticle.title}
                     </Title>
-                    <Paragraph
-                      style={{
-                        fontSize: "16px",
-                        marginBottom: "20px",
-                        color: "#666",
-                      }}
-                    >
+                    <Paragraph className="blog-featured-excerpt">
                       {featuredArticle.excerpt}
                     </Paragraph>
-                    <div
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        marginBottom: "20px",
-                      }}
-                    >
+                    <div className="blog-featured-meta">
                       <Avatar
                         size="large"
+                        src={featuredArticle.authorAvatar}
                         icon={<UserOutlined />}
-                        style={{ marginRight: "12px" }}
+                        className="blog-featured-avatar"
                       />
-                      <div>
-                        <div style={{ fontWeight: "600" }}>
+                      <div className="blog-featured-author-info">
+                        <div className="blog-featured-author-name">
                           {featuredArticle.author}
                         </div>
-                        <div style={{ color: "#666", fontSize: "14px" }}>
+                        <div className="blog-featured-date-views">
                           <CalendarOutlined />{" "}
                           {new Date(featuredArticle.date).toLocaleDateString()}
-                          <span style={{ margin: "0 12px" }}>•</span>
+                          <span className="blog-meta-separator">•</span>
                           <EyeOutlined /> {featuredArticle.views}{" "}
-                          {t("blog.meta.views")}
+                          {t("blog.meta.views", "views")}
                         </div>
                       </div>
                     </div>
-                    <Space>
-                      <Button type="primary" size="large">
-                        {t("blog.actions.read_more")}
+                    <Space className="blog-featured-actions">
+                      <Button type="primary" size="large" className="blog-read-more-btn">
+                        {t("blog.actions.read_more", "Read More")}
                       </Button>
-                      <Button icon={<BookOutlined />} />
-                      <Button icon={<ShareAltOutlined />} />
+                      <Button 
+                        icon={<BookOutlined />} 
+                        className="blog-action-btn" 
+                        title={t("blog.actions.save", "Save article")}
+                      />
+                      <Button 
+                        icon={<ShareAltOutlined />} 
+                        className="blog-action-btn" 
+                        title={t("blog.actions.share", "Share article")}
+                      />
                     </Space>
                   </div>
                 </Col>
@@ -206,120 +211,121 @@ const Blog = () => {
         )}
 
         {/* Recent Articles Grid */}
-        <div style={{ marginBottom: "40px" }}>
-          <Title level={3} style={{ marginBottom: "30px" }}>
-            {t("blog.latest")}
+        <div className="blog-articles-section">
+          <Title level={3} className="blog-section-title">
+            <RocketOutlined className="blog-section-icon" />
+            {t("blog.latest", "Latest Articles")}
           </Title>
-          <Row gutter={[24, 24]}>
-            {filteredArticles.map((article, index) => (
-              <Col xs={24} sm={12} lg={8} key={article.id}>
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                >
-                  <Card
-                    hoverable
-                    cover={
-                      <img
-                        alt={article.title}
-                        src={article.image}
-                        style={{ height: "200px", objectFit: "cover" }}
-                      />
-                    }
-                    style={{
-                      height: "100%",
-                      borderRadius: "12px",
-                      overflow: "hidden",
-                      boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
-                      transition: "all 0.3s ease",
-                      display: "flex",
-                      flexDirection: "column",
-                    }}
-                    bodyStyle={{
-                      flex: 1,
-                      display: "flex",
-                      flexDirection: "column",
-                    }}
-                    actions={[
-                      <Button type="link" icon={<HeartOutlined />}>
-                        {t("blog.actions.like")}
-                      </Button>,
-                      <Button type="link" icon={<BookOutlined />}>
-                        {t("blog.actions.save")}
-                      </Button>,
-                      <Button type="link" icon={<ShareAltOutlined />}>
-                        {t("blog.actions.share")}
-                      </Button>,
-                    ]}
+          
+          {filteredArticles.length > 0 ? (
+            <Row gutter={[24, 24]}>
+              {filteredArticles.map((article, index) => (
+                <Col xs={24} sm={12} lg={8} key={article.id}>
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
                   >
-                    <div style={{ marginBottom: "12px" }}>
-                      <Tag color="blue">{article.category}</Tag>
-                    </div>
-
-                    <Title
-                      level={4}
-                      style={{
-                        marginBottom: "12px",
-                        lineHeight: "1.4",
-                        minHeight: "68px",
-                      }}
-                    >
-                      {article.title}
-                    </Title>
-
-                    <Paragraph
-                      ellipsis={{ rows: 3 }}
-                      style={{ marginBottom: "16px", color: "#666", flex: 1 }}
-                    >
-                      {article.excerpt}
-                    </Paragraph>
-
-                    <div
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "space-between",
-                        marginBottom: "12px",
-                      }}
-                    >
-                      <div style={{ display: "flex", alignItems: "center" }}>
-                        <Avatar
-                          size="small"
-                          icon={<UserOutlined />}
-                          style={{ marginRight: "8px" }}
+                    <Card
+                      hoverable
+                      cover={
+                        <img
+                          alt={article.title}
+                          src={article.image}
+                          className="blog-article-image"
                         />
-                        <span style={{ fontSize: "14px", color: "#666" }}>
-                          {article.author}
+                      }
+                      className="blog-article-card"
+                      actions={[
+                        <Button 
+                          type="link" 
+                          icon={<HeartOutlined />} 
+                          className="blog-article-action-btn"
+                          style={{
+                            color: likedArticles.includes(article.id) ? '#ff4d4f' : '#666'
+                          }}
+                          onClick={() => toggleLike(article.id)}
+                          title={t("blog.actions.like", "Like article")}
+                        >
+                          {article.likes}
+                        </Button>,
+                        <Button 
+                          type="link" 
+                          icon={<BookOutlined />} 
+                          className="blog-article-action-btn"
+                          title={t("blog.actions.save", "Save article")}
+                        />,
+                        <Button 
+                          type="link" 
+                          icon={<ShareAltOutlined />} 
+                          className="blog-article-action-btn"
+                          title={t("blog.actions.share", "Share article")}
+                        />,
+                      ]}
+                    >
+                      <div className="blog-article-category">
+                        <Tag color="blue">{article.category}</Tag>
+                      </div>
+
+                      <Title level={4} className="blog-article-title">
+                        {article.title}
+                      </Title>
+
+                      <Paragraph
+                        ellipsis={{ rows: 3 }}
+                        className="blog-article-excerpt"
+                      >
+                        {article.excerpt}
+                      </Paragraph>
+
+                      <div className="blog-article-meta">
+                        <div className="blog-article-author">
+                          <Avatar
+                            size="small"
+                            src={article.authorAvatar}
+                            icon={<UserOutlined />}
+                            className="blog-article-avatar"
+                          />
+                          <span className="blog-article-author-name">
+                            {article.author}
+                          </span>
+                        </div>
+                        <span className="blog-article-views">
+                          <EyeOutlined /> {article.views} {t("blog.meta.views", "views")}
                         </span>
                       </div>
-                      <span style={{ fontSize: "12px", color: "#999" }}>
-                        <EyeOutlined /> {article.views} {t("blog.meta.views")}
-                      </span>
-                    </div>
 
-                    <div
-                      style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "center",
-                        fontSize: "12px",
-                        color: "#999",
-                      }}
-                    >
-                      <span>
-                        <CalendarOutlined />{" "}
-                        {new Date(article.date).toLocaleDateString()}
-                      </span>
-                      <span>
-                        {article.readTime} {t("blog.meta.min_read")}
-                      </span>
-                    </div>
-                  </Card>
-                </motion.div>
-              </Col>
-            ))}
-          </Row>
+                      <div className="blog-article-footer">
+                        <span className="blog-article-date">
+                          <CalendarOutlined />{" "}
+                          {new Date(article.date).toLocaleDateString()}
+                        </span>
+                        <span className="blog-article-read-time">
+                          {article.readTime} {t("blog.meta.min_read", "min read")}
+                        </span>
+                      </div>
+                    </Card>
+                  </motion.div>
+                </Col>
+              ))}
+            </Row>
+          ) : (
+            <div style={{ textAlign: 'center', padding: '40px 0' }}>
+              <Title level={4}>{t("blog.no_results", "No articles found")}</Title>
+              <Paragraph>
+                {t("blog.no_results_desc", "Try adjusting your search or filter criteria")}
+              </Paragraph>
+              <Button 
+                type="primary" 
+                onClick={() => {
+                  setSearchTerm("");
+                  setSelectedCategory("all");
+                }}
+              >
+                {t("blog.reset_filters", "Reset Filters")}
+              </Button>
+            </div>
+          )}
         </div>
 
         {/* Newsletter Subscription */}
@@ -328,45 +334,31 @@ const Blog = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
+          className="blog-newsletter-section"
         >
-          <Card
-            style={{
-              background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-              border: "none",
-              borderRadius: "16px",
-              textAlign: "center",
-              color: "#fff",
-            }}
-          >
-            <Title level={3} style={{ color: "#fff", marginBottom: "16px" }}>
-              {t("blog.newsletter.title")}
+          <Card className="blog-newsletter-card">
+            <Title level={3} className="blog-newsletter-title">
+              {t("blog.newsletter.title", "Stay Updated")}
             </Title>
-            <Paragraph
-              style={{ color: "rgba(255,255,255,0.9)", marginBottom: "24px" }}
-            >
-              {t("blog.newsletter.subtitle")}
+            <Paragraph className="blog-newsletter-subtitle">
+              {t("blog.newsletter.subtitle", "Subscribe to our newsletter for the latest articles and updates")}
             </Paragraph>
             <Row gutter={[16, 16]} justify="center">
               <Col xs={24} sm={16} md={12}>
-                <Input.Group compact>
+                <Space.Compact className="blog-newsletter-input-group">
                   <Input
                     size="large"
-                    placeholder={t("blog.newsletter.placeholder")}
-                    style={{ width: "70%" }}
+                    placeholder={t("blog.newsletter.placeholder", "Enter your email")}
+                    className="blog-newsletter-input"
                   />
                   <Button
-                    type="primary"
                     size="large"
-                    style={{
-                      width: "30%",
-                      backgroundColor: "#fff",
-                      color: "#667eea",
-                      border: "none",
-                    }}
+                    type="primary"
+                    className="blog-newsletter-submit-btn"
                   >
-                    {t("blog.actions.subscribe")}
+                    {t("blog.actions.subscribe", "Subscribe")}
                   </Button>
-                </Input.Group>
+                </Space.Compact>
               </Col>
             </Row>
           </Card>

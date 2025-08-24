@@ -1,12 +1,15 @@
-
 .courses-page {
   min-height: 100vh;
   padding: 24px 0;
   background: #f8f9fa;
 }
 
+.courses-rtl {
+  direction: rtl;
+}
+
 .courses-main-container {
-  max-width: 1400px;
+  max-width: 1300px;
   margin: 0 auto;
   padding: 0 16px;
 }
@@ -18,7 +21,7 @@
 
 .courses-title {
   color: #1f2937;
-  margin-bottom: 16px;
+  margin-bottom: 16px !important;
   font-weight: 700;
 }
 
@@ -67,7 +70,7 @@
 }
 
 .courses-learning-paths-title {
-  margin-bottom: 24px;
+  margin-bottom: 24px !important;
   color: #1f2937;
   display: flex;
   align-items: center;
@@ -85,6 +88,12 @@
   border: 1px solid #e5e7eb;
   box-shadow: 0 4px 6px rgba(0,0,0,0.04);
   overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.learning-path-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
 }
 
 .learning-path-header {
@@ -101,6 +110,7 @@
 .learning-path-title {
   margin: 0;
   color: #1f2937;
+  font-size: 18px;
 }
 
 .learning-path-tags {
@@ -149,7 +159,7 @@
 }
 
 .courses-all-section {
-  margin-bottom: 24px;
+  margin-bottom: 24px !important;
   color: #1f2937;
   display: flex;
   align-items: center;
@@ -170,6 +180,11 @@
   background: #fff;
 }
 
+.course-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
 .course-image-container {
   position: relative;
   height: 180px;
@@ -181,6 +196,10 @@
   height: 100%;
   object-fit: cover;
   transition: all 0.3s ease;
+}
+
+.course-card:hover .course-image {
+  transform: scale(1.05);
 }
 
 .course-badges {
@@ -199,6 +218,7 @@
   padding: 0 8px;
   height: 24px;
   line-height: 24px;
+  border-radius: 12px;
 }
 
 .course-new-tag {
@@ -228,6 +248,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.course-action-button:hover {
+  background-color: rgba(0,0,0,0.8);
+  transform: scale(1.1);
 }
 
 .course-action-icon {
@@ -250,6 +276,11 @@
   display: flex;
   align-items: flex-end;
   padding: 16px;
+  opacity: 0;
+}
+
+.course-card:hover .course-hover-overlay {
+  opacity: 1;
 }
 
 .course-preview-button {
@@ -399,7 +430,7 @@
 
 .courses-no-results-title {
   color: #1f2937;
-  margin-bottom: 16px;
+  margin-bottom: 16px !important;
 }
 
 .courses-no-results-desc {
@@ -408,18 +439,113 @@
   margin-bottom: 24px;
 }
 
+/* RTL specific styles */
+.courses-rtl .courses-learning-paths-icon {
+  margin-right: 0;
+  margin-left: 12px;
+}
+
+.courses-rtl .courses-all-icon {
+  margin-right: 0;
+  margin-left: 12px;
+}
+
+.courses-rtl .learning-path-icon {
+  margin-right: 0;
+  margin-left: 12px;
+}
+
+.courses-rtl .learning-path-tag {
+  margin-right: 0;
+  margin-left: 8px;
+}
+
+.courses-rtl .course-badges {
+  left: auto;
+  right: 12px;
+}
+
+.courses-rtl .course-actions {
+  right: auto;
+  left: 12px;
+}
+
+.courses-rtl .course-duration-badge {
+  left: auto;
+  right: 12px;
+}
+
+.courses-rtl .course-instructor-avatar {
+  margin-right: 0;
+  margin-left: 8px;
+}
+
+.courses-rtl .course-rating-value {
+  margin-right: 0;
+  margin-left: 4px;
+}
+
+.courses-rtl .course-rating-stars {
+  margin-right: 0;
+  margin-left: 6px;
+}
+
+.courses-rtl .course-category-tag {
+  margin-right: 0;
+  margin-left: 6px;
+}
+
+.courses-rtl .course-price-original {
+  margin-left: 0;
+  margin-right: 8px;
+}
+
+/* Responsive styles */
 @media (max-width: 768px) {
   .courses-title {
-    font-size: 2rem;
+    font-size: 2rem !important;
   }
   
   .courses-page {
     padding: 20px 0;
   }
+  
+  .courses-filters {
+    padding: 16px;
+  }
+  
+  .course-image-container {
+    height: 160px;
+  }
 }
 
 @media (max-width: 576px) {
   .courses-title {
-    font-size: 1.75rem;
+    font-size: 1.75rem !important;
+  }
+  
+  .courses-subtitle {
+    font-size: 16px;
+  }
+  
+  .course-title {
+    font-size: 15px;
+    height: auto;
+  }
+  
+  .course-metadata {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+  }
+  
+  .course-footer {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  
+  .course-enroll-button {
+    width: 100%;
   }
 }

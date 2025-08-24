@@ -1,5 +1,4 @@
-
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Layout, Menu, Button, Select, Space } from 'antd';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -13,6 +12,7 @@ const Navbar = () => {
   const { t, i18n } = useTranslation();
   const location = useLocation();
   const navigate = useNavigate();
+  const [direction, setDirection] = useState(i18n.language === 'ar' ? 'rtl' : 'ltr');
 
   const menuItems = [
     { key: '/', label: <Link to="/">{t('nav.home')}</Link> },
@@ -23,33 +23,45 @@ const Navbar = () => {
     { key: '/contact', label: <Link to="/contact">{t('nav.contact')}</Link> },
   ];
 
+  useEffect(() => {
+    // Update direction when language changes
+    setDirection(i18n.language === 'ar' ? 'rtl' : 'ltr');
+    document.dir = i18n.language === 'ar' ? 'rtl' : 'ltr';
+  }, [i18n.language]);
+
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
-    document.dir = lng === 'ar' ? 'rtl' : 'ltr';
   };
 
   return (
     <Header style={{ 
       backgroundColor: '#fff', 
       boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
-      padding: '0 50px',
+      padding: direction === 'rtl' ? '0 50px 0 20px' : '0 20px 0 50px',
       position: 'sticky',
       top: 0,
-      zIndex: 1000
+      zIndex: 1000,
+      direction: direction // Add direction to header
     }}>
       <div style={{ 
         display: 'flex', 
         justifyContent: 'space-between', 
         alignItems: 'center',
-        height: '100%'
+        height: '100%',
+        flexDirection: direction === 'rtl' ? 'row-reverse' : 'row' // Reverse flex direction for RTL
       }}>
         <motion.div
-          initial={{ opacity: 0, x: -20 }}
+          initial={{ opacity: 0, x: direction === 'rtl' ? 20 : -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
           style={{ display: 'flex', alignItems: 'center' }}
         >
-          <BookOutlined style={{ fontSize: '24px', color: '#1890ff', marginRight: '10px' }} />
+          <BookOutlined style={{ 
+            fontSize: '24px', 
+            color: '#1890ff', 
+            marginRight: direction === 'rtl' ? 0 : '10px',
+            marginLeft: direction === 'rtl' ? '10px' : 0
+          }} />
           <Link to="/" style={{ 
             fontSize: '24px', 
             fontWeight: 'bold', 
@@ -68,11 +80,12 @@ const Navbar = () => {
             border: 'none',
             backgroundColor: 'transparent',
             flex: 1,
-            justifyContent: 'center'
+            justifyContent: 'center',
+            direction: direction // Add direction to menu
           }}
         />
 
-        <Space>
+        <Space direction={direction === 'rtl' ? 'horizontal-reverse' : 'horizontal'}>
           <Select 
             value={i18n.language} 
             onChange={changeLanguage}

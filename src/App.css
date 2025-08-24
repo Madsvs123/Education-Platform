@@ -113,6 +113,51 @@ html, body {
   left: -75px;
 }
 
+/* Consistent Button Styles */
+.ant-btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  border: none !important;
+  color: #fff !important;
+  font-weight: 500 !important;
+  transition: all 0.3s ease !important;
+}
+
+.ant-btn-primary:hover,
+.ant-btn-primary:focus {
+  background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4) !important;
+  color: #fff !important;
+}
+
+.ant-btn-default {
+  background: #fff !important;
+  border: 1px solid #d9d9d9 !important;
+  color: #1f2937 !important;
+  font-weight: 500 !important;
+  transition: all 0.3s ease !important;
+}
+
+.ant-btn-default:hover,
+.ant-btn-default:focus {
+  background: #f8f9fa !important;
+  border-color: #667eea !important;
+  color: #667eea !important;
+  transform: translateY(-2px) !important;
+}
+
+.ant-btn-text {
+  color: #667eea !important;
+  font-weight: 500 !important;
+  transition: all 0.3s ease !important;
+}
+
+.ant-btn-text:hover,
+.ant-btn-text:focus {
+  color: #5a6fd8 !important;
+  background: rgba(102, 126, 234, 0.1) !important;
+}
+
 /* Hero buttons */
 .hero-btn-primary {
   height: 50px !important;

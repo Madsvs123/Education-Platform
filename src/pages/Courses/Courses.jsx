@@ -1,4 +1,3 @@
-// Courses.jsx
 import React, { useState, useEffect } from "react";
 import {
   Row,
@@ -47,8 +46,9 @@ const { Option } = Select;
 const { useBreakpoint } = Grid;
 
 const Courses = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const screens = useBreakpoint();
+  const isRTL = i18n.language === 'ar';
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedLevel, setSelectedLevel] = useState("all");
   const [selectedSort, setSelectedSort] = useState("popular");
@@ -178,28 +178,28 @@ const Courses = () => {
   // Learning paths data
   const learningPaths = [
     {
-      title: "Web Development Mastery",
+      title: t("courses.learning_paths.web_dev", "Web Development Mastery"),
       icon: <RocketOutlined />,
       courses: 12,
-      duration: "6 months",
+      duration: t("courses.duration_months", "6 months"),
       level: "intermediate",
       color: "#1890ff",
       progress: 35,
     },
     {
-      title: "Data Science Fundamentals",
+      title: t("courses.learning_paths.data_science", "Data Science Fundamentals"),
       icon: <TrophyOutlined />,
       courses: 8,
-      duration: "4 months",
+      duration: t("courses.duration_months", "4 months"),
       level: "beginner",
       color: "#52c41a",
       progress: 20,
     },
     {
-      title: "UX/UI Design Pro",
+      title: t("courses.learning_paths.ui_ux", "UX/UI Design Pro"),
       icon: <StarOutlined />,
       courses: 10,
-      duration: "5 months",
+      duration: t("courses.duration_months", "5 months"),
       level: "advanced",
       color: "#722ed1",
       progress: 75,
@@ -248,7 +248,7 @@ const Courses = () => {
   };
 
   return (
-    <div className="courses-page">
+    <div className={`courses-page ${isRTL ? 'courses-rtl' : ''}`}>
       <div className="courses-main-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -256,32 +256,11 @@ const Courses = () => {
           transition={{ duration: 0.6 }}
         >
           {/* Header Section */}
-          <div
-            className="courses-header"
-            style={{ textAlign: "center", marginBottom: "48px" }}
-          >
-            <Title
-              level={1}
-              className="courses-title"
-              style={{
-                color: "#1f2937",
-                marginBottom: "16px",
-                fontWeight: 700,
-                fontSize: screens.md ? "2.5rem" : "2rem",
-              }}
-            >
-              {t("courses.title")}
+          <div className="courses-header">
+            <Title level={1} className="courses-title">
+              {t("courses.title", "Browse Courses")}
             </Title>
-            <Paragraph
-              className="courses-subtitle"
-              style={{
-                fontSize: "18px",
-                maxWidth: "700px",
-                margin: "0 auto",
-                color: "#6b7280",
-                lineHeight: 1.6,
-              }}
-            >
+            <Paragraph className="courses-subtitle">
               {t(
                 "courses.subtitle",
                 "Discover our comprehensive catalog of courses designed to advance your career and expand your knowledge",
@@ -290,17 +269,7 @@ const Courses = () => {
           </div>
 
           {/* Filters Section */}
-          <div
-            className="courses-filters"
-            style={{
-              marginBottom: "32px",
-              background: "#fff",
-              padding: "24px",
-              borderRadius: "16px",
-              boxShadow: "0 4px 6px rgba(0,0,0,0.04)",
-              border: "1px solid #f0f0f0",
-            }}
-          >
+          <div className="courses-filters">
             <Row gutter={[16, 16]} align="middle">
               <Col xs={24} sm={12} md={8} lg={6}>
                 <Input
@@ -308,23 +277,22 @@ const Courses = () => {
                     "courses.search_placeholder",
                     "Search courses, topics, instructors...",
                   )}
-                  prefix={<SearchOutlined style={{ color: "#9ca3af" }} />}
+                  prefix={<SearchOutlined className="courses-search-prefix" />}
                   size="large"
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="search-input"
-                  style={{ borderRadius: "12px" }}
+                  className="courses-search-input"
                 />
               </Col>
 
               <Col xs={24} sm={12} md={8} lg={4}>
                 <Select
                   size="large"
-                  style={{ width: "100%", borderRadius: "12px" }}
+                  className="courses-select"
                   value={selectedCategory}
                   onChange={setSelectedCategory}
                   suffixIcon={<FilterOutlined />}
-                  placeholder="Category"
+                  placeholder={t("courses.filter.category", "Category")}
                 >
                   {categories.map((cat) => (
                     <Option key={cat.value} value={cat.value}>
@@ -340,7 +308,7 @@ const Courses = () => {
               <Col xs={24} sm={12} md={8} lg={4}>
                 <Select
                   size="large"
-                  style={{ width: "100%", borderRadius: "12px" }}
+                  className="courses-select"
                   value={selectedLevel}
                   onChange={setSelectedLevel}
                   placeholder={t("courses.level", "Level")}
@@ -363,7 +331,7 @@ const Courses = () => {
               <Col xs={24} sm={12} md={8} lg={4}>
                 <Select
                   size="large"
-                  style={{ width: "100%", borderRadius: "12px" }}
+                  className="courses-select"
                   value={selectedSort}
                   onChange={setSelectedSort}
                   placeholder={t("courses.sort_by", "Sort by")}
@@ -393,19 +361,13 @@ const Courses = () => {
                     justifyContent: screens.lg ? "flex-end" : "flex-start",
                   }}
                 >
-                  <Text
-                    style={{
-                      color: "#6b7280",
-                      fontSize: "14px",
-                      lineHeight: "40px",
-                    }}
-                  >
+                  <Text className="courses-results-text">
                     {t("courses.showing_results", "Showing")}{" "}
-                    <strong style={{ color: "#1f2937" }}>
+                    <strong className="courses-results-strong">
                       {sortedCourses.length}
                     </strong>{" "}
                     {t("courses.of_courses", "of")}{" "}
-                    <strong style={{ color: "#1f2937" }}>
+                    <strong className="courses-results-strong">
                       {coursesData.length}
                     </strong>{" "}
                     {t("courses.courses", "courses")}
@@ -421,21 +383,11 @@ const Courses = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            style={{ marginBottom: "48px" }}
+            className="courses-learning-paths"
           >
-            <Title
-              level={3}
-              style={{
-                marginBottom: "24px",
-                color: "#1f2937",
-                display: "flex",
-                alignItems: "center",
-              }}
-            >
-              <RocketOutlined
-                style={{ marginRight: "12px", color: "#1890ff" }}
-              />
-              {t("courses.learning_paths", "Structured Learning Paths")}
+            <Title level={3} className="courses-learning-paths-title">
+              <RocketOutlined className="courses-learning-paths-icon" />
+              {t("courses.learning_paths.title", "Structured Learning Paths")}
             </Title>
 
             <Row gutter={[24, 24]}>
@@ -443,80 +395,49 @@ const Courses = () => {
                 <Col xs={24} md={8} key={index}>
                   <Card
                     hoverable
-                    style={{
-                      borderRadius: "16px",
-                      height: "100%",
-                      background: "#fff",
-                      border: "1px solid #e5e7eb",
-                      boxShadow: "0 4px 6px rgba(0,0,0,0.04)",
-                      overflow: "hidden",
-                    }}
+                    className="learning-path-card"
                     bodyStyle={{ padding: "20px" }}
                   >
-                    <div
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        marginBottom: "16px",
-                      }}
-                    >
+                    <div className="learning-path-header">
                       <div
-                        style={{
-                          fontSize: "32px",
-                          color: path.color,
-                          marginRight: "12px",
-                        }}
+                        className="learning-path-icon"
+                        style={{ color: path.color }}
                       >
                         {path.icon}
                       </div>
-                      <Title level={5} style={{ margin: 0, color: "#1f2937" }}>
+                      <Title level={5} className="learning-path-title">
                         {path.title}
                       </Title>
                     </div>
 
-                    <div style={{ marginBottom: "16px" }}>
+                    <div className="learning-path-tags">
                       <Tag
                         color={getLevelColor(path.level)}
-                        style={{
-                          borderRadius: "12px",
-                          padding: "4px 10px",
-                          marginRight: "8px",
-                          fontSize: "12px",
-                        }}
+                        className="learning-path-tag"
                       >
                         {getLevelText(path.level)}
                       </Tag>
                       <Tag
                         color="default"
-                        style={{
-                          borderRadius: "12px",
-                          padding: "4px 10px",
-                          fontSize: "12px",
-                        }}
+                        className="learning-path-tag"
                       >
                         {path.courses} {t("courses.courses", "courses")}
                       </Tag>
                     </div>
 
-                    <div style={{ marginBottom: "16px" }}>
-                      <Text style={{ color: "#6b7280", fontSize: "14px" }}>
+                    <div className="learning-path-meta">
+                      <Text className="learning-path-meta-text">
                         ⏱️ {path.duration} • 📜{" "}
                         {t("courses.certificate", "Certificate")}
                       </Text>
                     </div>
 
-                    <div style={{ marginBottom: "20px" }}>
-                      <div
-                        style={{
-                          display: "flex",
-                          justifyContent: "space-between",
-                          marginBottom: "6px",
-                        }}
-                      >
-                        <Text style={{ fontSize: "12px", color: "#6b7280" }}>
+                    <div className="learning-path-progress">
+                      <div className="learning-path-progress-header">
+                        <Text className="learning-path-progress-label">
                           {t("courses.progress", "Progress")}
                         </Text>
-                        <Text style={{ fontSize: "12px", fontWeight: "500" }}>
+                        <Text className="learning-path-progress-value">
                           {path.progress}%
                         </Text>
                       </div>
@@ -531,11 +452,10 @@ const Courses = () => {
                     <Button
                       type="default"
                       block
+                      className="learning-path-button"
                       style={{
-                        borderRadius: "8px",
                         color: path.color,
                         borderColor: path.color,
-                        fontWeight: "500",
                       }}
                     >
                       {t("courses.continue_path", "Continue Path")}
@@ -553,16 +473,8 @@ const Courses = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <Title
-              level={3}
-              style={{
-                marginBottom: "24px",
-                color: "#1f2937",
-                display: "flex",
-                alignItems: "center",
-              }}
-            >
-              <BookOutlined style={{ marginRight: "12px", color: "#1890ff" }} />
+            <Title level={3} className="courses-all-section">
+              <BookOutlined className="courses-all-icon" />
               {t("courses.all_courses", "All Courses")}
             </Title>
 
@@ -582,66 +494,26 @@ const Courses = () => {
                     >
                       <Card
                         className="course-card"
-                        style={{
-                          height: "100%",
-                          borderRadius: "16px",
-                          overflow: "hidden",
-                          boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
-                          transition: "all 0.3s ease",
-                          border: "1px solid #f0f0f0",
-                          background: "#fff",
-                        }}
                         bodyStyle={{ padding: "0" }}
                       >
                         {/* Image Section */}
-                        <div
-                          style={{
-                            position: "relative",
-                            height: "180px",
-                            overflow: "hidden",
-                          }}
-                        >
+                        <div className="course-image-container">
                           <img
                             alt={course.title}
                             src={course.thumbnail}
                             onError={handleImageError}
-                            style={{
-                              width: "100%",
-                              height: "100%",
-                              objectFit: "cover",
-                              transition: "all 0.3s ease",
-                              filter:
-                                hoveredCard === course.id
-                                  ? "brightness(0.85)"
-                                  : "brightness(1)",
-                            }}
+                            className="course-image"
                           />
 
                           {/* Badges */}
-                          <div
-                            style={{
-                              position: "absolute",
-                              top: "12px",
-                              left: "12px",
-                              display: "flex",
-                              flexDirection: "column",
-                              gap: "8px",
-                              zIndex: 2,
-                            }}
-                          >
+                          <div className="course-badges">
                             {course.isBestseller && (
                               <div style={{ marginTop: "0" }}>
                                 <Badge.Ribbon
                                   text={t("courses.bestseller", "Bestseller")}
                                   color="gold"
                                   placement="start"
-                                  style={{
-                                    fontSize: "11px",
-                                    fontWeight: "bold",
-                                    padding: "0 8px",
-                                    height: "24px",
-                                    lineHeight: "24px",
-                                  }}
+                                  className="course-bestseller-badge"
                                 />
                               </div>
                             )}
@@ -655,17 +527,7 @@ const Courses = () => {
                               >
                                 <Tag
                                   color="#52c41a"
-                                  style={{
-                                    border: "none",
-                                    borderRadius: "12px",
-                                    fontWeight: "bold",
-                                    fontSize: "11px",
-                                    padding: "0 8px",
-                                    height: "24px",
-                                    lineHeight: "24px",
-                                    margin: 0,
-                                    whiteSpace: "nowrap",
-                                  }}
+                                  className="course-new-tag"
                                 >
                                   {t("courses.new", "New")}
                                 </Tag>
@@ -674,21 +536,12 @@ const Courses = () => {
                           </div>
 
                           {/* Action buttons */}
-                          <div
-                            style={{
-                              position: "absolute",
-                              top: "12px",
-                              right: "12px",
-                              display: "flex",
-                              flexDirection: "column",
-                              gap: "8px",
-                            }}
-                          >
+                          <div className="course-actions">
                             <Tooltip
                               title={
                                 favoriteCourses.includes(course.id)
-                                  ? t("courses.favorite.remove")
-                                  : t("courses.favorite.add")
+                                  ? t("courses.favorite.remove", "Remove from favorites")
+                                  : t("courses.favorite.add", "Add to favorites")
                               }
                             >
                               <Button
@@ -697,278 +550,128 @@ const Courses = () => {
                                 size="small"
                                 icon={
                                   <HeartOutlined
+                                    className="course-action-icon"
                                     style={{
                                       color: favoriteCourses.includes(course.id)
                                         ? "#ff4d4f"
                                         : "#fff",
-                                      fontSize: "14px",
                                     }}
                                   />
                                 }
-                                style={{
-                                  backgroundColor: "rgba(0,0,0,0.6)",
-                                  border: "none",
-                                  display: "flex",
-                                  alignItems: "center",
-                                  justifyContent: "center",
-                                }}
+                                className="course-action-button"
                                 onClick={() => toggleFavorite(course.id)}
                               />
                             </Tooltip>
 
-                            <Tooltip title={t("courses.preview")}>
+                            <Tooltip title={t("courses.preview", "Preview course")}>
                               <Button
                                 type="default"
                                 shape="circle"
                                 size="small"
                                 icon={
-                                  <EyeOutlined
-                                    style={{ color: "#fff", fontSize: "14px" }}
-                                  />
+                                  <EyeOutlined className="course-action-icon" />
                                 }
-                                style={{
-                                  backgroundColor: "rgba(0,0,0,0.6)",
-                                  border: "none",
-                                  display: "flex",
-                                  alignItems: "center",
-                                  justifyContent: "center",
-                                }}
+                                className="course-action-button"
                               />
                             </Tooltip>
                           </div>
 
                           {/* Hover Overlay */}
-                          <div
-                            style={{
-                              position: "absolute",
-                              top: 0,
-                              left: 0,
-                              right: 0,
-                              bottom: 0,
-                              background:
-                                "linear-gradient(transparent 60%, rgba(0,0,0,0.7))",
-                              opacity: hoveredCard === course.id ? 1 : 0,
-                              transition: "opacity 0.3s ease",
-                              display: "flex",
-                              alignItems: "flex-end",
-                              padding: "16px",
-                            }}
-                          >
+                          <div className="course-hover-overlay">
                             <Button
                               type="primary"
                               block
                               icon={<PlayCircleOutlined />}
-                              style={{
-                                borderRadius: "8px",
-                                fontWeight: "500",
-                              }}
+                              className="course-preview-button"
                             >
                               {t("courses.preview", "Preview Course")}
                             </Button>
                           </div>
 
                           {/* Duration */}
-                          <div
-                            style={{
-                              position: "absolute",
-                              bottom: "12px",
-                              left: "12px",
-                              background: "rgba(0,0,0,0.7)",
-                              color: "#fff",
-                              padding: "4px 8px",
-                              borderRadius: "12px",
-                              fontSize: "12px",
-                              display: "flex",
-                              alignItems: "center",
-                              gap: "4px",
-                            }}
-                          >
+                          <div className="course-duration-badge">
                             <ClockCircleOutlined />
                             <span>{course.duration}</span>
                           </div>
                         </div>
 
                         {/* Content Section */}
-                        <div style={{ padding: "16px" }}>
-                          <div style={{ marginBottom: "12px" }}>
+                        <div className="course-content">
+                          <div className="course-category-tags">
                             <Tag
                               color="blue"
-                              style={{
-                                borderRadius: "12px",
-                                fontSize: "11px",
-                                padding: "2px 8px",
-                                marginRight: "6px",
-                                border: "none",
-                              }}
+                              className="course-category-tag"
                             >
-                              {t(`courses.filter.${course.category}`)}
+                              {t(`courses.filter.${course.category}`, course.category)}
                             </Tag>
                             <Tag
                               color={getLevelColor(course.level)}
-                              style={{
-                                borderRadius: "12px",
-                                fontSize: "11px",
-                                padding: "2px 8px",
-                                border: "none",
-                              }}
+                              className="course-category-tag"
                             >
                               {getLevelText(course.level)}
                             </Tag>
                           </div>
 
-                          <Title
-                            level={5}
-                            style={{
-                              margin: "0 0 12px 0",
-                              lineHeight: "1.4",
-                              fontSize: "16px",
-                              color: "#1f2937",
-                              fontWeight: "600",
-                              height: "44px",
-                              overflow: "hidden",
-                              display: "-webkit-box",
-                              WebkitLineClamp: 2,
-                              WebkitBoxOrient: "vertical",
-                            }}
-                          >
+                          <Title level={5} className="course-title">
                             {course.title}
                           </Title>
 
-                          <div
-                            style={{
-                              display: "flex",
-                              alignItems: "center",
-                              marginBottom: "12px",
-                            }}
-                          >
+                          <div className="course-instructor">
                             <Avatar
                               src={course.instructorAvatar}
                               size="small"
-                              style={{
-                                width: "24px",
-                                height: "24px",
-                                marginRight: "8px",
-                              }}
+                              className="course-instructor-avatar"
+                              icon={<UserOutlined />}
                             />
-                            <Text
-                              style={{ fontSize: "13px", color: "#6b7280" }}
-                            >
+                            <Text className="course-instructor-name">
                               {course.instructor}
                             </Text>
                           </div>
 
-                          <div
-                            style={{
-                              marginBottom: "12px",
-                              display: "flex",
-                              alignItems: "center",
-                            }}
-                          >
-                            <div
-                              style={{
-                                display: "flex",
-                                alignItems: "center",
-                                marginRight: "8px",
-                              }}
-                            >
-                              <span
-                                style={{
-                                  fontWeight: "bold",
-                                  color: "#faad14",
-                                  fontSize: "14px",
-                                  marginRight: "4px",
-                                }}
-                              >
+                          <div className="course-rating-section">
+                            <div className="course-rating-container">
+                              <span className="course-rating-value">
                                 {course.rating}
                               </span>
                               <Rate
                                 disabled
                                 defaultValue={course.rating}
                                 allowHalf
-                                style={{ fontSize: "12px", marginRight: "6px" }}
+                                className="course-rating-stars"
                               />
                             </div>
-                            <Text
-                              style={{ fontSize: "12px", color: "#9ca3af" }}
-                            >
+                            <Text className="course-rating-count">
                               ({course.reviews.toLocaleString()})
                             </Text>
                           </div>
 
                           {/* Course metadata */}
-                          <div
-                            style={{
-                              display: "flex",
-                              justifyContent: "space-between",
-                              marginBottom: "16px",
-                              fontSize: "12px",
-                              color: "#6b7280",
-                            }}
-                          >
-                            <div
-                              style={{
-                                display: "flex",
-                                alignItems: "center",
-                                gap: "4px",
-                              }}
-                            >
+                          <div className="course-metadata">
+                            <div className="course-metadata-item">
                               <VideoCameraOutlined />
                               <span>
-                                {course.lessons} {t("courses.lessons")}
+                                {course.lessons} {t("courses.lessons", "lessons")}
                               </span>
                             </div>
-                            <div
-                              style={{
-                                display: "flex",
-                                alignItems: "center",
-                                gap: "4px",
-                              }}
-                            >
+                            <div className="course-metadata-item">
                               <UserOutlined />
                               <span>{course.students.toLocaleString()}</span>
                             </div>
-                            <div
-                              style={{
-                                display: "flex",
-                                alignItems: "center",
-                                gap: "4px",
-                              }}
-                            >
+                            <div className="course-metadata-item">
                               <FireOutlined />
                               <span>{course.popularity}%</span>
                             </div>
                           </div>
 
-                          <Divider
-                            style={{ margin: "12px 0", borderColor: "#f0f0f0" }}
-                          />
+                          <Divider className="course-divider" />
 
-                          <div
-                            style={{
-                              display: "flex",
-                              justifyContent: "space-between",
-                              alignItems: "center",
-                            }}
-                          >
+                          <div className="course-footer">
                             <div>
-                              <span
-                                style={{
-                                  fontSize: "18px",
-                                  fontWeight: "bold",
-                                  color: "#1890ff",
-                                }}
-                              >
+                              <span className="course-price-main">
                                 {course.price}
                               </span>
                               {course.originalPrice && (
-                                <span
-                                  style={{
-                                    fontSize: "14px",
-                                    textDecoration: "line-through",
-                                    color: "#9ca3af",
-                                    marginLeft: "8px",
-                                  }}
-                                >
+                                <span className="course-price-original">
                                   {course.originalPrice}
                                 </span>
                               )}
@@ -976,10 +679,7 @@ const Courses = () => {
                             <Button
                               type="primary"
                               size="middle"
-                              style={{
-                                borderRadius: "8px",
-                                fontWeight: "500",
-                              }}
+                              className="course-enroll-button"
                             >
                               {t("courses.enroll", "Enroll Now")}
                             </Button>
@@ -991,29 +691,14 @@ const Courses = () => {
                 ))}
               </Row>
             ) : (
-              <div
-                className="no-results"
-                style={{
-                  textAlign: "center",
-                  padding: "60px 0",
-                  background: "#fff",
-                  borderRadius: "16px",
-                  border: "1px solid #f0f0f0",
-                }}
-              >
+              <div className="courses-no-results">
                 <Title
                   level={4}
-                  style={{ color: "#1f2937", marginBottom: "16px" }}
+                  className="courses-no-results-title"
                 >
                   {t("courses.no_results", "No courses found")}
                 </Title>
-                <Paragraph
-                  style={{
-                    color: "#6b7280",
-                    fontSize: "16px",
-                    marginBottom: "24px",
-                  }}
-                >
+                <Paragraph className="courses-no-results-desc">
                   {t(
                     "courses.no_results_desc",
                     "Try adjusting your search or filter criteria",
@@ -1036,11 +721,6 @@ const Courses = () => {
       </div>
     </div>
   );
-};
-
-// Add prop types
-Courses.propTypes = {
-  // Add if needed
 };
 
 export default React.memo(Courses);

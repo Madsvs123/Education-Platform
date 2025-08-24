@@ -25,6 +25,8 @@
           "money_back": "Money-back Guarantee"
         },
         "features": {
+          "title": "Why Choose EduPlatform?",
+          "subtitle": "Discover the features that make our platform stand out from the competition",
           "learn_online": "Learn Online",
           "learn_desc": "Access courses anytime, anywhere",
           "expert_tutors": "Expert Tutors",
@@ -56,7 +58,16 @@
         },
         "testimonials": {
           "title": "What Our Students Say",
-          "subtitle": "Hear from our global community of learners"
+          "subtitle": "Hear from our global community of learners",
+          "sarah_name": "Sarah Johnson",
+          "student_role": "Student",
+          "sarah_content": "EduPlatform transformed my career. The courses are comprehensive and the instructors are amazing!",
+          "michael_name": "Michael Chen",
+          "developer_role": "Developer",
+          "michael_content": "The quality of education here rivals top universities. I landed my dream job after completing the Full Stack course.",
+          "emma_name": "Emma Rodriguez",
+          "designer_role": "Designer",
+          "emma_content": "As a working professional, the flexibility to learn at my own pace was crucial. The platform is intuitive and engaging."
         },
         "cta": {
           "title": "Start Your Learning Journey Today",
@@ -386,7 +397,24 @@
         "set_goals": "Set Goals",
         "completed": "completed",
         "next": "Next: {{lesson}}",
-        "join": "Join"
+        "join": "Join",
+        "target_date": "Target: {{date}}",
+        "stats": {
+          "courses_enrolled": "Courses Enrolled",
+          "hours_learned": "Hours Learned",
+          "certificates": "Certificates",
+          "current_streak": "Current Streak",
+          "from_last_week": "+{{count}} from last week",
+          "from_last_month": "+{{count}} from last month",
+          "from_last_week_hours": "+{{count}}h from last week",
+          "keep_it_up": "Keep it up!"
+        },
+        "continue_learning_title": "Continue Learning",
+        "recent_activity_title": "Recent Activity",
+        "upcoming_lessons_title": "Upcoming Lessons",
+        "learning_goals_title": "Learning Goals",
+        "by_instructor": "by {{instructor}}",
+        "progress_completed": "{{progress}}% completed"
       }
     }
   },
@@ -403,58 +431,69 @@
         "register": "التسجيل",
         "dashboard": "لوحة التحكم"
       },
-      "home": {
-        "hero": {
-          "title": "قوي رحلة التعلم الخاصة بك",
-          "subtitle": "حول المستقبل بالتعليم الجيد",
-          "description": "انضم إلى آلاف الطلاب والمعلمين في منصة التعلم الشاملة التي تتضمن دورات تفاعلية ومدرسين خبراء وأدوات مبتكرة.",
-          "cta_learn": "ابدأ التعلم",
-          "cta_teach": "كن مدرساً",
-          "trust_text": "يثق بنا 50,000+ طالب حول العالم",
-          "accredited": "دورات معتمدة",
-          "expert_instructors": "مدرسون خبراء",
-          "money_back": "ضمان استرداد الأموال"
-        },
-        "features": {
-          "learn_online": "تعلم عبر الإنترنت",
-          "learn_desc": "الوصول إلى الدورات في أي وقت وأي مكان",
-          "expert_tutors": "مدرسون خبراء",
-          "tutors_desc": "تعلم من المهنيين في الصناعة",
-          "certificates": "الشهادات",
-          "cert_desc": "احصل على شهادات معترف بها",
-          "accelerated_learning": "التعلم المسرع",
-          "accelerated_desc": "تعلم بوتيرتك الخاصة بطرقنا المبتكرة",
-          "accredited_programs": "برامج معتمدة",
-          "accredited_desc": "شهادات ودرجات معترف بها عالمياً",
-          "global_community": "مجتمع عالمي",
-          "global_desc": "انضم للطلاب من جميع أنحاء العالم"
-        },
-        "benefits": {
-          "title": "لماذا تتعلم معنا؟",
-          "subtitle": "اكتشف المزايا التي تجعل منصة التعلم لدينا متميزة عن الباقي",
-          "interactive_materials": "مواد تعليمية تفاعلية",
-          "personalized_paths": "مسارات تعلم مخصصة",
-          "hands_on_projects": "مشاريع عملية",
-          "peer_collaboration": "تعاون بين الأقران",
-          "career_support": "خدمات دعم المهنة",
-          "lifetime_access": "وصول مدى الحياة للمواد"
-        },
-        "stats": {
-          "courses": "الدورات",
-          "students": "الطلاب",
-          "instructors": "المدرسون",
-          "support": "الدعم"
-        },
-        "testimonials": {
-          "title": "ماذا يقول طلابنا",
-          "subtitle": "استمع من مجتمعنا العالمي من المتعلمين"
-        },
-        "cta": {
-          "title": "ابدأ رحلة التعلم اليوم",
-          "subtitle": "انضم لآلاف الطلاب الذين يحققون أهدافهم مع دوراتنا",
-          "button": "ابدأ الآن"
-        }
+    "home": {
+      "hero": {
+        "title": "قوي رحلة التعلم الخاصة بك",
+        "subtitle": "حول المستقبل بالتعليم الجيد",
+        "description": "انضم إلى آلاف الطلاب والمعلمين في منصة التعلم الشاملة التي تتضمن دورات تفاعلية ومدرسين خبراء وأدوات مبتكرة.",
+        "cta_learn": "ابدأ التعلم",
+        "cta_teach": "كن مدرساً",
+        "trust_text": "يثق بنا 50,000+ طالب حول العالم",
+        "accredited": "دورات معتمدة",
+        "expert_instructors": "مدرسون خبراء",
+        "money_back": "ضمان استرداد الأموال"
       },
+      "features": {
+        "title": "لماذا تختار منصة التعليم؟",
+        "subtitle": "اكتشف الميزات التي تجعل منصتنا متميزة عن المنافسة",
+        "learn_online": "تعلم عبر الإنترنت",
+        "learn_desc": "الوصول إلى الدورات في أي وقت وأي مكان",
+        "expert_tutors": "مدرسون خبراء",
+        "tutors_desc": "تعلم من المهنيين في الصناعة",
+        "certificates": "الشهادات",
+        "cert_desc": "احصل على شهادات معترف بها",
+        "accelerated_learning": "التعلم المسرع",
+        "accelerated_desc": "تعلم بوتيرتك الخاصة بطرقنا المبتكرة",
+        "accredited_programs": "برامج معتمدة",
+        "accredited_desc": "شهادات ودرجات معترف بها عالمياً",
+        "global_community": "مجتمع عالمي",
+        "global_desc": "انضم للطلاب من جميع أنحاء العالم"
+      },
+      "benefits": {
+        "title": "لماذا تتعلم معنا؟",
+        "subtitle": "اكتشف المزايا التي تجعل منصة التعلم لدينا متميزة عن الباقي",
+        "interactive_materials": "مواد تعليمية تفاعلية",
+        "personalized_paths": "مسارات تعلم مخصصة",
+        "hands_on_projects": "مشاريع عملية",
+        "peer_collaboration": "تعاون بين الأقران",
+        "career_support": "خدمات دعم المهنة",
+        "lifetime_access": "وصول مدى الحياة للمواد"
+      },
+      "stats": {
+        "courses": "الدورات",
+        "students": "الطلاب",
+        "instructors": "المدرسون",
+        "support": "الدعم"
+      },
+      "testimonials": {
+        "title": "ماذا يقول طلابنا",
+        "subtitle": "استمع من مجتمعنا العالمي من المتعلمين",
+        "sarah_name": "سارة جونسون",
+        "student_role": "طالبة",
+        "sarah_content": "حولت منصة التعليم مساري المهني. الدورات شاملة والمدرسون رائعون!",
+        "michael_name": "مايكل تشين",
+        "developer_role": "مطور",
+        "michael_content": "جودة التعليم هنا تنافس أفضل الجامعات. حصلت على وظيفة أحلامي بعد إكمال دورة Full Stack.",
+        "emma_name": "إيما رودريغيز",
+        "designer_role": "مصممة",
+        "emma_content": "كمحترفة عاملة، كانت المرونة في التعلم بوتيرتي الخاصة أمراً حاسماً. المنصة بديهية وجذابة."
+      },
+      "cta": {
+        "title": "ابدأ رحلة التعلم اليوم",
+        "subtitle": "انضم لآلاف الطلاب الذين يحققون أهدافهم مع دوراتنا",
+        "button": "ابدأ الآن"
+      }
+    },
       "courses": {
         "title": "دوراتنا",
         "subtitle": "اكتشف كتالوجنا الشامل من الدورات المصممة لتطوير مهنتك",
@@ -734,8 +773,8 @@
         "join_learners": "انضم إلى آلاف المتعلمين اليوم",
         "full_name": "الاسم الكامل",
         "or_continue_with": "أو تابع باستخدام",
-        "continue_google": "المتابعة مع جوجل",
-        "continue_facebook": "المتابعة مع فيسبook",
+        "continue_google": "تابع مع جوجل",
+        "continue_facebook": "تابع مع فيسبوك",
         "agree_to": "أوافق على",
         "terms_of_service": "شروط الخدمة",
         "and": "و",
@@ -758,16 +797,16 @@
           "accept_terms": "يرجى قبول الشروط"
         }
       },
-      "dashboard": {
+        "dashboard": {
         "welcome": "مرحباً بعودتك، {{name}}! 👋",
-        "learning_progress": "إليك تقدمك في التعلم",
+        "learning_progress": "هذا هو تقدمك في التعلم",
         "continue_learning": "متابعة التعلم",
         "view_all": "عرض الكل",
         "courses_enrolled": "الدورات المسجلة",
         "hours_learned": "ساعات التعلم",
         "certificates": "الشهادات",
         "current_streak": "التتابع الحالي",
-        "recommended_for_you": "مقترح لك",
+        "recommended_for_you": "مُوصى به لك",
         "browse_all": "تصفح الكل",
         "recent_activity": "النشاط الأخير",
         "see_all": "عرض الكل",
@@ -777,8 +816,36 @@
         "set_goals": "تعيين الأهداف",
         "completed": "مكتمل",
         "next": "التالي: {{lesson}}",
-        "join": "انضم"
+        "join": "انضم",
+        "target_date": "الهدف: {{date}}",
+        "courses": "الدورات",
+        "stats": {
+          "courses_enrolled": "الدورات المسجلة",
+          "hours_learned": "ساعات التعلم",
+          "certificates": "الشهادات",
+          "current_streak": "التتابع الحالي",
+          "from_last_week": "+{{count}} من الأسبوع الماضي",
+          "from_last_month": "+{{count}} من الشهر الماضي",
+          "from_last_week_hours": "+{{count}}س من الأسبوع الماضي",
+          "keep_it_up": "استمر على هذا النحو!"
+        },
+        "continue_learning_title": "متابعة التعلم",
+        "recent_activity_title": "النشاط الأخير",
+        "upcoming_lessons_title": "الدروس القادمة",
+        "learning_goals_title": "أهداف التعلم",
+        "by_instructor": "بواسطة {{instructor}}",
+        "progress_completed": "{{progress}}% مكتمل"
       }
     }
   }
-}
+ }
+
+
+
+
+
+
+
+
+
+      

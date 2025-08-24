@@ -1,7 +1,16 @@
-
 .about-page {
   min-height: 100vh;
   background-color: #fff;
+}
+
+.about-rtl {
+  direction: rtl;
+}
+
+.about-main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
 }
 
 .about-hero {
@@ -14,9 +23,10 @@
 }
 
 .about-hero-title {
-  color: #fff;
-  margin-bottom: 24px;
-  font-size: 3rem;
+  color: #fff !important;
+  margin-bottom: 24px !important;
+  font-size: 3rem !important;
+  font-weight: 700;
 }
 
 .about-hero-description {
@@ -30,10 +40,19 @@
 
 .about-hero-buttons {
   gap: 16px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .about-hero-btn-primary {
   border-radius: 25px;
+  font-weight: 500;
+  height: 48px;
+  padding: 0 24px;
+  background: #fff;
+  color: #667eea;
+  border: none;
 }
 
 .about-hero-btn-secondary {
@@ -41,14 +60,17 @@
   border: 1px solid rgba(255,255,255,0.3);
   color: #fff;
   border-radius: 25px;
+  font-weight: 500;
+  height: 48px;
+  padding: 0 24px;
 }
 
-.about-main-container {
-  padding: 80px 20px;
+.about-content-container {
+  padding: 80px 0;
 }
 
 .about-mission-vision {
-  margin-bottom: 100px;
+  margin-bottom: 80px;
 }
 
 .about-mission-card {
@@ -56,6 +78,12 @@
   padding: 40px;
   border-radius: 20px;
   height: 100%;
+  transition: all 0.3s ease;
+}
+
+.about-mission-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
 }
 
 .about-mission-icon-container {
@@ -75,7 +103,8 @@
 }
 
 .about-mission-title {
-  margin-bottom: 20px;
+  margin-bottom: 20px !important;
+  color: #1f2937;
 }
 
 .about-mission-text {
@@ -89,6 +118,12 @@
   padding: 40px;
   border-radius: 20px;
   height: 100%;
+  transition: all 0.3s ease;
+}
+
+.about-vision-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
 }
 
 .about-vision-icon-container {
@@ -108,7 +143,8 @@
 }
 
 .about-vision-title {
-  margin-bottom: 20px;
+  margin-bottom: 20px !important;
+  color: #1f2937;
 }
 
 .about-vision-text {
@@ -118,7 +154,7 @@
 }
 
 .about-values {
-  margin-bottom: 100px;
+  margin-bottom: 80px;
 }
 
 .about-values-header {
@@ -127,7 +163,8 @@
 }
 
 .about-values-title {
-  margin-bottom: 16px;
+  margin-bottom: 16px !important;
+  color: #1f2937;
 }
 
 .about-values-subtitle {
@@ -135,6 +172,7 @@
   color: #666;
   max-width: 600px;
   margin: 0 auto;
+  line-height: 1.6;
 }
 
 .about-value-card {
@@ -146,22 +184,30 @@
   transition: all 0.3s ease;
 }
 
+.about-value-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
 .about-value-icon {
   margin-bottom: 24px;
+  font-size: 48px;
 }
 
 .about-value-title {
-  margin-bottom: 16px;
+  margin-bottom: 16px !important;
+  color: #1f2937;
 }
 
 .about-value-description {
   color: #666;
   line-height: 1.6;
   margin: 0;
+  font-size: 14px;
 }
 
 .about-stats {
-  margin-bottom: 100px;
+  margin-bottom: 80px;
 }
 
 .about-stats-container {
@@ -172,8 +218,8 @@
 }
 
 .about-stats-title {
-  color: #fff;
-  margin-bottom: 50px;
+  color: #fff !important;
+  margin-bottom: 50px !important;
 }
 
 .about-stat-title {
@@ -192,7 +238,7 @@
 }
 
 .about-timeline {
-  margin-bottom: 100px;
+  margin-bottom: 80px;
 }
 
 .about-timeline-header {
@@ -201,7 +247,8 @@
 }
 
 .about-timeline-title {
-  margin-bottom: 16px;
+  margin-bottom: 16px !important;
+  color: #1f2937;
 }
 
 .about-timeline-subtitle {
@@ -209,19 +256,22 @@
   color: #666;
   max-width: 600px;
   margin: 0 auto;
+  line-height: 1.6;
 }
 
 .about-timeline-item-title {
-  margin-bottom: 8px;
+  margin-bottom: 8px !important;
+  color: #1f2937;
 }
 
 .about-timeline-item-desc {
   color: #666;
   margin: 0;
+  line-height: 1.6;
 }
 
 .about-success-stories {
-  margin-bottom: 100px;
+  margin-bottom: 80px;
 }
 
 .about-success-header {
@@ -230,7 +280,8 @@
 }
 
 .about-success-title {
-  margin-bottom: 16px;
+  margin-bottom: 16px !important;
+  color: #1f2937;
 }
 
 .about-success-subtitle {
@@ -238,6 +289,7 @@
   color: #666;
   max-width: 600px;
   margin: 0 auto;
+  line-height: 1.6;
 }
 
 .about-success-card {
@@ -245,6 +297,12 @@
   box-shadow: 0 4px 20px rgba(0,0,0,0.08);
   border: 1px solid #f0f0f0;
   height: 100%;
+  transition: all 0.3s ease;
+}
+
+.about-success-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
 }
 
 .about-success-header-section {
@@ -258,12 +316,14 @@
 }
 
 .about-success-name {
-  margin-bottom: 4px;
+  margin-bottom: 4px !important;
+  color: #1f2937;
 }
 
 .about-success-role {
   display: block;
   margin-bottom: 8px;
+  color: #666;
 }
 
 .about-success-quote-container {
@@ -288,6 +348,7 @@
   font-style: italic;
   margin: 0;
   padding-left: 20px;
+  line-height: 1.6;
 }
 
 .about-success-timeline {
@@ -308,6 +369,7 @@
   font-weight: bold;
   display: block;
   color: #666;
+  font-size: 12px;
 }
 
 .about-success-time {
@@ -322,6 +384,11 @@
 .about-success-time-text {
   display: block;
   margin-top: 8px;
+  font-size: 12px;
+}
+
+.about-cta {
+  margin-bottom: 40px;
 }
 
 .about-cta-card {
@@ -334,8 +401,8 @@
 }
 
 .about-cta-title {
-  color: #fff;
-  margin-bottom: 20px;
+  color: #fff !important;
+  margin-bottom: 20px !important;
 }
 
 .about-cta-subtitle {
@@ -344,6 +411,14 @@
   font-size: 18px;
   max-width: 500px;
   margin: 0 auto 30px;
+  line-height: 1.6;
+}
+
+.about-cta-buttons {
+  gap: 16px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .about-cta-primary {
@@ -351,8 +426,9 @@
   color: #667eea;
   border: none;
   border-radius: 25px;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding: 0 24px;
+  height: 48px;
+  font-weight: 500;
 }
 
 .about-cta-secondary {
@@ -360,6 +436,117 @@
   color: #fff;
   border: 2px solid rgba(255,255,255,0.3);
   border-radius: 25px;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding: 0 24px;
+  height: 48px;
+  font-weight: 500;
+}
+
+/* RTL specific styles */
+.about-rtl .about-success-avatar {
+  margin-right: 0;
+  margin-left: 20px;
+}
+
+.about-rtl .about-success-quote-icon {
+  left: auto;
+  right: 10px;
+}
+
+.about-rtl .about-success-quote {
+  padding-left: 0;
+  padding-right: 20px;
+}
+
+.about-rtl .about-stat-icon {
+  margin-right: 0;
+  margin-left: 8px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .about-hero {
+    padding: 80px 0;
+  }
+  
+  .about-hero-title {
+    font-size: 2.5rem !important;
+  }
+  
+  .about-hero-description {
+    font-size: 18px;
+  }
+  
+  .about-content-container {
+    padding: 60px 0;
+  }
+  
+  .about-mission-card,
+  .about-vision-card {
+    padding: 24px;
+  }
+  
+  .about-stats-container {
+    padding: 60px 24px;
+  }
+  
+  .about-cta-card {
+    padding: 40px 24px;
+  }
+  
+  .about-success-header-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .about-success-avatar {
+    margin-right: 0;
+    margin-bottom: 16px;
+  }
+  
+  .about-success-timeline {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-hero-title {
+    font-size: 2rem !important;
+  }
+  
+  .about-hero-description {
+    font-size: 16px;
+  }
+  
+  .about-hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .about-hero-btn-primary,
+  .about-hero-btn-secondary {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .about-cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .about-cta-primary,
+  .about-cta-secondary {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .about-value-card {
+    height: auto;
+    min-height: 280px;
+  }
+  
+  .about-stat-value {
+    font-size: 2rem;
+  }
 }

@@ -1,4 +1,3 @@
-// Tutors.jsx
 import React, { useState } from "react";
 import {
   Row,
@@ -14,7 +13,8 @@ import {
   List,
   Divider,
   Statistic,
-  Progress,
+  Space,
+  Grid
 } from "antd";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
@@ -29,12 +29,13 @@ import {
   VideoCameraOutlined,
   TrophyOutlined,
   GlobalOutlined,
-  EnvironmentOutlined,
   CheckCircleOutlined,
   TeamOutlined,
   ClockCircleOutlined,
   DollarOutlined,
   SafetyCertificateOutlined,
+  RocketOutlined,
+  RightOutlined
 } from "@ant-design/icons";
 import { tutorsData } from "../../data/tutorsData";
 import "./Tutors.css";
@@ -42,9 +43,12 @@ import "./Tutors.css";
 const { Title, Paragraph, Text } = Typography;
 const { Search } = Input;
 const { Option } = Select;
+const { useBreakpoint } = Grid;
 
 const Tutors = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const screens = useBreakpoint();
+  const isRTL = i18n.language === 'ar';
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedSubject, setSelectedSubject] = useState("all");
   const [sortBy, setSortBy] = useState("rating");
@@ -89,13 +93,12 @@ const Tutors = () => {
   const avgRating = (
     tutors.reduce((sum, tutor) => sum + tutor.rating, 0) / tutors.length
   ).toFixed(1);
-  const successRate = 95; // Platform success rate
 
   return (
-    <div className="tutors-page">
+    <div className={`tutors-page ${isRTL ? 'tutors-rtl' : ''}`}>
       {/* Hero Section */}
       <div className="tutors-hero">
-        <div className="main-container">
+        <div className="tutors-main-container">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -108,10 +111,18 @@ const Tutors = () => {
               {t("tutors.subtitle")}
             </Paragraph>
             <div className="tutors-hero-buttons">
-              <Button type="primary" size="large">
+              <Button
+                type="primary"
+                size="large"
+                icon={<RocketOutlined />}
+                className="tutors-hero-primary-btn"
+              >
                 {t("tutors.become_tutor")}
               </Button>
-              <Button size="large" className="tutors-hero-secondary-btn">
+              <Button
+                size="large"
+                className="tutors-hero-secondary-btn"
+              >
                 {t("tutors.how_it_works")}
               </Button>
             </div>
@@ -119,101 +130,57 @@ const Tutors = () => {
         </div>
       </div>
 
-      <div className="main-container" style={{ padding: "40px 20px" }}>
+      <div className="tutors-main-container">
         {/* Platform Overview Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          style={{ marginBottom: "60px" }}
+          className="tutors-platform-overview"
         >
-          <Title
-            level={2}
-            style={{ textAlign: "center", marginBottom: "40px" }}
-          >
+          <Title level={2} className="tutors-section-title">
             {t("tutors.why_choose")}
           </Title>
-          <Row gutter={[32, 32]}>
+          <Row gutter={[24, 24]}>
             <Col xs={24} sm={12} md={6}>
-              <Card
-                style={{
-                  textAlign: "center",
-                  border: "none",
-                  boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
-                }}
-              >
-                <TeamOutlined
-                  style={{
-                    fontSize: "48px",
-                    color: "#1890ff",
-                    marginBottom: "16px",
-                  }}
-                />
+              <Card className="tutors-platform-card">
+                <TeamOutlined className="tutors-platform-icon tutors-platform-icon-students" />
                 <Statistic
                   title={t("tutors.stats.active_students")}
                   value={totalStudents.toLocaleString()}
+                  valueStyle={{ color: '#1890ff' }}
                 />
               </Card>
             </Col>
             <Col xs={24} sm={12} md={6}>
-              <Card
-                style={{
-                  textAlign: "center",
-                  border: "none",
-                  boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
-                }}
-              >
-                <UserOutlined
-                  style={{
-                    fontSize: "48px",
-                    color: "#52c41a",
-                    marginBottom: "16px",
-                  }}
+              <Card className="tutors-platform-card">
+                <UserOutlined className="tutors-platform-icon tutors-platform-icon-tutors" />
+                <Statistic 
+                  title={t("tutors.stats.expert_tutors")} 
+                  value={tutors.length} 
+                  valueStyle={{ color: '#52c41a' }}
                 />
-                <Statistic title="Expert Tutors" value={tutors.length} />
               </Card>
             </Col>
             <Col xs={24} sm={12} md={6}>
-              <Card
-                style={{
-                  textAlign: "center",
-                  border: "none",
-                  boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
-                }}
-              >
-                <BookOutlined
-                  style={{
-                    fontSize: "48px",
-                    color: "#faad14",
-                    marginBottom: "16px",
-                  }}
-                />
+              <Card className="tutors-platform-card">
+                <BookOutlined className="tutors-platform-icon tutors-platform-icon-courses" />
                 <Statistic
                   title={t("tutors.stats.courses_available")}
                   value={totalCourses}
+                  valueStyle={{ color: '#faad14' }}
                 />
               </Card>
             </Col>
             <Col xs={24} sm={12} md={6}>
-              <Card
-                style={{
-                  textAlign: "center",
-                  border: "none",
-                  boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
-                }}
-              >
-                <StarOutlined
-                  style={{
-                    fontSize: "48px",
-                    color: "#fadb14",
-                    marginBottom: "16px",
-                  }}
-                />
+              <Card className="tutors-platform-card">
+                <StarOutlined className="tutors-platform-icon tutors-platform-icon-rating" />
                 <Statistic
-                  title="Average Rating"
+                  title={t("tutors.stats.average_rating")}
                   value={avgRating}
                   precision={1}
+                  valueStyle={{ color: '#fadb14' }}
                 />
               </Card>
             </Col>
@@ -225,17 +192,11 @@ const Tutors = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          style={{ marginBottom: "40px" }}
+          className="tutors-search-section"
         >
-          <Card
-            style={{
-              borderRadius: "12px",
-              boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
-            }}
-            bodyStyle={{ padding: "24px" }}
-          >
+          <Card className="tutors-search-card">
             <Row gutter={[16, 16]} align="middle">
-              <Col xs={24} md={12}>
+              <Col xs={24} md={10}>
                 <Search
                   placeholder={t("tutors.search.placeholder")}
                   size="large"
@@ -245,7 +206,7 @@ const Tutors = () => {
                   allowClear
                 />
               </Col>
-              <Col xs={12} sm={8} md={4}>
+              <Col xs={12} sm={8} md={5}>
                 <Select
                   size="large"
                   value={selectedSubject}
@@ -254,14 +215,14 @@ const Tutors = () => {
                   suffixIcon={<FilterOutlined />}
                 >
                   <Option value="all">{t("tutors.search.subjects_all")}</Option>
-                  {subjects.map((subject) => (
+                  {subjects.filter(subject => subject !== "all").map((subject) => (
                     <Option key={subject} value={subject}>
-                      {subject === "all" ? "All Subjects" : subject}
+                      {subject}
                     </Option>
                   ))}
                 </Select>
               </Col>
-              <Col xs={12} sm={8} md={4}>
+              <Col xs={12} sm={8} md={5}>
                 <Select
                   size="large"
                   value={sortBy}
@@ -287,7 +248,7 @@ const Tutors = () => {
               </Col>
               <Col xs={24} sm={8} md={4}>
                 <Button
-                  type="primary"
+                  type="default"
                   size="large"
                   style={{ width: "100%" }}
                   onClick={() => {
@@ -304,256 +265,169 @@ const Tutors = () => {
         </motion.div>
 
         {/* Results Count */}
-        <div style={{ marginBottom: "24px" }}>
-          <Text strong style={{ fontSize: "16px" }}>
+        <div className="tutors-results-count">
+          <Text className="tutors-results-text">
             {t("tutors.search.results_count", { count: filteredTutors.length })}
           </Text>
         </div>
 
         {/* Tutors List */}
-        <List
-          itemLayout="vertical"
-          dataSource={filteredTutors}
-          renderItem={(tutor, index) => (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.05 }}
-            >
-              <Card
-                style={{
-                  borderRadius: "12px",
-                  marginBottom: "20px",
-                  boxShadow: "0 2px 8px rgba(0,0,0,0.06)",
-                  border: "1px solid #f0f0f0",
-                }}
-                bodyStyle={{ padding: "24px" }}
+        <div className="tutors-list-container">
+          <List
+            itemLayout="vertical"
+            dataSource={filteredTutors}
+            renderItem={(tutor, index) => (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.05 }}
               >
-                <Row gutter={[24, 16]} align="middle">
-                  <Col xs={24} md={6} lg={4} style={{ textAlign: "center" }}>
-                    <div
-                      style={{ position: "relative", display: "inline-block" }}
-                    >
-                      <Avatar
-                        size={100}
-                        src={tutor.image}
-                        icon={<UserOutlined />}
-                        style={{
-                          marginBottom: "12px",
-                          border: "3px solid #fff",
-                          boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
-                        }}
-                      />
-                      {tutor.featured && (
-                        <div
-                          style={{
-                            position: "absolute",
-                            top: -5,
-                            right: -5,
-                            background: "#ff4d4f",
-                            width: "28px",
-                            height: "28px",
-                            borderRadius: "50%",
-                            border: "3px solid #fff",
-                            display: "flex",
-                            alignItems: "center",
-                            justifyContent: "center",
-                          }}
-                        >
-                          <TrophyOutlined
-                            style={{ color: "#fff", fontSize: "14px" }}
-                          />
-                        </div>
-                      )}
-                      {tutor.online && (
-                        <div
-                          style={{
-                            position: "absolute",
-                            bottom: 5,
-                            right: -5,
-                            background: "#52c41a",
-                            width: "20px",
-                            height: "20px",
-                            borderRadius: "50%",
-                            border: "2px solid #fff",
-                          }}
+                <Card className="tutor-card">
+                  <Row gutter={[24, 16]} align="middle">
+                    <Col xs={24} md={6} lg={4}>
+                      <div className="tutor-avatar-container">
+                        <Avatar
+                          size={100}
+                          src={tutor.image}
+                          icon={<UserOutlined />}
+                          className="tutor-avatar"
                         />
-                      )}
-                    </div>
-                    <div>
-                      <Title level={5} style={{ margin: "8px 0 4px" }}>
-                        {tutor.name}
-                      </Title>
-                      <Tag color="blue" style={{ marginBottom: "8px" }}>
-                        {tutor.subject}
-                      </Tag>
-                      {tutor.verified && (
-                        <div style={{ marginBottom: "8px" }}>
-                          <SafetyCertificateOutlined
-                            style={{ color: "#1890ff", marginRight: "4px" }}
-                          />
-                          <Text type="secondary" style={{ fontSize: "12px" }}>
-                            {t("tutors.tutor_card.verified")}
-                          </Text>
-                        </div>
-                      )}
-                    </div>
-                  </Col>
-
-                  <Col xs={24} md={12} lg={14}>
-                    <div style={{ marginBottom: "12px" }}>
-                      <div
-                        style={{
-                          display: "flex",
-                          alignItems: "center",
-                          marginBottom: "8px",
-                        }}
-                      >
-                        <Rate
-                          disabled
-                          defaultValue={tutor.rating}
-                          style={{ fontSize: "14px", marginRight: "8px" }}
-                        />
-                        <Text strong style={{ color: "#faad14" }}>
-                          {tutor.rating}
-                        </Text>
-                        <Text type="secondary" style={{ marginLeft: "8px" }}>
-                          ({tutor.reviews} {t("tutors.tutor_card.reviews")})
-                        </Text>
-                      </div>
-
-                      <div
-                        style={{
-                          display: "flex",
-                          flexWrap: "wrap",
-                          gap: "6px",
-                          marginBottom: "12px",
-                        }}
-                      >
-                        {tutor.specialties.map((specialty, idx) => (
-                          <Tag key={idx} color="green" size="small">
-                            {specialty}
-                          </Tag>
-                        ))}
-                      </div>
-
-                      <Paragraph
-                        ellipsis={{ rows: 2, expandable: true, symbol: "more" }}
-                        style={{
-                          color: "#666",
-                          marginBottom: "12px",
-                          fontSize: "14px",
-                        }}
-                      >
-                        {tutor.bio}
-                      </Paragraph>
-                    </div>
-
-                    <div
-                      style={{
-                        display: "flex",
-                        flexWrap: "wrap",
-                        gap: "16px",
-                        alignItems: "center",
-                      }}
-                    >
-                      <div style={{ display: "flex", alignItems: "center" }}>
-                        <UserOutlined
-                          style={{ marginRight: "4px", color: "#1890ff" }}
-                        />
-                        <Text type="secondary">
-                          {tutor.students.toLocaleString()}{" "}
-                          {t("tutors.tutor_card.students")}
-                        </Text>
-                      </div>
-                      <div style={{ display: "flex", alignItems: "center" }}>
-                        <BookOutlined
-                          style={{ marginRight: "4px", color: "#1890ff" }}
-                        />
-                        <Text type="secondary">
-                          {tutor.courses} {t("tutors.tutor_card.courses")}
-                        </Text>
-                      </div>
-                      <div style={{ display: "flex", alignItems: "center" }}>
-                        <ClockCircleOutlined
-                          style={{ marginRight: "4px", color: "#1890ff" }}
-                        />
-                        <Text type="secondary">{tutor.responseTime}</Text>
-                      </div>
-                      {tutor.online && (
-                        <div style={{ display: "flex", alignItems: "center" }}>
-                          <CheckCircleOutlined
-                            style={{ marginRight: "4px", color: "#52c41a" }}
-                          />
-                          <Text type="secondary">
-                            {t("tutors.tutor_card.online_now")}
-                          </Text>
-                        </div>
-                      )}
-                    </div>
-                  </Col>
-
-                  <Col xs={24} md={6} lg={6}>
-                    <div
-                      style={{
-                        display: "flex",
-                        flexDirection: "column",
-                        gap: "12px",
-                        borderLeft: "1px solid #f0f0f0",
-                        paddingLeft: "24px",
-                      }}
-                    >
-                      <div style={{ textAlign: "center" }}>
-                        <Text
-                          strong
-                          style={{ fontSize: "20px", color: "#1890ff" }}
-                        >
-                          ${tutor.hourlyRate}/hr
-                        </Text>
-                        {tutor.discount && (
-                          <Text
-                            type="secondary"
-                            style={{
-                              textDecoration: "line-through",
-                              marginLeft: "8px",
-                            }}
-                          >
-                            ${tutor.originalRate}
-                          </Text>
+                        {tutor.featured && (
+                          <div className="tutor-featured-badge">
+                            <TrophyOutlined className="tutor-featured-icon" />
+                          </div>
+                        )}
+                        {tutor.online && (
+                          <div className="tutor-online-indicator" />
                         )}
                       </div>
+                      <div className="tutor-basic-info">
+                        <Title level={5} className="tutor-name">
+                          {tutor.name}
+                        </Title>
+                        <Tag color="blue" className="tutor-subject-tag">
+                          {tutor.subject}
+                        </Tag>
+                        {tutor.verified && (
+                          <div className="tutor-verified">
+                            <SafetyCertificateOutlined className="tutor-verified-icon" />
+                            <Text type="secondary" className="tutor-verified-text">
+                              {t("tutors.tutor_card.verified")}
+                            </Text>
+                          </div>
+                        )}
+                      </div>
+                    </Col>
 
-                      <Button
-                        type="primary"
-                        icon={<MessageOutlined />}
-                        style={{ width: "100%" }}
-                        size="large"
-                      >
-                        {t("tutors.tutor_card.message")}
-                      </Button>
+                    <Col xs={24} md={12} lg={14}>
+                      <div className="tutor-details">
+                        <div className="tutor-rating-section">
+                          <Rate
+                            disabled
+                            defaultValue={tutor.rating}
+                            className="tutor-rating-stars"
+                          />
+                          <Text strong className="tutor-rating-value">
+                            {tutor.rating}
+                          </Text>
+                          <Text type="secondary" className="tutor-rating-count">
+                            ({tutor.reviews} {t("tutors.tutor_card.reviews")})
+                          </Text>
+                        </div>
 
-                      <Button
-                        icon={<VideoCameraOutlined />}
-                        style={{ width: "100%" }}
-                        size="large"
-                      >
-                        {t("tutors.tutor_card.book_trial")}
-                      </Button>
+                        <div className="tutor-specialties">
+                          {tutor.specialties.map((specialty, idx) => (
+                            <Tag key={idx} color="green" size="small">
+                              {specialty}
+                            </Tag>
+                          ))}
+                        </div>
 
-                      <Button
-                        type="default"
-                        style={{ width: "100%" }}
-                        size="large"
-                      >
-                        {t("tutors.tutor_card.view_profile")}
-                      </Button>
-                    </div>
-                  </Col>
-                </Row>
-              </Card>
-            </motion.div>
-          )}
-        />
+                        <Paragraph
+                          ellipsis={{ rows: 2, expandable: true, symbol: "more" }}
+                          className="tutor-bio"
+                        >
+                          {tutor.bio}
+                        </Paragraph>
+
+                        <div className="tutor-stats">
+                          <div className="tutor-stat-item">
+                            <UserOutlined className="tutor-stat-icon" />
+                            <Text type="secondary">
+                              {tutor.students.toLocaleString()}{" "}
+                              {t("tutors.tutor_card.students")}
+                            </Text>
+                          </div>
+                          <div className="tutor-stat-item">
+                            <BookOutlined className="tutor-stat-icon" />
+                            <Text type="secondary">
+                              {tutor.courses} {t("tutors.tutor_card.courses")}
+                            </Text>
+                          </div>
+                          <div className="tutor-stat-item">
+                            <ClockCircleOutlined className="tutor-stat-icon" />
+                            <Text type="secondary">{tutor.responseTime}</Text>
+                          </div>
+                          {tutor.online && (
+                            <div className="tutor-stat-item">
+                              <CheckCircleOutlined className="tutor-online-icon" />
+                              <Text type="secondary">
+                                {t("tutors.tutor_card.online_now")}
+                              </Text>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </Col>
+
+                    <Col xs={24} md={6} lg={6}>
+                      <div className="tutor-actions">
+                        <div className="tutor-price">
+                          <Text strong className="tutor-price-main">
+                            ${tutor.hourlyRate}{t("tutors.tutor_card.per_hour")}
+                          </Text>
+                          {tutor.discount && (
+                            <Text
+                              type="secondary"
+                              className="tutor-price-original"
+                            >
+                              ${tutor.originalRate}
+                            </Text>
+                          )}
+                        </div>
+
+                        <Button
+                          type="primary"
+                          icon={<MessageOutlined />}
+                          className="tutor-action-button"
+                          size="large"
+                        >
+                          {t("tutors.tutor_card.message")}
+                        </Button>
+
+                        <Button
+                          icon={<VideoCameraOutlined />}
+                          className="tutor-action-button"
+                          size="large"
+                        >
+                          {t("tutors.tutor_card.book_trial")}
+                        </Button>
+
+                        <Button
+                          type="default"
+                          className="tutor-action-button"
+                          size="large"
+                        >
+                          {t("tutors.tutor_card.view_profile")} <RightOutlined />
+                        </Button>
+                      </div>
+                    </Col>
+                  </Row>
+                </Card>
+              </motion.div>
+            )}
+          />
+        </div>
 
         {/* How It Works Section */}
         <motion.div
@@ -561,31 +435,15 @@ const Tutors = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          style={{ margin: "60px 0" }}
+          className="tutors-how-works"
         >
-          <Title
-            level={2}
-            style={{ textAlign: "center", marginBottom: "40px" }}
-          >
+          <Title level={2} className="tutors-section-title">
             {t("tutors.how_works.title")}
           </Title>
           <Row gutter={[32, 32]}>
             <Col xs={24} md={8}>
-              <Card
-                style={{
-                  textAlign: "center",
-                  height: "100%",
-                  border: "none",
-                  boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
-                }}
-              >
-                <div
-                  style={{
-                    fontSize: "48px",
-                    color: "#1890ff",
-                    marginBottom: "16px",
-                  }}
-                >
+              <Card className="tutors-how-works-card">
+                <div className="tutors-how-works-number tutors-how-works-number-1">
                   1
                 </div>
                 <Title level={4}>{t("tutors.how_works.step1_title")}</Title>
@@ -593,21 +451,8 @@ const Tutors = () => {
               </Card>
             </Col>
             <Col xs={24} md={8}>
-              <Card
-                style={{
-                  textAlign: "center",
-                  height: "100%",
-                  border: "none",
-                  boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
-                }}
-              >
-                <div
-                  style={{
-                    fontSize: "48px",
-                    color: "#52c41a",
-                    marginBottom: "16px",
-                  }}
-                >
+              <Card className="tutors-how-works-card">
+                <div className="tutors-how-works-number tutors-how-works-number-2">
                   2
                 </div>
                 <Title level={4}>{t("tutors.how_works.step2_title")}</Title>
@@ -615,21 +460,8 @@ const Tutors = () => {
               </Card>
             </Col>
             <Col xs={24} md={8}>
-              <Card
-                style={{
-                  textAlign: "center",
-                  height: "100%",
-                  border: "none",
-                  boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
-                }}
-              >
-                <div
-                  style={{
-                    fontSize: "48px",
-                    color: "#faad14",
-                    marginBottom: "16px",
-                  }}
-                >
+              <Card className="tutors-how-works-card">
+                <div className="tutors-how-works-number tutors-how-works-number-3">
                   3
                 </div>
                 <Title level={4}>{t("tutors.how_works.step3_title")}</Title>
@@ -645,65 +477,33 @@ const Tutors = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          style={{ marginTop: "60px" }}
+          className="tutors-cta"
         >
-          <Card
-            style={{
-              background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-              border: "none",
-              borderRadius: "16px",
-              textAlign: "center",
-              color: "#fff",
-              padding: "40px 24px",
-            }}
-          >
+          <Card className="tutors-cta-card">
             <Row gutter={[32, 32]} align="middle">
               <Col xs={24} md={16}>
-                <Title
-                  level={3}
-                  style={{ color: "#fff", marginBottom: "12px" }}
-                >
+                <Title level={3} className="tutors-cta-title">
                   {t("tutors.cta.title")}
                 </Title>
-                <Paragraph
-                  style={{
-                    color: "rgba(255,255,255,0.9)",
-                    marginBottom: "0",
-                    fontSize: "16px",
-                  }}
-                >
+                <Paragraph className="tutors-cta-subtitle">
                   {t("tutors.cta.subtitle")}
                 </Paragraph>
-                <div
-                  style={{
-                    marginTop: "16px",
-                    display: "flex",
-                    flexWrap: "wrap",
-                    gap: "16px",
-                    justifyContent: "center",
-                  }}
-                >
-                  <div style={{ display: "flex", alignItems: "center" }}>
-                    <CheckCircleOutlined
-                      style={{ color: "#52c41a", marginRight: "8px" }}
-                    />
-                    <Text style={{ color: "rgba(255,255,255,0.9)" }}>
+                <div className="tutors-cta-features">
+                  <div className="tutors-cta-feature">
+                    <CheckCircleOutlined className="tutors-cta-feature-icon" />
+                    <Text className="tutors-cta-feature-text">
                       {t("tutors.cta.features.rates")}
                     </Text>
                   </div>
-                  <div style={{ display: "flex", alignItems: "center" }}>
-                    <CheckCircleOutlined
-                      style={{ color: "#52c41a", marginRight: "8px" }}
-                    />
-                    <Text style={{ color: "rgba(255,255,255,0.9)" }}>
+                  <div className="tutors-cta-feature">
+                    <CheckCircleOutlined className="tutors-cta-feature-icon" />
+                    <Text className="tutors-cta-feature-text">
                       {t("tutors.cta.features.schedule")}
                     </Text>
                   </div>
-                  <div style={{ display: "flex", alignItems: "center" }}>
-                    <CheckCircleOutlined
-                      style={{ color: "#52c41a", marginRight: "8px" }}
-                    />
-                    <Text style={{ color: "rgba(255,255,255,0.9)" }}>
+                  <div className="tutors-cta-feature">
+                    <CheckCircleOutlined className="tutors-cta-feature-icon" />
+                    <Text className="tutors-cta-feature-text">
                       {t("tutors.cta.features.reach")}
                     </Text>
                   </div>
@@ -712,15 +512,7 @@ const Tutors = () => {
               <Col xs={24} md={8}>
                 <Button
                   size="large"
-                  style={{
-                    backgroundColor: "#fff",
-                    color: "#667eea",
-                    border: "none",
-                    width: "100%",
-                    height: "48px",
-                    fontWeight: 600,
-                    borderRadius: "8px",
-                  }}
+                  className="tutors-cta-button"
                   icon={<GlobalOutlined />}
                 >
                   {t("tutors.cta.button")}

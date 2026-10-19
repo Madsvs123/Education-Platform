@@ -1,17 +1,38 @@
-## Running React on Replit
+# Education Platform
 
-[React](https://reactjs.org/) is a popular JavaScript library for building user interfaces.
+Aleph Edu is a bilingual education site for browsing courses, tutors, and articles. Course, tutor, and blog content comes from local data files. Login and registration send the visitor to the dashboard without a backend.
 
-[Vite](https://vitejs.dev/) is a blazing fast frontend build tool that includes features like Hot Module Reloading (HMR), optimized builds, and TypeScript support out of the box.
+## Features
 
-Using the two in conjunction is one of the fastest ways to build a web app.
+- English and Arabic, with right-to-left layout when Arabic is selected
+- Pages for home, courses, course detail, tutors, about, blog, article detail, contact, and dashboard
+- Login and registration screens
+- Ant Design layout with page transitions
 
-### Getting Started
-- Hit run
-- Edit [App.jsx](#src/App.jsx) and watch it live update!
+## Tech stack
 
-By default, Replit runs the `dev` script, but you can configure it by changing the `run` field in the [configuration file](#.replit). Here are the vite docs for [serving production websites](https://vitejs.dev/guide/build.html)
+- React 18
+- Vite
+- Ant Design
+- React Router
+- i18next
+- Framer Motion
 
-### Typescript
+## Setup
 
-Just rename any file from `.jsx` to `.tsx`. You can also try our [TypeScript Template](https://replit.com/@replit/React-TypeScript)
+```bash
+npm install
+npm run dev
+```
+
+The dev server listens on [http://localhost:5173](http://localhost:5173).
+
+## Scripts
+
+- `npm run dev` — start the development server
+- `npm run build` — build the static site into `dist/`
+- `npm run preview` — preview the production build
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
